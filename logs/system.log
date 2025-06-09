@@ -1,0 +1,68 @@
+2025-06-09 13:47:54,280 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 13:55:41,905 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 13:55:43,961 [INFO] Running Market Analysis Agent
+2025-06-09 13:55:43,961 [INFO] Fetching price data for AAPL on 2025-06-10
+2025-06-09 13:55:43,962 [INFO] Fetching price data for TSLA on 2025-06-10
+2025-06-09 13:55:43,962 [INFO] Fetching price data for NVDA on 2025-06-10
+2025-06-09 13:56:01,171 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-06-09 14:11:26,124 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 14:11:32,418 [INFO] Running Market Analysis Agent
+2025-06-09 14:11:32,421 [INFO] Fetching price data for AAPL on 2025-06-10
+2025-06-09 14:11:32,421 [INFO] Fetching price data for TSLA on 2025-06-10
+2025-06-09 14:11:32,421 [INFO] Fetching price data for NVDA on 2025-06-10
+2025-06-09 14:11:34,607 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-06-09 14:14:00,932 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 14:14:07,938 [INFO] Running Market Analysis Agent
+2025-06-09 14:14:07,939 [INFO] Fetching price data for AAPL on 2025-06-10
+2025-06-09 14:14:07,939 [INFO] Fetching price data for TSLA on 2025-06-10
+2025-06-09 14:14:07,940 [INFO] Fetching price data for NVDA on 2025-06-10
+2025-06-09 14:14:09,421 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-06-09 14:15:01,782 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 14:15:09,008 [INFO] Running Market Analysis Agent
+2025-06-09 14:15:09,008 [INFO] Fetching price data for AAPL on 2025-06-10
+2025-06-09 14:15:09,009 [INFO] Fetching price data for TSLA on 2025-06-10
+2025-06-09 14:15:09,010 [INFO] Fetching price data for NVDA on 2025-06-10
+2025-06-09 14:15:14,726 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:15:14,747 [INFO] Market Summary Generated
+2025-06-09 14:15:14,757 [INFO] Running Forecasting Agent
+2025-06-09 14:15:14,759 [INFO] Running Risk & Anomaly Detection Agent
+2025-06-09 14:15:14,759 [INFO] Running basic forecast model
+2025-06-09 14:15:14,771 [INFO] Fetching simulated transaction data
+2025-06-09 14:15:14,772 [INFO] Running anomaly detection on transaction data
+2025-06-09 14:15:16,541 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:15:16,550 [INFO] Forecast Generated
+2025-06-09 14:15:17,130 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:15:17,133 [INFO] Anomaly Report Generated
+2025-06-09 16:10:03,741 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 16:10:11,305 [INFO] Running Market Analysis Agent
+2025-06-09 16:10:11,306 [INFO] Fetching price data for AAPL on 2025-06-10
+2025-06-09 16:10:11,306 [INFO] Fetching price data for TSLA on 2025-06-10
+2025-06-09 16:10:11,307 [INFO] Fetching price data for NVDA on 2025-06-10
+2025-06-09 16:10:13,033 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 16:10:13,064 [INFO] Market Summary Generated
+2025-06-09 16:10:13,074 [INFO] Running Forecasting Agent
+2025-06-09 16:10:13,079 [INFO] Running basic forecast model
+2025-06-09 16:10:13,081 [INFO] Running Risk & Anomaly Detection Agent
+2025-06-09 16:10:13,087 [INFO] Fetching simulated transaction data
+2025-06-09 16:10:13,117 [INFO] Running anomaly detection on transaction data
+2025-06-09 16:10:14,677 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 16:10:14,682 [INFO] Anomaly Report Generated
+2025-06-09 16:10:14,728 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 16:10:14,735 [INFO] Forecast Generated
+2025-06-09 16:10:29,262 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-06-09 16:10:35,431 [INFO] Running Market Analysis Agent
+2025-06-09 16:10:35,432 [INFO] Fetching price data for AAPL on 2025-06-10
+2025-06-09 16:10:35,432 [INFO] Fetching price data for TSLA on 2025-06-10
+2025-06-09 16:10:35,432 [INFO] Fetching price data for NVDA on 2025-06-10
+2025-06-09 16:10:36,937 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 16:10:36,952 [INFO] Market Summary Generated
+2025-06-09 16:10:36,962 [INFO] Running Forecasting Agent
+2025-06-09 16:10:36,963 [INFO] Running basic forecast model
+2025-06-09 16:10:36,963 [INFO] Running Risk & Anomaly Detection Agent
+2025-06-09 16:10:36,973 [INFO] Fetching simulated transaction data
+2025-06-09 16:10:36,990 [INFO] Running anomaly detection on transaction data
+2025-06-09 16:10:38,540 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 16:10:38,543 [INFO] Forecast Generated
+2025-06-09 16:10:39,043 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 16:10:39,046 [INFO] Anomaly Report Generated
+2025-06-09 16:19:45,629 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
