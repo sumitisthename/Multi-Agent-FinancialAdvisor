@@ -16,6 +16,10 @@ Date: {date}
 --- Compliance Review ---
 {compliance}
 
+User Question:
+{user_question}
+
+
 Tasks:
 1. Combine insights from all sources.
 2. Determine the optimal decision (e.g., Buy, Hold, Sell, or Take No Action).

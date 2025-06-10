@@ -40,7 +40,8 @@ def market_analysis_node(config):
             "date": state["timestamp"],
             "assets": ", ".join(state["assets"]),
             "price_data": prices,
-            "news": headlines
+            "news": headlines,
+            "user_question": state.get("user_query", "")
         }
 
         # Format prompt

@@ -16,7 +16,7 @@ def run():
 
     # Test scenario input
     initial_state = {
-        "assets": ["AAPL", "TSLA", "NVDA"],
+        "assets": [],
         "timestamp": "2025-06-10",
         "memory": None
     }

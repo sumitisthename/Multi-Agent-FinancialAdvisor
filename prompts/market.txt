@@ -10,6 +10,10 @@ Today is {date}. The assets under review are: {assets}.
 --- News Headlines ---
 {news}
 
+User Question:
+{user_question}
+
+
 Analyze the current market trends and key events.
 Provide a concise summary of relevant developments, indicating bullish or bearish sentiment for each major asset.
 Avoid speculation—base conclusions only on the provided information.

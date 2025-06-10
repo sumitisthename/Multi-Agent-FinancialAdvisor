@@ -42,7 +42,8 @@ def forecasting_node(config):
             "date": date,
             "assets": ", ".join(assets),
             "market_summary": market_summary,
-            "forecast_table": forecast_data  # stringified table or metrics
+            "forecast_table": forecast_data,
+            "user_question": state.get("user_query", "")
         }
 
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)

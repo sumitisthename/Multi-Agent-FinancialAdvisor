@@ -47,7 +47,8 @@ def memory_reflection_node(config):
             "forecast": forecast,
             "risk": risk,
             "compliance": compliance,
-            "decision": decision
+            "decision": decision,
+            "user_question": state.get("user_query", "")
         }
 
         prompt = PromptTemplate.from_template(REFLECTION_PROMPT)

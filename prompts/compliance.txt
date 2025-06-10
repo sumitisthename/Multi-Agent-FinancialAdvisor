@@ -13,6 +13,9 @@ Date: {date}
 --- Risk Alerts ---
 {risk_summary}
 
+User Question:
+{user_question}
+
 Tasks:
 1. Evaluate whether the proposed strategy violates any stated compliance rules.
 2. Highlight any risks that may have regulatory implications.

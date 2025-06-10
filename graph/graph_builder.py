@@ -17,6 +17,7 @@ class GraphState(TypedDict):
     compliance_review: str
     final_decision: str
     reflection_lesson: str
+    user_query: str  
 
 def build_graph(config):
     """Build and return the compiled graph"""
@@ -108,6 +109,7 @@ def run():
         initial_state = {
             "assets": ["AAPL", "TSLA", "NVDA"],  # Your assets
             "timestamp": "2025-06-10",           # Your timestamp
+            "user_query": " ",
             "market_summary": "",
             "forecast": "",
             "risk_report": "",

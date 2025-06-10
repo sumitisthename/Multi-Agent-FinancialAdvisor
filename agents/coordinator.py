@@ -42,7 +42,8 @@ def coordinator_node(config):
             "market": market,
             "forecast": forecast,
             "risk": risk,
-            "compliance": compliance
+            "compliance": compliance,
+            "user_question": state.get("user_query", "")
         }
 
         prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)

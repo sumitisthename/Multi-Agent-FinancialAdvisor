@@ -27,5 +27,5 @@ python-dotenv
 # Logging and debugging
 loguru
 
-# Optional: Jupyter support for prototyping
-jupyter
+# Code Carbon
+codecarbon

@@ -11,6 +11,9 @@ Assets: {assets}
 --- Forecast Data ---
 {forecast_table}
 
+User Question:
+{user_question}
+
 Based on the above market summary and quantitative forecasts:
 1. Interpret the direction and strength of movement for each asset.
 2. Recommend whether to buy, hold, or reduce exposure.

@@ -45,7 +45,8 @@ def risk_node(config):
             "assets": ", ".join(assets),
             "forecast": forecast,
             "market_summary": market_summary,
-            "anomaly_report": anomalies
+            "anomaly_report": anomalies,
+            "user_question": state.get("user_query", "")
         }
 
         prompt = PromptTemplate.from_template(RISK_PROMPT)

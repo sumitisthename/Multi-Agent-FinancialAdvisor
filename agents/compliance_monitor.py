@@ -41,7 +41,8 @@ def compliance_node(config):
             "date": date,
             "rules": rules,
             "action_summary": proposed_action,
-            "risk_summary": risk_alerts
+            "risk_summary": risk_alerts,
+            "user_question": state.get("user_query", "")
         }
 
         prompt = PromptTemplate.from_template(COMPLIANCE_PROMPT)

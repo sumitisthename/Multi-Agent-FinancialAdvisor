@@ -3,11 +3,12 @@ import time
 import json
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # Ensure module paths are accessible
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from graph.graph_builder import build_graph
 from config.settings import load_config
 from utils.logger import setup_logger
+from codecarbon import EmissionsTracker
 
 st.set_page_config(page_title="Multi-Agent Financial Planner", layout="wide")
 
@@ -35,10 +36,14 @@ def run_graph_with_streaming(initial_state):
     graph = build_graph(config)
     status_area = st.empty()
 
+    tracker = EmissionsTracker(project_name="financial_multi_agent_system", output_file="emissions.csv")
+    tracker.start()
+
     with st.spinner("Running multi-agent graph..."):
         result = graph.invoke(initial_state)
         time.sleep(0.5)
 
+    emissions = tracker.stop()
     st.success("✅ Execution complete!")
 
     # Show detailed per-agent output
@@ -54,6 +59,10 @@ def run_graph_with_streaming(initial_state):
     for title, content in agent_outputs.items():
         with st.expander(f"📌 {title}"):
             st.markdown(f"```\n{content}\n```")
+
+    # Emission summary
+    st.subheader("🌱 Carbon Emissions")
+    st.markdown(f"**Estimated CO₂ Emitted**: `{emissions:.6f} kg` per run")
 
     # Export section
     if export_format == "JSON":
@@ -96,7 +105,8 @@ if st.session_state.get("run"):
     initial_state = {
         "assets": [a.strip() for a in assets.split(",")],
         "timestamp": timestamp,
-        "memory": None
+        "memory": None,
+        "user_query": user_query.strip() if user_query else "No question provided"
     }
     run_graph_with_streaming(initial_state)
     st.session_state['run'] = False

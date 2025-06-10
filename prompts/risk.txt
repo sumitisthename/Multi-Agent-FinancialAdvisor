@@ -14,6 +14,10 @@ Assets: {assets}
 --- Anomaly Report ---
 {anomaly_report}
 
+User Question:
+{user_question}
+
+
 Tasks:
 1. Identify any red flags or inconsistencies in the forecast based on the anomaly report.
 2. Explain the likely causes of any detected anomalies.

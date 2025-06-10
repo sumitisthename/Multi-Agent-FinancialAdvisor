@@ -14,11 +14,13 @@ def log_decision(state, lesson, config):
     logger.info("Logging decision and lesson to memory")
 
     entry = {
-        "timestamp": state["timestamp"],
-        "assets": state["assets"],
-        "decision": state.get("final_decision", ""),
-        "lesson": lesson
-    }
+    "timestamp": state["timestamp"],
+    "assets": state["assets"],
+    "user_query": state.get("user_query", ""),
+    "decision": state.get("final_decision", ""),
+    "lesson": lesson
+}
+
 
     try:
         if os.path.exists(MEMORY_LOG_PATH):
