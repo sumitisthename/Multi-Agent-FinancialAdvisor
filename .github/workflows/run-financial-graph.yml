@@ -2,8 +2,8 @@ name: Nightly Financial Graph Run
 
 on:
   schedule:
-    - cron: "0 2 * * *"  # Runs at 02:00 UTC daily
-  workflow_dispatch:  # Also allow manual runs from GitHub
+    - cron: "0 2 * * *"
+  workflow_dispatch:
 
 jobs:
   scheduled-graph-run:
@@ -20,18 +20,23 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: 🧠 Run LangGraph with Emissions Tracking
         run: |
           python main.py || true
 
+      - name: 🖥️ Test Streamlit App (headless mode)
+        run: |
+          streamlit run streamlit_app/app.py --server.headless true || true
+
       - name: 📎 Upload Logs and Emissions
-        uses: actions/upload-artifact@v3
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: nightly-financial-output
           path: |
             logs/system.log
             memory/logs.json
             emissions.csv
+          if-no-files-found: ignore
