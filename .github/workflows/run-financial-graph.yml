@@ -2,12 +2,12 @@ name: Nightly Financial Graph Run
 
 on:
   schedule:
-    - cron: "0 2 * * *"
-  workflow_dispatch:
+    - cron: "0 2 * * *"  # Runs daily at 2:00 AM UTC
+  workflow_dispatch:      # Allow manual runs
 
 jobs:
   scheduled-graph-run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # ✅ Pin to stable image
 
     steps:
       - name: 📥 Checkout code
@@ -20,6 +20,7 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: 🧠 Run LangGraph with Emissions Tracking
@@ -32,7 +33,7 @@ jobs:
 
       - name: 📎 Upload Logs and Emissions
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4  # ✅ Latest version
         with:
           name: nightly-financial-output
           path: |
