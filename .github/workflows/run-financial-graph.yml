@@ -2,12 +2,13 @@ name: Nightly Financial Graph Run
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at 2:00 AM UTC (9 PM ET)
-  workflow_dispatch:      # Allow manual runs
+    - cron: "0 0 * * *"  # Runs daily at 12:00 AM UTC (7 PM ET)
+  workflow_dispatch:
 
 jobs:
   scheduled-graph-run:
-    runs-on: ubuntu-22.04  # ✅ Pin to stable image
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45  # ✅ Set a max runtime for safety
 
     steps:
       - name: 📥 Checkout code
@@ -31,9 +32,9 @@ jobs:
         run: |
           python main.py || true
 
-      - name: 🖥️ Test Streamlit App (headless mode)
+      - name: 🖥️ Test Streamlit App (headless mode, 60s max)
         run: |
-          streamlit run streamlit_app/app.py --server.headless true --server.port 8501 || true
+          timeout 60s streamlit run streamlit_app/app.py --server.headless true --server.port 8501 || true
 
       - name: 📎 Upload Logs and Emissions
         if: always()
