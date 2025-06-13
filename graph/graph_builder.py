@@ -2,6 +2,8 @@ from typing import TypedDict, Annotated
 from langgraph.graph import StateGraph
 from operator import add
 import logging
+from codecarbon import EmissionsTracker
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -161,7 +163,14 @@ def test_simple():
             logger.error("Simple graph is None")
             return
         
-        result = graph.invoke({"assets": ["AAPL", "TSLA"], "result": ""})
+        
+        tracker = EmissionsTracker(project_name="graph_cli_run", output_file="emissions.csv")
+        tracker.start()
+
+        result = graph.invoke(initial_state)
+
+        emissions = tracker.stop()
+        logger.info(f"Estimated CO₂ emissions: {emissions:.6f} kg")
         logger.info(f"Simple test result: {result}")
         
     except Exception as e:

@@ -29,3 +29,13 @@ loguru
 
 # Code Carbon
 codecarbon
+
+# Time-series forecasting
+statsmodels
+
+# Yahoo Finance data fetching
+yfinance
+
+# utilities and helpers
+utils
+
