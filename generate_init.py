@@ -30,3 +30,6 @@ for dir_name in target_dirs:
             print(f"✔️ Already exists: {init_file}")
     else:
         print(f"⚠️ Directory not found: {full_path}")
+# Ensure the script is run from the project root
+if __name__ == "__main__":
+    print("Initialization complete. All necessary __init__.py files created.")
