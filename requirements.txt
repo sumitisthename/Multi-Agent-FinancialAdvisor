@@ -39,3 +39,6 @@ yfinance
 # utilities and helpers
 utils
 
+datetime
+pytest
+

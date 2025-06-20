@@ -35,7 +35,7 @@ def forecasting_node(config):
 
 
         market_summary = state.get("market_summary", "")
-        assets = state["assets"]
+        assets = list(set(state["assets"]))
         date = state["timestamp"]
 
         logger.info("ARIMA model invoked for assets: %s", assets)
