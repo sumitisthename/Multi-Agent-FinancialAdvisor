@@ -3,6 +3,8 @@ from langgraph.graph import StateGraph
 from operator import add
 import logging
 from codecarbon import EmissionsTracker
+import datetime
+import os
 
 
 # Set up logging
@@ -110,7 +112,7 @@ def run():
         # Define initial state
         initial_state = {
             "assets": ["AAPL", "TSLA", "NVDA"],  # Your assets
-            "timestamp": "2025-06-10",           # Your timestamp
+            "timestamp": datetime.utcnow().isoformat(),           
             "user_query": " ",
             "market_summary": "",
             "forecast": "",

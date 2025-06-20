@@ -9,24 +9,29 @@ from langchain_groq import ChatGroq
 import os
 from dotenv import load_dotenv
 
+# Load environment variables
 load_dotenv()
+
+# Setup logger
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
+# Load config
+config = load_config()
 
-logger = get_logger()
+# Validate API key
+api_key = os.getenv("GROQ_API_KEY")
+if not api_key:
+    raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
 
-
+# Initialize LLM globally with API key
 llm = ChatGroq(
     model="llama3-8b-8192",
     api_key=os.getenv("GROQ_API_KEY")
 )
 
-
-# Load prompt
+# Load prompt template from file
 with open("prompts/market.txt") as f:
     MARKET_PROMPT = f.read()
-
 
 def market_analysis_node(config):
     def run(state):
@@ -36,6 +41,7 @@ def market_analysis_node(config):
         prices = fetch_market_data(state["assets"], state["timestamp"], config)
         headlines = fetch_news_data(state["assets"], config)
 
+        # Prepare prompt context
         context = {
             "date": state["timestamp"],
             "assets": ", ".join(state["assets"]),
@@ -44,12 +50,11 @@ def market_analysis_node(config):
             "user_question": state.get("user_query", "")
         }
 
-        # Format prompt
+        # Format and run prompt
         prompt = PromptTemplate.from_template(MARKET_PROMPT)
         llm_input = prompt.format(**context)
 
-        # Call LLM
-        llm = ChatGroq(model="llama3-8b-8192")
+        # Generate response
         parser = StrOutputParser()
         summary = parser.invoke(llm.invoke(llm_input))
 
@@ -59,5 +64,3 @@ def market_analysis_node(config):
         return state
 
     return run
-# This module defines the market analysis agent for the LangGraph multi-agent financial system.
-# It fetches market data and news, formats it, and generates a market summary using an LLM.
