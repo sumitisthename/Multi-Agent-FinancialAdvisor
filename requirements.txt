@@ -42,3 +42,8 @@ utils
 datetime
 pytest
 
+
+# Visualization
+matplotlib  
+Ipython
+

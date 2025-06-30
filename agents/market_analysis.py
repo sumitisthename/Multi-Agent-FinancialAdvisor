@@ -20,6 +20,7 @@ config = load_config()
 
 # Validate API key
 api_key = os.getenv("GROQ_API_KEY")
+print("[DEBUG] Using GROQ Key:", api_key)
 if not api_key:
     raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
 

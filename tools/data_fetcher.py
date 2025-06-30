@@ -3,17 +3,32 @@
 import requests
 import os
 from utils.logger import get_logger
+import yfinance as yf
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = get_logger()
 
 
 def fetch_market_data(assets, date, config):
-    # Using Alpha Vantage or Yahoo API as example (mock structure here)
     results = []
     for asset in assets:
-        # Simulate fetch
-        logger.info(f"Fetching price data for {asset} on {date}")
-        results.append(f"Price data for {asset} on {date} (stub)")
+        try:
+            logger.info(f"📥 Fetching price data for {asset} on {date}")
+            # Fetch daily data for the last 60 days as an example
+            df = yf.download(asset, period="60d", interval="1d", progress=False)
+            if df.empty:
+                logger.warning(f"⚠️ No data found for {asset}")
+                results.append(f"No data found for {asset} on {date}")
+                continue
+            
+            results.append(f"Fetched {len(df)} records for {asset} on {date}")
+        
+        except Exception as e:
+            logger.error(f"❌ Failed to fetch data for {asset}: {e}")
+            results.append(f"Failed to fetch data for {asset} on {date}")
+    
     return "\n".join(results)
 
 
