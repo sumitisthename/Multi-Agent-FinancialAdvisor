@@ -8,6 +8,7 @@ from statsmodels.tools.sm_exceptions import ConvergenceWarning
 import warnings
 import os
 import traceback
+from datetime import datetime
 
 logger = get_logger()
 
@@ -67,7 +68,8 @@ def run_forecast_model(assets, date, config):
             # Save raw asset prices
             df = df.reset_index()  # 'Date' column from index
             df['timestamp'] = pd.Timestamp.now()
-            asset_csv_path = f"forecasts/assets_{asset}_{date}.csv"
+            safe_date = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
+            asset_csv_path = f"forecasts/assets-{asset}-{safe_date}.csv"
             df.to_csv(asset_csv_path, index=False)
             logger.info(f"✅ Asset CSV saved: {asset_csv_path}")
             logger.debug(df.head(6))
@@ -108,7 +110,7 @@ def run_forecast_model(assets, date, config):
     # Save combined forecast summary
     try:
         forecast_df = pd.DataFrame(forecast_records)
-        summary_path = f"forecasts/forecast_{date}.csv"
+        summary_path = f"forecasts/forecast-{date}.csv"
         forecast_df.to_csv(summary_path, index=False)
         logger.info(f"✅ Forecast summary saved to {summary_path}")
     except Exception as e:
