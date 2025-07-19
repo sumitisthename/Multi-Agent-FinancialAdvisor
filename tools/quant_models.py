@@ -1,3 +1,6 @@
+"""
+Quantitative models for the LangGraph multi-agent financial analysis system.
+"""
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
@@ -18,7 +21,9 @@ warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 def format_forecast_table(forecast_records):
-    """Format forecast records into a readable table"""
+    """
+    Formats forecast records into a readable table.
+    """
     if not forecast_records:
         return "No forecast data available."
     
@@ -52,11 +57,12 @@ def format_forecast_table(forecast_records):
     
     return table
 
-def run_forecast_model(assets, date, config):
+def run_forecast_model(assets, date):
+    """
+    Runs a forecast model for a list of assets.
+    """
     forecasts = []
     forecast_records = []
-
-    assets = config.get("assets", assets)  # allow dynamic override
 
     os.makedirs("forecasts", exist_ok=True)
 
@@ -120,7 +126,10 @@ def run_forecast_model(assets, date, config):
     return format_forecast_table(forecast_records)
 
 
-def detect_anomalies(transactions, forecast_text, config):
+def detect_anomalies(transactions, forecast_text):
+    """
+    Detects anomalies in a list of transactions.
+    """
     logger.info("📊 Running anomaly detection on transaction data")
 
     try:
@@ -133,15 +142,18 @@ def detect_anomalies(transactions, forecast_text, config):
         logger.error(f"❌ Error during anomaly detection: {e}")
         return "Anomaly detection failed."
 
-def run_quant_models(assets, date, transactions, config):
+def run_quant_models(assets, date, transactions):
+    """
+    Runs a suite of quantitative models.
+    """
     logger.info("🔍 Running quantitative models...")
 
     # Run forecast model
-    forecast_text = run_forecast_model(assets, date, config)
+    forecast_text = run_forecast_model(assets, date)
     logger.info(f"Forecast results:\n{forecast_text}")
 
     # Run anomaly detection
-    anomaly_text = detect_anomalies(transactions, forecast_text, config)
+    anomaly_text = detect_anomalies(transactions, forecast_text)
     logger.info(f"Anomaly detection results:\n{anomaly_text}")
 
     return {
