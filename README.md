@@ -39,7 +39,9 @@ This project is a multi-agent financial system that uses LangGraph to analyze ma
    - Add your API keys to the `.env` file. At a minimum, you will need a `GROQ_API_KEY`.
    ```
    GROQ_API_KEY="your-groq-api-key"
-   # Add other keys like OPENAI_API_KEY if you plan to use other models
+   # Add other API Keys:
+   NEW_API_KEY = "your-new-api-key"
+   ALPHA = "your-apha-vantage-api-key"
    ```
 
 ## Usage
