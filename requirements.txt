@@ -46,4 +46,5 @@ pytest
 # Visualization
 matplotlib  
 Ipython
+Flask
 

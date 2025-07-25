@@ -73,6 +73,17 @@ This will launch a web application in your browser where you can:
 -   Ask questions in natural language.
 -   Download the results as a JSON or TXT file.
 
+## Running with Docker
+
+To run the application using Docker, you need to have Docker and Docker Compose installed.
+
+1. **Build and run the containers:**
+   ```bash
+   docker-compose up --build
+   ```
+2. **Access the application:**
+   Open your web browser and go to `http://localhost:3000`.
+
 ## Project Structure
 
 ```
