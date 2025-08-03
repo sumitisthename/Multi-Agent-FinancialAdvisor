@@ -1,22 +1,25 @@
 # agents/memory_reflection.py
-"""
-Memory and reflection agent for the LangGraph multi-agent financial analysis system.
-"""
+
 from memory.memory_store import log_decision, retrieve_recent_memory
 from config.settings import load_config
 from utils.logger import get_logger
+from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
 
-load_dotenv(override=True)
+load_dotenv()
 logger = get_logger()
 
 print(os.getenv("GROQ_API_KEY"))
 logger = get_logger()
 
 
+llm = ChatGroq(
+    model="llama3-8b-8192",
+    api_key=os.getenv("GROQ_API_KEY")
+)
 
 
 # Load reflection prompt
@@ -24,16 +27,10 @@ with open("prompts/coordinator.txt") as f:
     REFLECTION_PROMPT = f.read().replace("Decision", "Reflection")  # reuse structure
 
 
-def memory_reflection_node():
-    """
-    Represents the memory and reflection agent node in the LangGraph.
-    """
+def memory_reflection_node(config):
     def run(state):
-        """
-        Executes the memory and reflection agent.
-        """
-        from langchain_groq import ChatGroq
         logger.info("Running Memory Reflection Agent")
+<<<<<<< HEAD
         try:
             date = state["timestamp"]
             decision = state.get("final_decision", "")
@@ -42,9 +39,17 @@ def memory_reflection_node():
             forecast = state.get("forecast", "")
             risk = state.get("risk_report", "")
             compliance = state.get("compliance_review", "")
+=======
+>>>>>>> b469ac9e169c373554a18c86902ef03db3469da9
 
-            memory_snippets = retrieve_recent_memory()
+        date = state["timestamp"]
+        decision = state.get("final_decision", "")
+        market = state.get("market_summary", "")
+        forecast = state.get("forecast", "")
+        risk = state.get("risk_report", "")
+        compliance = state.get("compliance_review", "")
 
+<<<<<<< HEAD
             context = {
                 "date": date,
                 "memory_log": memory_snippets,
@@ -56,27 +61,41 @@ def memory_reflection_node():
                 "decision": decision,
                 "user_question": state.get("user_query", "")
             }
+=======
+        memory_snippets = retrieve_recent_memory(config)
+>>>>>>> b469ac9e169c373554a18c86902ef03db3469da9
 
-            prompt = PromptTemplate.from_template(REFLECTION_PROMPT)
-            llm_input = prompt.format(**context)
+        context = {
+            "date": date,
+            "memory_log": memory_snippets,
+            "market": market,
+            "forecast": forecast,
+            "risk": risk,
+            "compliance": compliance,
+            "decision": decision,
+            "user_question": state.get("user_query", "")
+        }
 
+<<<<<<< HEAD
             # Initialize LLM
             llm = ChatGroq(
                 model="llama3-8b-8192",
                 api_key=os.getenv("GROQ_API_KEY"),
                 temperature=0.2
             )
+=======
+        prompt = PromptTemplate.from_template(REFLECTION_PROMPT)
+        llm_input = prompt.format(**context)
+>>>>>>> b469ac9e169c373554a18c86902ef03db3469da9
 
-            parser = StrOutputParser()
-            lesson = parser.invoke(llm.invoke(llm_input))
+        llm = ChatGroq(model="llama3-8b-8192")
+        parser = StrOutputParser()
+        lesson = parser.invoke(llm.invoke(llm_input))
 
-            logger.info("Reflection Completed - Lesson Logged")
+        logger.info("Reflection Completed - Lesson Logged")
 
-            log_decision(state, lesson)
-            state["reflection_lesson"] = lesson
-        except Exception as e:
-            logger.error(f"Error in memory reflection agent: {e}")
-            state["reflection_lesson"] = f"Error in memory reflection: {e}"
+        log_decision(state, lesson, config)
+        state["reflection_lesson"] = lesson
         return state
 
     return run
