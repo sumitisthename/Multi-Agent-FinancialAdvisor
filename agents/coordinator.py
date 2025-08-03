@@ -58,8 +58,8 @@ def coordinator_node(config):
                 "user_question": state.get("user_query", "")
             }
 
-        prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
-        llm_input = prompt.format(**context)
+            prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
+            llm_input = prompt.format(**context)
 
             # Initialize LLM
             llm = ChatGroq(
@@ -72,10 +72,14 @@ def coordinator_node(config):
             print("\n=== Coordinator Prompt Input ===\n", llm_input, "\n============================\n")
             final_decision = parser.invoke(llm.invoke(llm_input))
 
-        logger.info("Final Decision Synthesized")
+            logger.info("Final Decision Synthesized")
 
-        state["final_decision"] = final_decision
-        return state
+            state["final_decision"] = final_decision
+            return state
+        except Exception as e:
+            logger.error(f"Error in coordinator_node: {e}")
+            state["final_decision"] = f"Error: {e}"
+            return state
 
     return run
 # This module defines the coordinator agent for the LangGraph multi-agent financial system.
