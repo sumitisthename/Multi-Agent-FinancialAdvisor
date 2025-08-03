@@ -31,7 +31,7 @@ class GraphState(TypedDict):
     reflection_lesson: str
     user_query: str  
 
-def build_graph():
+def build_graph(config):
     """
     Builds and compiles the LangGraph workflow.
     """
@@ -57,7 +57,7 @@ def build_graph():
         
         # Add nodes to the graph
         try:
-            builder.add_node("market_analysis", market_analysis_node())
+            builder.add_node("market_analysis", market_analysis_node(config))
             builder.add_node("forecasting", forecasting_node())
             builder.add_node("risk", risk_node())
             builder.add_node("compliance", compliance_node())

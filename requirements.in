@@ -19,3 +19,4 @@ yfinance
 pytest
 matplotlib
 ipython
+mlflow

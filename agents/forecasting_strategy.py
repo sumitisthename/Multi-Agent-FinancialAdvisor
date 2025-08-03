@@ -11,7 +11,7 @@ from memory.memory_store import log_decision
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 logger = get_logger()
 
 print(os.getenv("GROQ_API_KEY"))
@@ -59,7 +59,8 @@ def forecasting_node():
             # Initialize LLM
             llm = ChatGroq(
                 model="llama3-8b-8192",
-                api_key=os.getenv("GROQ_API_KEY")
+                api_key=os.getenv("GROQ_API_KEY"),
+                temperature=0
             )
 
             parser = StrOutputParser()

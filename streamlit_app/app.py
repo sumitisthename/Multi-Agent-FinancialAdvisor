@@ -3,6 +3,7 @@ import time
 import json
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from graph.graph_builder import build_graph
@@ -26,27 +27,36 @@ with st.sidebar:
     if st.button("Run Multi-Agent Graph"):
         st.session_state['run'] = True
 
-# Set up logging and config
+# Load config and logger
 config = load_config()
 logger = setup_logger()
 
-# Function to simulate step-by-step graph execution
+# Function to run the LangGraph
 def run_graph_with_streaming(initial_state):
     st.subheader("🧠 System Execution Log")
-    graph = build_graph(config)
     status_area = st.empty()
+
+    graph = build_graph(config)
+
+    if graph is None:
+        st.error("❌ Failed to build graph. Please check the logs or agent node definitions.")
+        return
 
     tracker = EmissionsTracker(project_name="financial_multi_agent_system", output_file="emissions.csv")
     tracker.start()
 
     with st.spinner("Running multi-agent graph..."):
-        result = graph.invoke(initial_state)
-        time.sleep(0.5)
+        try:
+            result = graph.invoke(initial_state)
+            time.sleep(0.5)
+        except Exception as e:
+            st.error(f"❌ Error during graph execution: {e}")
+            return
 
     emissions = tracker.stop()
     st.success("✅ Execution complete!")
 
-    # Show detailed per-agent output
+    # Display per-agent outputs
     agent_outputs = {
         "Market Summary": result.get("market_summary", "N/A"),
         "Forecast": result.get("forecast", "N/A"),
@@ -83,10 +93,11 @@ def run_graph_with_streaming(initial_state):
 
     return result
 
-# Question-based interactive input
+# Interactive input for custom query
 st.markdown("---")
 st.subheader("💬 Ask a Question to the Financial System")
 user_query = st.text_area("Enter your question (e.g., Should I invest in TSLA next week?)")
+
 if st.button("Analyze My Query"):
     with st.spinner("Planning and reasoning through your query..."):
         st.markdown("### 🧭 Planning")
@@ -100,7 +111,7 @@ if st.button("Analyze My Query"):
 
         st.success("Query processing complete. Please run the multi-agent graph to view outputs above.")
 
-# Run system when triggered
+# Run the system
 if st.session_state.get("run"):
     initial_state = {
         "assets": [a.strip() for a in assets.split(",")],
