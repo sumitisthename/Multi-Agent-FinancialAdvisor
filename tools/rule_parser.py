@@ -1,17 +1,12 @@
 # tools/rule_parser.py
-"""
-Rule parsing tools for the LangGraph multi-agent financial analysis system.
-"""
+
 import os
 from utils.logger import get_logger
 
 logger = get_logger()
 
 
-def extract_compliance_rules():
-    """
-    Extracts compliance rules from a set of documents.
-    """
+def extract_compliance_rules(config):
     # In practice, parse legal docs or vector DB results
     logger.info("Extracting compliance rules (stub)")
 

@@ -10,7 +10,7 @@ logger = get_logger()
 MEMORY_LOG_PATH = "./memory/logs.json"
 
 
-def log_decision(state, lesson):
+def log_decision(state, lesson, config):
     logger.info("Logging decision and lesson to memory")
 
     entry = {
@@ -37,7 +37,7 @@ def log_decision(state, lesson):
         logger.error(f"Failed to write to memory log: {e}")
 
 
-def retrieve_recent_memory(limit=5):
+def retrieve_recent_memory(config, limit=5):
     try:
         if os.path.exists(MEMORY_LOG_PATH):
             with open(MEMORY_LOG_PATH, "r") as f:
