@@ -1,5 +1,7 @@
 # tools/data_fetcher.py
-
+"""
+Data fetching tools for the LangGraph multi-agent financial analysis system.
+"""
 import requests
 import os
 from utils.logger import get_logger
@@ -11,7 +13,10 @@ load_dotenv()
 logger = get_logger()
 
 
-def fetch_market_data(assets, date, config):
+def fetch_market_data(assets, date):
+    """
+    Fetches market data for a list of assets.
+    """
     results = []
     for asset in assets:
         try:
@@ -32,7 +37,10 @@ def fetch_market_data(assets, date, config):
     return "\n".join(results)
 
 
-def fetch_news_data(assets, config):
+def fetch_news_data(assets):
+    """
+    Fetches news data for a list of assets.
+    """
     news_api_key = os.getenv("NEWS_API_KEY")
     query = " OR ".join(assets)
     url = f"https://newsapi.org/v2/everything?q={query}&sortBy=publishedAt&apiKey={news_api_key}"
@@ -47,7 +55,10 @@ def fetch_news_data(assets, config):
         return "News fetch error."
 
 
-def fetch_transaction_data(assets, date, config):
+def fetch_transaction_data(assets, date):
+    """
+    Fetches transaction data for a list of assets.
+    """
     # Stub function — extend with real transactional logs or simulated examples
     logger.info("Fetching simulated transaction data")
     return [{"asset": a, "volume": 1000, "price": 250 + i * 10} for i, a in enumerate(assets)]

@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: financial_advisor
+Version: 0.1
+Requires-Python: >=3.8
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: statsmodels
+Requires-Dist: yfinance
+Dynamic: requires-dist
+Dynamic: requires-python
