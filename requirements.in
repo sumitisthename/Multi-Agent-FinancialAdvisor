@@ -20,3 +20,8 @@ pytest
 matplotlib
 ipython
 mlflow
+reportlab
+datetime
+json
+pandas
+os

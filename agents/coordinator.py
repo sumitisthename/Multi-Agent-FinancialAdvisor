@@ -35,14 +35,26 @@ def coordinator_node():
         from langchain_groq import ChatGroq
         logger.info("Running Coordinator Agent")
         try:
+            economic_indicators = state.get("economic_indicators", [])
+            if not economic_indicators:
+                raise ValueError("No economic indicators found in state.")
             market = state.get("market_summary", "")
+            if not market:
+                raise ValueError("Market summary is missing in state.")
             forecast = state.get("forecast", "")
+            if not forecast:
+                raise ValueError("Forecast is missing in state.")
             risk = state.get("risk_report", "")
+            if not risk:
+                raise ValueError("Risk report is missing in state.")
             compliance = state.get("compliance_review", "")
+            if not compliance:
+                raise ValueError("Compliance review is missing in state.")
             date = state["timestamp"]
 
             context = {
                 "date": date,
+                "economic_indicators": economic_indicators,
                 "market": market,
                 "forecast": forecast,
                 "risk": risk,
@@ -56,7 +68,8 @@ def coordinator_node():
             # Initialize LLM
             llm = ChatGroq(
                 model="llama3-8b-8192",
-                api_key=os.getenv("GROQ_API_KEY")
+                api_key=os.getenv("GROQ_API_KEY"),
+                temperature=0.2
             )
 
             parser = StrOutputParser()

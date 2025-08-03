@@ -4,6 +4,9 @@ You are the coordinator agent responsible for synthesizing a final financial dec
 
 Date: {date}
 
+--- Econimic Indicators ---
+{economic_indicators}
+
 --- Market Summary ---
 {market}
 

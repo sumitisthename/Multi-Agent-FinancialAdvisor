@@ -58,6 +58,7 @@ def run_graph_with_streaming(initial_state):
 
     # Display per-agent outputs
     agent_outputs = {
+        "Economic Indicators": result.get("economic_indicators", "N/A"),
         "Market Summary": result.get("market_summary", "N/A"),
         "Forecast": result.get("forecast", "N/A"),
         "Risk Report": result.get("risk_report", "N/A"),

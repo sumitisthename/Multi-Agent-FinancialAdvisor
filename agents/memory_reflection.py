@@ -37,6 +37,7 @@ def memory_reflection_node():
         try:
             date = state["timestamp"]
             decision = state.get("final_decision", "")
+            economic_indicators = state.get("economic_indicators", [])
             market = state.get("market_summary", "")
             forecast = state.get("forecast", "")
             risk = state.get("risk_report", "")
@@ -47,6 +48,7 @@ def memory_reflection_node():
             context = {
                 "date": date,
                 "memory_log": memory_snippets,
+                "economic_indicators": economic_indicators,
                 "market": market,
                 "forecast": forecast,
                 "risk": risk,
@@ -61,7 +63,8 @@ def memory_reflection_node():
             # Initialize LLM
             llm = ChatGroq(
                 model="llama3-8b-8192",
-                api_key=os.getenv("GROQ_API_KEY")
+                api_key=os.getenv("GROQ_API_KEY"),
+                temperature=0.2
             )
 
             parser = StrOutputParser()

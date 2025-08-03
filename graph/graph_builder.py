@@ -30,6 +30,7 @@ class GraphState(TypedDict):
     final_decision: str
     reflection_lesson: str
     user_query: str  
+    economic_indicators: list[dict] 
 
 def build_graph(config):
     """
@@ -47,6 +48,7 @@ def build_graph(config):
             from agents.market_analysis import market_analysis_node
             from agents.forecasting_strategy import forecasting_node
             from agents.risk_anomaly import risk_node
+            from agents.economic_indicator import economic_indicator_node
             from agents.compliance_monitor import compliance_node
             from agents.coordinator import coordinator_node
             from agents.memory_reflection import memory_reflection_node
@@ -60,6 +62,7 @@ def build_graph(config):
             builder.add_node("market_analysis", market_analysis_node(config))
             builder.add_node("forecasting", forecasting_node())
             builder.add_node("risk", risk_node())
+            builder.add_node("economic_data", economic_indicator_node())
             builder.add_node("compliance", compliance_node())
             builder.add_node("coordinator", coordinator_node())
             builder.add_node("memory_reflection", memory_reflection_node())
@@ -70,9 +73,10 @@ def build_graph(config):
         
         # Set up the graph structure
         try:
-            builder.set_entry_point("market_analysis")
+            builder.set_entry_point("economic_data")
             
             # Use sequential execution to avoid parallel state updates
+            builder.add_edge("economic_data", "market_analysis")
             builder.add_edge("market_analysis", "forecasting")
             builder.add_edge("forecasting", "risk")
             builder.add_edge("risk", "compliance")
