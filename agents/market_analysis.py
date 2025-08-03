@@ -10,7 +10,7 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv(override=True)
+load_dotenv()
 
 # Setup logger
 logger = get_logger()
@@ -38,9 +38,9 @@ def market_analysis_node(config):
     def run(state):
         logger.info("Running Market Analysis Agent")
 
-        # ✅ FIXED: Fetch data with correct arguments
-        prices = fetch_market_data(state["assets"], state["timestamp"])
-        headlines = fetch_news_data(state["assets"])
+        # Fetch data
+        prices = fetch_market_data(state["assets"], state["timestamp"], config)
+        headlines = fetch_news_data(state["assets"], config)
 
         # Prepare prompt context
         context = {

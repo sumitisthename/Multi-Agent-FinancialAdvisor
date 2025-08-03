@@ -1,6 +1,3 @@
-"""
-Builds the LangGraph workflow for the multi-agent financial analysis system.
-"""
 from typing import TypedDict, Annotated
 from langgraph.graph import StateGraph
 from operator import add
@@ -18,9 +15,6 @@ logger = logging.getLogger(__name__)
 
 # Fixed GraphState with proper reducers
 class GraphState(TypedDict):
-    """
-    Represents the state of the LangGraph.
-    """
     assets: Annotated[list[str], add]  # Use add reducer for lists
     timestamp: str                     # Simple string, no reducer needed
     market_summary: str
@@ -32,9 +26,7 @@ class GraphState(TypedDict):
     user_query: str  
 
 def build_graph(config):
-    """
-    Builds and compiles the LangGraph workflow.
-    """
+    """Build and return the compiled graph"""
     try:
         logger.info("Starting graph construction...")
         
@@ -58,11 +50,11 @@ def build_graph(config):
         # Add nodes to the graph
         try:
             builder.add_node("market_analysis", market_analysis_node(config))
-            builder.add_node("forecasting", forecasting_node())
-            builder.add_node("risk", risk_node())
-            builder.add_node("compliance", compliance_node())
-            builder.add_node("coordinator", coordinator_node())
-            builder.add_node("memory_reflection", memory_reflection_node())
+            builder.add_node("forecasting", forecasting_node(config))
+            builder.add_node("risk", risk_node(config))
+            builder.add_node("compliance", compliance_node(config))
+            builder.add_node("coordinator", coordinator_node(config))
+            builder.add_node("memory_reflection", memory_reflection_node(config))
             logger.info("All nodes added successfully")
         except Exception as e:
             logger.error(f"Failed to add nodes: {e}")
@@ -98,12 +90,61 @@ def build_graph(config):
         logger.error(f"Graph construction failed: {e}")
         return None
 
+def run():
+    """Main execution function"""
+    try:
+        # Your config setup
+        config = {
+            # Add your configuration here
+            "api_key": "your_api_key",  # Replace with actual config
+            # ... other config parameters
+        }
+        
+        # Build the graph with debugging
+        logger.info("Building graph...")
+        graph = build_graph(config)
+        
+        # Check if graph was created successfully
+        if graph is None:
+            logger.error("Graph construction returned None - check build_graph function")
+            return
+        
+        logger.info(f"Graph created successfully: {type(graph)}")
+        
+        # Define initial state
+        initial_state = {
+            "assets": ["AAPL", "TSLA", "NVDA"],  # Your assets
+            "timestamp": datetime.now(timezone.utc).isoformat(),           
+            "user_query": " ",
+            "market_summary": "",
+            "forecast": "",
+            "risk_report": "",
+            "compliance_review": "",
+            "final_decision": "",
+            "reflection_lesson": ""
+        }
+        
+        logger.info("Starting graph execution...")
+        logger.info(f"Initial state: {initial_state}")
+        
+        # Invoke the graph
+        result = graph.invoke(initial_state)
+        
+        logger.info("Graph execution completed successfully")
+        logger.info(f"Final result: {result}")
+        
+        return result
+        
+    except Exception as e:
+        logger.error(f"Execution failed: {e}")
+        raise
+
 def display_graph(graph):
-    """
-    Displays the graph.
-    """
     try:
         display(Image(graph.get_graph().create_png()))
     except Exception as e:
         logger.error(f"Failed to display graph: {e}")
-        raise
+
+if __name__ == "__main__":
+    # Then run your main function
+    run()

@@ -2,7 +2,6 @@
 
 import logging
 import os
-from logging.handlers import RotatingFileHandler
 from config.settings import load_config
 
 _config = load_config()
@@ -15,34 +14,16 @@ if not os.path.exists("logs"):
 
 
 def setup_logger():
-    """
-    Sets up a rotating file handler and a stream handler for logging.
-    """
-    logger = logging.getLogger("agent-system")
-    logger.setLevel(LOG_LEVEL)
-
-    # Create a rotating file handler
-    file_handler = RotatingFileHandler(
-        LOG_FILE, maxBytes=1024 * 1024 * 5, backupCount=5
+    logging.basicConfig(
+        level=LOG_LEVEL,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.FileHandler(LOG_FILE),
+            logging.StreamHandler()
+        ]
     )
-    file_handler.setFormatter(
-        logging.Formatter("%(asctime)s [%(levelname)s] [%(name)s] %(message)s")
-    )
-
-    # Create a stream handler
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(
-        logging.Formatter("%(asctime)s [%(levelname)s] [%(name)s] %(message)s")
-    )
-
-    logger.addHandler(file_handler)
-    logger.addHandler(stream_handler)
-
-    return logger
+    return logging.getLogger("agent-system")
 
 
 def get_logger():
-    """
-    Returns the logger instance.
-    """
     return logging.getLogger("agent-system")
