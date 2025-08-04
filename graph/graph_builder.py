@@ -52,20 +52,12 @@ def build_graph(config):
         # Add nodes to the graph
         try:
             builder.add_node("market_analysis", market_analysis_node(config))
-<<<<<<< HEAD
             builder.add_node("forecasting", forecasting_node())
             builder.add_node("risk", risk_node())
             builder.add_node("economic_data", economic_indicator_node())
             builder.add_node("compliance", compliance_node())
             builder.add_node("coordinator", coordinator_node())
             builder.add_node("memory_reflection", memory_reflection_node())
-=======
-            builder.add_node("forecasting", forecasting_node(config))
-            builder.add_node("risk", risk_node(config))
-            builder.add_node("compliance", compliance_node(config))
-            builder.add_node("coordinator", coordinator_node(config))
-            builder.add_node("memory_reflection", memory_reflection_node(config))
->>>>>>> b469ac9e169c373554a18c86902ef03db3469da9
             logger.info("All nodes added successfully")
         except Exception as e:
             logger.error(f"Failed to add nodes: {e}")

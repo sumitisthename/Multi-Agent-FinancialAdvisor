@@ -39,14 +39,10 @@ def fetch_market_data(assets, date, config):
     return "\n".join(results)
 
 
-<<<<<<< HEAD
 def fetch_news_data(assets):
     """
     Fetches news data for a list of assets and saves citations to a JSON file.
     """
-=======
-def fetch_news_data(assets, config):
->>>>>>> b469ac9e169c373554a18c86902ef03db3469da9
     news_api_key = os.getenv("NEWS_API_KEY")
     query = " OR ".join(assets)
     url = f"https://newsapi.org/v2/everything?q={query}&sortBy=publishedAt&apiKey={news_api_key}"
