@@ -30,12 +30,42 @@ with open("prompts/coordinator.txt") as f:
 def coordinator_node(config):
     def run(state):
         logger.info("Running Coordinator Agent")
+<<<<<<< HEAD
+        try:
+            economic_indicators = state.get("economic_indicators", [])
+            if not economic_indicators:
+                raise ValueError("No economic indicators found in state.")
+            market = state.get("market_summary", "")
+            if not market:
+                raise ValueError("Market summary is missing in state.")
+            forecast = state.get("forecast", "")
+            if not forecast:
+                raise ValueError("Forecast is missing in state.")
+            risk = state.get("risk_report", "")
+            if not risk:
+                raise ValueError("Risk report is missing in state.")
+            compliance = state.get("compliance_review", "")
+            if not compliance:
+                raise ValueError("Compliance review is missing in state.")
+            date = state["timestamp"]
+
+            context = {
+                "date": date,
+                "economic_indicators": economic_indicators,
+                "market": market,
+                "forecast": forecast,
+                "risk": risk,
+                "compliance": compliance,
+                "user_question": state.get("user_query", "")
+            }
+=======
 
         market = state.get("market_summary", "")
         forecast = state.get("forecast", "")
         risk = state.get("risk_report", "")
         compliance = state.get("compliance_review", "")
         date = state["timestamp"]
+>>>>>>> origin/main
 
         context = {
             "date": date,
@@ -46,8 +76,17 @@ def coordinator_node(config):
             "user_question": state.get("user_query", "")
         }
 
+<<<<<<< HEAD
+            # Initialize LLM
+            llm = ChatGroq(
+                model="llama3-8b-8192",
+                api_key=os.getenv("GROQ_API_KEY"),
+                temperature=0.2
+            )
+=======
         prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
         llm_input = prompt.format(**context)
+>>>>>>> origin/main
 
         llm = ChatGroq(model="llama3-8b-8192")
         parser = StrOutputParser()
@@ -56,8 +95,17 @@ def coordinator_node(config):
 
         logger.info("Final Decision Synthesized")
 
+<<<<<<< HEAD
+            state["final_decision"] = final_decision
+            return state
+        except Exception as e:
+            logger.error(f"Error in coordinator_node: {e}")
+            state["final_decision"] = f"Error: {e}"
+            return state
+=======
         state["final_decision"] = final_decision
         return state
+>>>>>>> origin/main
 
     return run
 # This module defines the coordinator agent for the LangGraph multi-agent financial system.

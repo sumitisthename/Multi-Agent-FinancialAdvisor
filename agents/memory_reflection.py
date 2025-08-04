@@ -30,6 +30,30 @@ with open("prompts/coordinator.txt") as f:
 def memory_reflection_node(config):
     def run(state):
         logger.info("Running Memory Reflection Agent")
+<<<<<<< HEAD
+        try:
+            date = state["timestamp"]
+            decision = state.get("final_decision", "")
+            economic_indicators = state.get("economic_indicators", [])
+            market = state.get("market_summary", "")
+            forecast = state.get("forecast", "")
+            risk = state.get("risk_report", "")
+            compliance = state.get("compliance_review", "")
+
+            memory_snippets = retrieve_recent_memory(config)
+
+            context = {
+                "date": date,
+                "memory_log": memory_snippets,
+                "economic_indicators": economic_indicators,
+                "market": market,
+                "forecast": forecast,
+                "risk": risk,
+                "compliance": compliance,
+                "decision": decision,
+                "user_question": state.get("user_query", "")
+            }
+=======
 
         date = state["timestamp"]
         decision = state.get("final_decision", "")
@@ -39,6 +63,7 @@ def memory_reflection_node(config):
         compliance = state.get("compliance_review", "")
 
         memory_snippets = retrieve_recent_memory(config)
+>>>>>>> origin/main
 
         context = {
             "date": date,
@@ -51,8 +76,17 @@ def memory_reflection_node(config):
             "user_question": state.get("user_query", "")
         }
 
+<<<<<<< HEAD
+            # Initialize LLM
+            llm = ChatGroq(
+                model="llama3-8b-8192",
+                api_key=os.getenv("GROQ_API_KEY"),
+                temperature=0.2
+            )
+=======
         prompt = PromptTemplate.from_template(REFLECTION_PROMPT)
         llm_input = prompt.format(**context)
+>>>>>>> origin/main
 
         llm = ChatGroq(model="llama3-8b-8192")
         parser = StrOutputParser()
@@ -60,11 +94,21 @@ def memory_reflection_node(config):
 
         logger.info("Reflection Completed - Lesson Logged")
 
+<<<<<<< HEAD
+            log_decision(state, lesson, config)
+            state["reflection_lesson"] = lesson
+            return state
+        except Exception as e:
+            logger.error(f"Error in memory_reflection_node: {e}")
+            raise
+=======
         log_decision(state, lesson, config)
         state["reflection_lesson"] = lesson
         return state
+>>>>>>> origin/main
 
     return run
+
 # This module defines the memory reflection agent for the LangGraph multi-agent financial system.
 # It reviews past decisions and lessons learned, generating a reflection lesson using an LLM.           
 # The memory reflection agent is designed to enhance the system's learning capabilities by analyzing past decisions,
