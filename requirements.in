@@ -22,6 +22,7 @@ ipython
 mlflow
 reportlab
 datetime
-json
 pandas
 os
+FPDF
+inspect

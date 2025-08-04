@@ -30,7 +30,6 @@ with open("prompts/coordinator.txt") as f:
 def coordinator_node(config):
     def run(state):
         logger.info("Running Coordinator Agent")
-<<<<<<< HEAD
         try:
             economic_indicators = state.get("economic_indicators", [])
             if not economic_indicators:
@@ -58,54 +57,23 @@ def coordinator_node(config):
                 "compliance": compliance,
                 "user_question": state.get("user_query", "")
             }
-=======
 
-        market = state.get("market_summary", "")
-        forecast = state.get("forecast", "")
-        risk = state.get("risk_report", "")
-        compliance = state.get("compliance_review", "")
-        date = state["timestamp"]
->>>>>>> origin/main
+            prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
+            llm_input = prompt.format(**context)
 
-        context = {
-            "date": date,
-            "market": market,
-            "forecast": forecast,
-            "risk": risk,
-            "compliance": compliance,
-            "user_question": state.get("user_query", "")
-        }
+            llm = ChatGroq(model="llama3-8b-8192")
+            parser = StrOutputParser()
+            print("\n=== Coordinator Prompt Input ===\n", llm_input, "\n============================\n")
+            final_decision = parser.invoke(llm.invoke(llm_input))
 
-<<<<<<< HEAD
-            # Initialize LLM
-            llm = ChatGroq(
-                model="llama3-8b-8192",
-                api_key=os.getenv("GROQ_API_KEY"),
-                temperature=0.2
-            )
-=======
-        prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
-        llm_input = prompt.format(**context)
->>>>>>> origin/main
+            logger.info("Final Decision Synthesized")
 
-        llm = ChatGroq(model="llama3-8b-8192")
-        parser = StrOutputParser()
-        print("\n=== Coordinator Prompt Input ===\n", llm_input, "\n============================\n")
-        final_decision = parser.invoke(llm.invoke(llm_input))
-
-        logger.info("Final Decision Synthesized")
-
-<<<<<<< HEAD
             state["final_decision"] = final_decision
             return state
         except Exception as e:
             logger.error(f"Error in coordinator_node: {e}")
             state["final_decision"] = f"Error: {e}"
-            return state
-=======
-        state["final_decision"] = final_decision
         return state
->>>>>>> origin/main
 
     return run
 # This module defines the coordinator agent for the LangGraph multi-agent financial system.

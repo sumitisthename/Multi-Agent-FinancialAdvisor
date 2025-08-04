@@ -3676,3 +3676,247 @@ ValueError: No objects to concatenate
 2025-08-03 14:53:18,754 [INFO] [agent-system] Logging decision and lesson to memory
 =======
 >>>>>>> origin/main
+2025-08-04 11:55:30,377 [ERROR] Graph is None. Cannot proceed.
+2025-08-04 12:02:17,704 [INFO] Running graph...
+2025-08-04 12:02:17,705 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x00000250604F06E0>
+2025-08-04 12:02:17,717 [INFO] Running Economic Indicator Agent
+2025-08-04 12:02:17,904 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 12:02:18,190 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 12:02:18,359 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 12:02:19,067 [INFO] Economic Summary Generated
+2025-08-04 12:02:19,069 [INFO] Running Market Analysis Agent
+2025-08-04 12:02:21,186 [INFO] Market Summary Generated
+2025-08-04 12:02:21,187 [INFO] Running Forecasting Agent
+2025-08-04 12:02:21,188 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-04 12:02:21,190 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-06-30_17-44-51.csv
+2025-08-04 12:02:21,191 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-06-30_19-25-08.csv
+2025-08-04 12:02:21,192 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-06-30_19-30-10.csv
+2025-08-04 12:02:21,194 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-06-30_19-36-27.csv
+2025-08-04 12:02:21,195 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-06-30_21-36-18.csv
+2025-08-04 12:02:21,196 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-03_15-27-35.csv
+2025-08-04 12:02:21,198 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-03_15-34-49.csv
+2025-08-04 12:02:21,203 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_16-14-41.csv
+2025-08-04 12:02:21,205 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_16-17-30.csv
+2025-08-04 12:02:21,207 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_16-26-28.csv
+2025-08-04 12:02:21,209 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_16-32-01.csv
+2025-08-04 12:02:21,211 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_16-34-45.csv
+2025-08-04 12:02:21,213 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-BRK-B-2025-06-30_19-53-01.csv
+2025-08-04 12:02:21,215 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-BRK-B-2025-06-30_20-02-33.csv
+2025-08-04 12:02:21,216 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-BRK.B-2025-06-30_19-50-31.csv
+2025-08-04 12:02:21,217 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-ETN-2025-08-03_15-56-48.csv
+2025-08-04 12:02:21,218 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-ETN-2025-08-03_16-00-50.csv
+2025-08-04 12:02:21,218 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-06-30_17-44-50.csv
+2025-08-04 12:02:21,220 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-06-30_19-25-09.csv
+2025-08-04 12:02:21,220 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-06-30_19-30-09.csv
+2025-08-04 12:02:21,221 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-06-30_19-36-28.csv
+2025-08-04 12:02:21,222 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-06-30_21-36-19.csv
+2025-08-04 12:02:21,223 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-03_15-28-04.csv
+2025-08-04 12:02:21,224 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-03_15-35-23.csv
+2025-08-04 12:02:21,225 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_16-14-43.csv
+2025-08-04 12:02:21,225 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_16-17-31.csv
+2025-08-04 12:02:21,226 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_16-26-27.csv
+2025-08-04 12:02:21,227 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_16-32-02.csv
+2025-08-04 12:02:21,228 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_16-34-45.csv
+2025-08-04 12:02:21,229 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-OP-2025-08-03_16-36-28.csv
+2025-08-04 12:02:21,230 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-OP-2025-08-03_16-43-45.csv
+2025-08-04 12:02:21,231 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-06-30_17-44-51.csv
+2025-08-04 12:02:21,231 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-06-30_19-25-10.csv
+2025-08-04 12:02:21,232 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-06-30_19-30-11.csv
+2025-08-04 12:02:21,233 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-06-30_19-36-26.csv
+2025-08-04 12:02:21,234 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-06-30_21-36-18.csv
+2025-08-04 12:02:21,234 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_15-27-01.csv
+2025-08-04 12:02:21,235 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_15-34-08.csv
+2025-08-04 12:02:21,236 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-10-15.csv
+2025-08-04 12:02:21,236 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-12-11.csv
+2025-08-04 12:02:21,237 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-27-26.csv
+2025-08-04 12:02:21,238 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-33-00.csv
+2025-08-04 12:02:21,239 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-41-18.csv
+2025-08-04 12:02:21,239 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-50-37.csv
+2025-08-04 12:02:21,240 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_17-53-49.csv
+2025-08-04 12:02:21,241 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_19-40-48.csv
+2025-08-04 12:02:21,241 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_19-44-37.csv
+2025-08-04 12:02:21,242 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-03_19-51-54.csv
+2025-08-04 12:02:21,243 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_16-14-42.csv
+2025-08-04 12:02:21,244 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_16-17-31.csv
+2025-08-04 12:02:21,245 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_16-26-28.csv
+2025-08-04 12:02:21,246 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_16-32-02.csv
+2025-08-04 12:02:21,246 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_16-34-44.csv
+2025-08-04 12:02:21,247 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets_2025-06-20.csv
+2025-08-04 12:02:21,248 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets_AAPL_2025-06-20.csv
+2025-08-04 12:02:21,249 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets_GOOGL_2025-06-20.csv
+2025-08-04 12:02:21,259 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets_NVDA_2025-06-20.csv
+2025-08-04 12:02:21,261 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets_TSLA_2025-06-20.csv
+2025-08-04 12:02:21,262 [INFO] [SUCCESS] Deleted old forecast file: forecasts\debug_forecast_2025-06-13.csv
+2025-08-04 12:02:21,263 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 12:02:21,265 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-30.csv
+2025-08-04 12:02:21,266 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-07-30.csv
+2025-08-04 12:02:21,268 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-01.csv
+2025-08-04 12:02:21,269 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-03.csv
+2025-08-04 12:02:21,270 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast_2025-06-10.csv
+2025-08-04 12:02:21,272 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast_2025-06-13.csv
+2025-08-04 12:02:21,273 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast_2025-06-17.csv
+2025-08-04 12:02:21,277 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast_2025-06-20.csv
+2025-08-04 12:02:22,932 [INFO] Forecast Generated
+2025-08-04 12:02:22,933 [INFO] Logging decision and lesson to memory
+2025-08-04 12:02:22,940 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:02:22,942 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 12:02:22,943 [ERROR] Error in risk and anomaly detection agent: detect_anomalies() missing 1 required positional argument: 'config'
+2025-08-04 12:02:22,944 [INFO] Running Compliance Monitoring Agent
+2025-08-04 12:02:22,945 [ERROR] Error in compliance monitoring agent: extract_compliance_rules() missing 1 required positional argument: 'config'
+2025-08-04 12:02:22,946 [INFO] Running Coordinator Agent
+2025-08-04 12:02:24,620 [INFO] Final Decision Synthesized
+2025-08-04 12:02:24,621 [INFO] Running Memory Reflection Agent
+2025-08-04 12:02:24,626 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:02:25,355 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 12:02:25,356 [INFO] Logging decision and lesson to memory
+2025-08-04 12:02:25,360 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:12:09,710 [INFO] Running graph...
+2025-08-04 12:12:09,710 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000002457514E660>
+2025-08-04 12:12:09,714 [INFO] Running Economic Indicator Agent
+2025-08-04 12:12:09,964 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 12:12:10,108 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 12:12:10,296 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 12:12:10,920 [INFO] Economic Summary Generated
+2025-08-04 12:12:10,921 [INFO] Running Market Analysis Agent
+2025-08-04 12:12:14,306 [INFO] Market Summary Generated
+2025-08-04 12:12:14,307 [INFO] Running Forecasting Agent
+2025-08-04 12:12:14,307 [INFO] ARIMA model invoked for assets: ['NVDA', 'TSLA', 'AAPL']
+2025-08-04 12:12:14,309 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_17-02-21.csv
+2025-08-04 12:12:14,310 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 12:12:17,015 [INFO] Forecast Generated
+2025-08-04 12:12:17,015 [INFO] Logging decision and lesson to memory
+2025-08-04 12:12:17,019 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:12:17,021 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 12:12:17,021 [ERROR] Error in risk and anomaly detection agent: detect_anomalies() missing 1 required positional argument: 'config'
+2025-08-04 12:12:17,022 [INFO] Running Compliance Monitoring Agent
+2025-08-04 12:12:17,023 [ERROR] Error in compliance monitoring agent: extract_compliance_rules() missing 1 required positional argument: 'config'
+2025-08-04 12:12:17,023 [INFO] Running Coordinator Agent
+2025-08-04 12:12:18,578 [INFO] Final Decision Synthesized
+2025-08-04 12:12:18,579 [INFO] Running Memory Reflection Agent
+2025-08-04 12:12:18,584 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:12:19,299 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 12:12:19,300 [INFO] Logging decision and lesson to memory
+2025-08-04 12:12:19,303 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:12:19,831 [INFO] Emissions returned by tracker: None
+2025-08-04 12:13:57,358 [ERROR] Graph is None. Cannot proceed.
+2025-08-04 12:15:10,327 [INFO] Running graph...
+2025-08-04 12:15:10,328 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000001A15993E3C0>
+2025-08-04 12:15:10,334 [INFO] Running Economic Indicator Agent
+2025-08-04 12:15:10,503 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 12:15:10,737 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 12:15:10,910 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 12:15:11,871 [INFO] Economic Summary Generated
+2025-08-04 12:15:11,872 [INFO] Running Market Analysis Agent
+2025-08-04 12:15:16,977 [INFO] Market Summary Generated
+2025-08-04 12:15:16,979 [INFO] Running Forecasting Agent
+2025-08-04 12:15:16,979 [INFO] ARIMA model invoked for assets: ['NVDA', 'TSLA', 'AAPL']
+2025-08-04 12:15:16,981 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_17-12-15.csv
+2025-08-04 12:15:16,982 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_17-12-14.csv
+2025-08-04 12:15:16,983 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_17-12-15.csv
+2025-08-04 12:15:16,983 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 12:15:19,950 [INFO] Forecast Generated
+2025-08-04 12:15:19,951 [INFO] Logging decision and lesson to memory
+2025-08-04 12:15:19,956 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:15:19,960 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 12:15:19,961 [ERROR] Error in risk and anomaly detection agent: detect_anomalies() missing 1 required positional argument: 'config'
+2025-08-04 12:15:19,962 [INFO] Running Compliance Monitoring Agent
+2025-08-04 12:15:19,964 [ERROR] Error in compliance monitoring agent: extract_compliance_rules() missing 1 required positional argument: 'config'
+2025-08-04 12:15:19,966 [INFO] Running Coordinator Agent
+2025-08-04 12:15:21,154 [INFO] Final Decision Synthesized
+2025-08-04 12:15:21,155 [INFO] Running Memory Reflection Agent
+2025-08-04 12:15:21,159 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:15:21,899 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 12:15:21,899 [INFO] Logging decision and lesson to memory
+2025-08-04 12:15:21,903 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:15:22,422 [INFO] Emissions returned by tracker: None
+2025-08-04 12:23:03,554 [ERROR] Graph is None. Cannot proceed.
+2025-08-04 12:23:44,312 [ERROR] Graph is None. Cannot proceed.
+2025-08-04 12:24:39,062 [INFO] Running graph...
+2025-08-04 12:24:39,062 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000001EE223F63C0>
+2025-08-04 12:24:39,066 [INFO] Running Economic Indicator Agent
+2025-08-04 12:24:39,207 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 12:24:39,338 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 12:24:39,526 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 12:24:40,330 [INFO] Economic Summary Generated
+2025-08-04 12:24:40,331 [INFO] Running Market Analysis Agent
+2025-08-04 12:24:43,536 [INFO] Market Summary Generated
+2025-08-04 12:24:43,538 [INFO] Running Forecasting Agent
+2025-08-04 12:24:43,539 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-04 12:24:43,540 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_17-15-18.csv
+2025-08-04 12:24:43,541 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_17-15-17.csv
+2025-08-04 12:24:43,542 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_17-15-17.csv
+2025-08-04 12:24:43,543 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 12:24:46,869 [INFO] Forecast Generated
+2025-08-04 12:24:46,871 [INFO] Logging decision and lesson to memory
+2025-08-04 12:24:46,876 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:24:46,878 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 12:24:48,802 [INFO] Anomaly Report Generated
+2025-08-04 12:24:48,803 [INFO] Running Compliance Monitoring Agent
+2025-08-04 12:24:48,804 [ERROR] Error in compliance monitoring agent: extract_compliance_rules() missing 1 required positional argument: 'config'
+2025-08-04 12:24:48,805 [INFO] Running Coordinator Agent
+2025-08-04 12:24:50,609 [INFO] Final Decision Synthesized
+2025-08-04 12:24:50,611 [INFO] Running Memory Reflection Agent
+2025-08-04 12:24:50,615 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:24:59,456 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 12:24:59,458 [INFO] Logging decision and lesson to memory
+2025-08-04 12:24:59,464 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 12:24:59,986 [INFO] Emissions returned by tracker: None
+2025-08-04 13:48:35,155 [INFO] Running graph...
+2025-08-04 13:48:35,166 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000002B59AE11550>
+2025-08-04 13:48:35,214 [INFO] Running Economic Indicator Agent
+2025-08-04 13:48:35,536 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 13:48:35,843 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 13:48:36,046 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 13:48:36,866 [INFO] Economic Summary Generated
+2025-08-04 13:48:36,869 [INFO] Running Market Analysis Agent
+2025-08-04 13:48:45,651 [INFO] Market Summary Generated
+2025-08-04 13:48:45,668 [INFO] Running Forecasting Agent
+2025-08-04 13:48:45,675 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-04 13:48:45,684 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_17-24-44.csv
+2025-08-04 13:48:45,686 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_17-24-43.csv
+2025-08-04 13:48:45,692 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_17-24-44.csv
+2025-08-04 13:48:45,694 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 13:48:48,951 [INFO] Forecast Generated
+2025-08-04 13:48:48,952 [INFO] Logging decision and lesson to memory
+2025-08-04 13:48:49,027 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 13:48:49,030 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 13:48:51,924 [INFO] Anomaly Report Generated
+2025-08-04 13:48:51,926 [INFO] Running Compliance Monitoring Agent
+2025-08-04 13:48:51,928 [ERROR] Error in compliance monitoring agent: extract_compliance_rules() missing 1 required positional argument: 'config'
+2025-08-04 13:48:51,937 [INFO] Running Coordinator Agent
+2025-08-04 13:48:54,481 [INFO] Final Decision Synthesized
+2025-08-04 13:48:54,483 [INFO] Running Memory Reflection Agent
+2025-08-04 13:48:54,494 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 13:48:56,047 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 13:48:56,047 [INFO] Logging decision and lesson to memory
+2025-08-04 13:48:56,057 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 13:48:56,737 [INFO] Emissions returned by tracker: None
+2025-08-04 13:50:25,554 [INFO] Running graph...
+2025-08-04 13:50:25,555 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000023C9A04E270>
+2025-08-04 13:50:25,559 [INFO] Running Economic Indicator Agent
+2025-08-04 13:50:25,931 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 13:50:26,434 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 13:50:26,832 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 13:50:27,595 [INFO] Economic Summary Generated
+2025-08-04 13:50:27,598 [INFO] Running Market Analysis Agent
+2025-08-04 13:50:30,123 [INFO] Market Summary Generated
+2025-08-04 13:50:30,125 [INFO] Running Forecasting Agent
+2025-08-04 13:50:30,125 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-04 13:50:30,128 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_18-48-45.csv
+2025-08-04 13:50:30,132 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-04.csv
+2025-08-04 13:50:32,947 [INFO] Forecast Generated
+2025-08-04 13:50:32,949 [INFO] Logging decision and lesson to memory
+2025-08-04 13:50:32,954 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 13:50:32,963 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 13:50:34,935 [INFO] Anomaly Report Generated
+2025-08-04 13:50:34,936 [INFO] Running Compliance Monitoring Agent
+2025-08-04 13:50:34,937 [INFO] Extracting compliance rules (stub)
+2025-08-04 13:50:37,874 [INFO] Compliance Evaluation Completed
+2025-08-04 13:50:37,875 [INFO] Running Coordinator Agent
+2025-08-04 13:50:42,817 [INFO] Final Decision Synthesized
+2025-08-04 13:50:42,818 [INFO] Running Memory Reflection Agent
+2025-08-04 13:50:42,823 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 13:51:05,958 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 13:51:05,959 [INFO] Logging decision and lesson to memory
+2025-08-04 13:51:05,963 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 13:51:06,502 [INFO] Emissions returned by tracker: None
