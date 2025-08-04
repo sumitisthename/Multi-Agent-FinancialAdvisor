@@ -1,3 +1,4 @@
+import glob  # Correct import for glob module
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
@@ -59,6 +60,15 @@ def run_forecast_model(assets, date, config):
     assets = config.get("assets", assets)  # allow dynamic override
 
     os.makedirs("forecasts", exist_ok=True)
+    
+    # Delete all files in 'forecasts' directory before new run
+    files = glob.glob("forecasts/*")
+    for f in files:
+        try:
+            os.remove(f)
+            logger.info(f"[SUCCESS] Deleted old forecast file: {f}")
+        except Exception as e:
+            logger.warning(f"[ERROR] Could not delete file {f}: {e}")
 
     for asset in assets:
         try:

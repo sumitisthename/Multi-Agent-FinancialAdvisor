@@ -30,7 +30,6 @@ with open("prompts/coordinator.txt") as f:
 def memory_reflection_node(config):
     def run(state):
         logger.info("Running Memory Reflection Agent")
-<<<<<<< HEAD
         try:
             date = state["timestamp"]
             decision = state.get("final_decision", "")
@@ -53,59 +52,21 @@ def memory_reflection_node(config):
                 "decision": decision,
                 "user_question": state.get("user_query", "")
             }
-=======
 
-        date = state["timestamp"]
-        decision = state.get("final_decision", "")
-        market = state.get("market_summary", "")
-        forecast = state.get("forecast", "")
-        risk = state.get("risk_report", "")
-        compliance = state.get("compliance_review", "")
+            prompt = PromptTemplate.from_template(REFLECTION_PROMPT)
+            llm_input = prompt.format(**context)
 
-        memory_snippets = retrieve_recent_memory(config)
->>>>>>> origin/main
+            parser = StrOutputParser()
+            lesson = parser.invoke(llm.invoke(llm_input))
 
-        context = {
-            "date": date,
-            "memory_log": memory_snippets,
-            "market": market,
-            "forecast": forecast,
-            "risk": risk,
-            "compliance": compliance,
-            "decision": decision,
-            "user_question": state.get("user_query", "")
-        }
+            logger.info("Reflection Completed - Lesson Logged")
 
-<<<<<<< HEAD
-            # Initialize LLM
-            llm = ChatGroq(
-                model="llama3-8b-8192",
-                api_key=os.getenv("GROQ_API_KEY"),
-                temperature=0.2
-            )
-=======
-        prompt = PromptTemplate.from_template(REFLECTION_PROMPT)
-        llm_input = prompt.format(**context)
->>>>>>> origin/main
-
-        llm = ChatGroq(model="llama3-8b-8192")
-        parser = StrOutputParser()
-        lesson = parser.invoke(llm.invoke(llm_input))
-
-        logger.info("Reflection Completed - Lesson Logged")
-
-<<<<<<< HEAD
             log_decision(state, lesson, config)
             state["reflection_lesson"] = lesson
             return state
         except Exception as e:
             logger.error(f"Error in memory_reflection_node: {e}")
             raise
-=======
-        log_decision(state, lesson, config)
-        state["reflection_lesson"] = lesson
-        return state
->>>>>>> origin/main
 
     return run
 

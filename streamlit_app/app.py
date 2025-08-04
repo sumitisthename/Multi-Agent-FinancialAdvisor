@@ -3,8 +3,13 @@ import time
 import json
 import os
 import sys
+from fpdf import FPDF
+import io
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+
+import graph
 from graph.graph_builder import build_graph
 from config.settings import load_config
 from utils.logger import setup_logger
@@ -34,17 +39,27 @@ logger = setup_logger()
 def run_graph_with_streaming(initial_state):
     st.subheader("🧠 System Execution Log")
     graph = build_graph(config)
+    
+    if graph is None:
+        st.error("❌ Failed to build graph. Check logs for details.")
+        logger.error("Graph is None. Cannot proceed.")
+        return  # Only return if graph is None
+
     status_area = st.empty()
 
     tracker = EmissionsTracker(project_name="financial_multi_agent_system", output_file="emissions.csv")
     tracker.start()
 
     with st.spinner("Running multi-agent graph..."):
+        logger.info("Running graph...")
+        logger.info(f"Graph object: {graph}")
         result = graph.invoke(initial_state)
         time.sleep(0.5)
 
     emissions = tracker.stop()
+    logger.info(f"Emissions returned by tracker: {emissions}")
     st.success("✅ Execution complete!")
+
 
     # Show detailed per-agent output
     agent_outputs = {
@@ -63,7 +78,10 @@ def run_graph_with_streaming(initial_state):
 
     # Emission summary
     st.subheader("🌱 Carbon Emissions")
-    st.markdown(f"**Estimated CO₂ Emitted**: `{emissions:.6f} kg` per run")
+    if emissions is not None:
+        st.markdown(f"**Estimated CO₂ Emitted**: `{emissions:.6f} kg` per run")
+    else:
+        st.warning("⚠️ Emissions data not available.")
 
     # Export section
     if export_format == "JSON":
@@ -81,7 +99,31 @@ def run_graph_with_streaming(initial_state):
             file_name="agent_output.txt",
             mime="text/plain"
         )
+    elif export_format == "PDF":
+        # Create PDF
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_auto_page_break(auto=True, margin=15)
+        pdf.set_font("Arial", size=12)
 
+        for key, val in agent_outputs.items():
+            pdf.set_font("Arial", style="B", size=12)
+            pdf.cell(200, 10, txt=key, ln=True)
+            pdf.set_font("Arial", size=12)
+            for line in str(val).split('\n'):
+                pdf.multi_cell(0, 10, txt=line)
+
+        # Output PDF to bytes buffer
+        pdf_buffer = io.BytesIO()
+        pdf.output(pdf_buffer)
+        pdf_buffer.seek(0)
+
+        st.download_button(
+            label="📥 Download Result as PDF",
+            data=pdf_buffer,
+            file_name="agent_output.pdf",
+            mime="application/pdf"
+        )
     return result
 
 # Question-based interactive input
