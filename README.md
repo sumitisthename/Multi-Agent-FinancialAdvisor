@@ -5,6 +5,7 @@ This project is a multi-agent financial system that uses LangGraph to analyze ma
 ## Features
 
 - **Multi-Agent Architecture:** The system uses a team of specialized AI agents to handle different aspects of the financial analysis process, including:
+    - **Econimic Indicator Agent:** Capture inidcators like GDP, Inflation and Unemployment rate
     - **Market Analysis Agent:** Provides summaries of market conditions for specified assets.
     - **Forecasting Agent:** Predicts future asset prices using time-series models.
     - **Risk Analysis Agent:** Identifies potential risks associated with investments.
