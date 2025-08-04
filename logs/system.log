@@ -66,6 +66,7 @@
 2025-06-09 16:10:39,043 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-06-09 16:10:39,046 [INFO] Anomaly Report Generated
 2025-06-09 16:19:45,629 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+<<<<<<< HEAD
 2025-07-19 16:08:55,688 [INFO] [agent-system] Starting LangGraph Multi-Agent Financial System Test Run...
 2025-07-19 16:09:27,236 [INFO] [agent-system] Running Market Analysis Agent
 2025-07-19 16:09:37,054 [ERROR] [agent-system] Error in market analysis agent: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
@@ -3673,3 +3674,5 @@ ValueError: No objects to concatenate
 2025-08-03 14:53:18,754 [INFO] [agent-system] Logging decision and lesson to memory
 2025-08-03 14:53:18,754 [INFO] [agent-system] Logging decision and lesson to memory
 2025-08-03 14:53:18,754 [INFO] [agent-system] Logging decision and lesson to memory
+=======
+>>>>>>> origin/main
