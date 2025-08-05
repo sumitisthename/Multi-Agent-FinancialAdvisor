@@ -19,6 +19,9 @@ User Question:
 Tasks:
 1. Evaluate whether the proposed strategy violates any stated compliance rules.
 2. Highlight any risks that may have regulatory implications.
-3. State clearly whether the action is approved or flagged for review, with brief justification.
+3. Clearly return one of the following statuses on a new line at the end of your response:
+   COMPLIANT — if no rules are violated.
+   VIOLATION — if any rule is violated.
+Return only one of these two keywords on the last line.
 
 Be precise, formal, and ensure clarity for audit purposes.
