@@ -74,6 +74,32 @@ This will launch a web application in your browser where you can:
 -   Ask questions in natural language.
 -   Download the results as a JSON or TXT file.
 
+## Backtesting and Performance
+
+To evaluate the performance of the forecasting model, a backtesting script is included. This script runs the model over a historical period and compares its forecasts to actual market data.
+
+### Running the Backtest
+
+To run the backtest, execute the following command from the root directory:
+
+```bash
+python backtest.py
+```
+
+The script will test the forecast model for the assets defined in the script (default: SPY, AAPL) over the last 30 days.
+
+### Backtest Output
+
+The script will generate a `results/` directory with two files:
+
+-   `backtest_raw_data.csv`: A CSV file containing the detailed day-by-day results of the backtest. It includes the forecasted price and the actual price for each day.
+-   `performance_summary.json`: A JSON file containing a summary of key performance indicators (KPIs) for each asset, including:
+    -   **RMSE (Root Mean Squared Error):** Measures the absolute error of the forecast.
+    -   **MAPE (Mean Absolute Percentage Error):** Measures the percentage error of the forecast.
+    -   **Directional_Accuracy:** The percentage of time the model correctly predicted whether the price would go up or down.
+    -   **Total_Return_pct:** The total return of a simple trading strategy based on the forecasts.
+    -   **Sharpe_Ratio:** The risk-adjusted return of the simulated strategy.
+
 ## Project Structure
 
 ```

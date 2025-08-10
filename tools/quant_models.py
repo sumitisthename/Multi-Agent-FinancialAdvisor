@@ -30,7 +30,7 @@ def format_forecast_table(forecast_records):
     for record in forecast_records:
         asset = record.get("Asset", "N/A")
         
-        if "Forecast" in record:  # Error cases
+        if "Forecast" in record and "Latest Price" not in record:  # Error cases
             status = record["Forecast"]
             table += f"| {asset} | - | - | - | {status} |\n"
         else:  # Successful forecasts
@@ -53,15 +53,83 @@ def format_forecast_table(forecast_records):
     
     return table
 
-def run_forecast_model(assets, date, config):
-    forecasts = []
-    forecast_records = []
+def get_numerical_forecast(assets, end_date_str, save_intermediate_files=False):
+    """
+    Runs ARIMA forecast for a list of assets up to a given end date.
+    
+    Args:
+        assets (list[str]): List of asset tickers.
+        end_date_str (str): The end date for historical data (ISO format).
+        save_intermediate_files (bool): If True, saves raw asset data to CSV.
 
+    Returns:
+        list[dict]: A list of dictionaries, each containing forecast results for an asset.
+    """
+    forecast_records = []
+    end_date = pd.to_datetime(end_date_str)
+
+    for asset in assets:
+        try:
+            logger.info(f"📥 Fetching price data for {asset} up to {end_date.date()}")
+            # Fetch data up to the end_date. yfinance `end` is exclusive for dates.
+            # To include the end_date, we can either add a day or just use it as is,
+            # as the model needs data *before* the forecast point.
+            df = yf.download(asset, end=end_date, period="60d", interval="1d", auto_adjust=False)
+
+            if save_intermediate_files:
+                df_reset = df.reset_index()
+                df_reset['timestamp'] = pd.Timestamp.now()
+                safe_date = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
+                asset_csv_path = f"forecasts/assets-{asset}-{safe_date}.csv"
+                df_reset.to_csv(asset_csv_path, index=False)
+                logger.info(f"✅ Asset CSV saved: {asset_csv_path}")
+
+            prices = df[['Close']].dropna()
+            if len(prices) < 10:
+                logger.warning(f"{asset}: Not enough data to forecast ({len(prices)} data points).")
+                forecast_records.append({"Asset": asset, "Forecast": "Not enough data"})
+                continue
+
+            price_series = prices['Close'].asfreq('D', method='pad')
+
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                model = ARIMA(price_series, order=(3, 1, 2))
+                fitted_model = model.fit()
+                # Forecast one step (day) ahead
+                forecast_value = fitted_model.forecast(steps=1)
+
+            forecast = float(forecast_value.iloc[0])
+            latest_price = float(price_series.iloc[-1])
+            change_pct = ((forecast - latest_price) / latest_price) * 100
+
+            # The forecast is for the next day after the series ends
+            forecast_date = price_series.index[-1] + pd.Timedelta(days=1)
+
+            forecast_records.append({
+                "Asset": asset,
+                "Latest Price": round(latest_price, 2),
+                "Forecasted Price": round(forecast, 2),
+                "Expected Return (%)": round(change_pct, 2),
+                "Forecast Date": forecast_date.strftime('%Y-%m-%d')
+            })
+
+        except Exception as e:
+            logger.error(f"❌ Forecasting failed for {asset}:\n{traceback.format_exc()}")
+            forecast_records.append({"Asset": asset, "Forecast": "Failed"})
+
+    return forecast_records
+
+def run_forecast_model(assets, date, config):
+    """
+    Original function to run forecast, now refactored to use get_numerical_forecast.
+    It saves results to CSV and returns a formatted table for the agents.
+    """
     assets = config.get("assets", assets)  # allow dynamic override
 
     os.makedirs("forecasts", exist_ok=True)
-    
-    # Delete all files in 'forecasts' directory before new run
+
+    # Clean up old forecast files
     files = glob.glob("forecasts/*")
     for f in files:
         try:
@@ -70,63 +138,22 @@ def run_forecast_model(assets, date, config):
         except Exception as e:
             logger.warning(f"[ERROR] Could not delete file {f}: {e}")
 
-    for asset in assets:
-        try:
-            logger.info(f"📥 Fetching price data for {asset}")
-            df = yf.download(asset, period="60d", interval="1d", auto_adjust=False)
-
-            # Save raw asset prices
-            df = df.reset_index()  # 'Date' column from index
-            df['timestamp'] = pd.Timestamp.now()
-            safe_date = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
-            asset_csv_path = f"forecasts/assets-{asset}-{safe_date}.csv"
-            df.to_csv(asset_csv_path, index=False)
-            logger.info(f"✅ Asset CSV saved: {asset_csv_path}")
-            logger.debug(df.head(6))
-
-            # Forecast logic
-            prices = df[['Date', 'Close']].dropna()
-            if len(prices) < 10:
-                forecasts.append(f"{asset}: Not enough data to forecast.")
-                forecast_records.append({"Asset": asset, "Forecast": "Not enough data"})
-                continue
-
-            prices.set_index('Date', inplace=True)
-            prices.index = pd.to_datetime(prices.index)
-            price_series = prices['Close'].asfreq('D', method='pad')
-
-            with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
-                model = ARIMA(price_series, order=(3, 1, 2))
-                fitted_model = model.fit()
-                forecast_value = fitted_model.forecast(steps=1)
-
-            forecast = float(forecast_value.iloc[0])
-            latest_price = float(price_series.iloc[-1].item())
-            change_pct = ((forecast - latest_price) / latest_price) * 100
-
-            forecasts.append(f"{asset}: expected return {change_pct:+.2f}%")
-            forecast_records.append({
-                "Asset": asset,
-                "Latest Price": round(latest_price, 2),
-                "Forecasted Price": round(forecast, 2),
-                "Expected Return (%)": round(change_pct, 2)
-            })
-
-        except Exception as e:
-            logger.error(f"❌ Forecasting failed for {asset}:\n{traceback.format_exc()}")
-            forecast_records.append({"Asset": asset, "Forecast": "Failed"})
+    # Get numerical data, allowing intermediate files to be saved as before
+    forecast_records = get_numerical_forecast(assets, date, save_intermediate_files=True)
 
     # Save combined forecast summary
-    try:
-        forecast_df = pd.DataFrame(forecast_records)
-        summary_path = f"forecasts/forecast-{date}.csv"
-        forecast_df.to_csv(summary_path, index=False)
-        logger.info(f"✅ Forecast summary saved to {summary_path}")
-    except Exception as e:
-        logger.error(f"❌ Failed to save forecast CSV: {e}")
+    if forecast_records:
+        try:
+            forecast_df = pd.DataFrame(forecast_records)
+            # Use a safe filename based on the run date
+            safe_date_str = pd.to_datetime(date).strftime("%Y-%m-%d")
+            summary_path = f"forecasts/forecast-{safe_date_str}.csv"
+            forecast_df.to_csv(summary_path, index=False)
+            logger.info(f"✅ Forecast summary saved to {summary_path}")
+        except Exception as e:
+            logger.error(f"❌ Failed to save forecast CSV: {e}")
 
-    # Return formatted table instead of simple string list
+    # Return formatted table for compatibility with other agents
     return format_forecast_table(forecast_records)
 
 
