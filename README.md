@@ -76,31 +76,32 @@ This will launch a web application in your browser where you can:
 
 ## Backtesting and Performance
 
-To evaluate the performance and environmental impact of the forecasting models, a backtesting script is included. This script runs multiple models over a historical period and compares their forecasts, performance metrics, and carbon emissions.
+To evaluate the performance of different strategies, the project includes two backtesting scripts: one for purely numerical models and one for the full agent-based workflow.
 
-### Running the Backtest
+### 1. Numerical Model Backtest
 
-To run the backtest, execute the following command from the root directory:
+This script evaluates the performance and environmental impact of the underlying forecasting models (e.g., ARIMA, Moving Average).
 
+**To run:**
 ```bash
 python backtest.py
 ```
 
-The script will test the defined forecast models (default: ARIMA and a simple Moving Average) for the assets defined in the script (default: SPY, AAPL) over the last 30 days.
+**Output:**
+-   `results/backtest_raw_data_{model_name}.csv`: Raw daily forecast data for each numerical model.
+-   `results/performance_summary.json`: A JSON file containing performance metrics (RMSE, MAPE, Sharpe Ratio, etc.) and aggregated carbon emissions for each numerical model.
 
-### Backtest Output
+### 2. Agent-Based Strategy Backtest
 
-The script will generate a `results/` directory containing the following files:
+This script evaluates the performance of the complete agentic system by running the full graph for each day and making decisions based on the Coordinator agent's final output. This allows for a direct assessment of the value added by the hybrid agentic architecture.
 
--   `backtest_raw_data_{model_name}.csv`: A CSV file for each model tested, containing the detailed day-by-day results of the backtest. It includes the forecasted price and the actual price for each day.
--   `performance_summary.json`: A single JSON file containing a comparative summary of all tested models. For each model, it provides:
-    -   **performance_metrics**: A breakdown of KPIs for each asset, including:
-        -   **RMSE (Root Mean Squared Error):** Measures the absolute error of the forecast.
-        -   **MAPE (Mean Absolute Percentage Error):** Measures the percentage error of the forecast.
-        -   **Directional_Accuracy:** The percentage of time the model correctly predicted whether the price would go up or down.
-        -   **Total_Return_pct:** The total return of a simple trading strategy based on the forecasts.
-        -   **Sharpe_Ratio:** The risk-adjusted return of the simulated strategy.
-    -   **aggregated_emissions_kg**: The total aggregated carbon emissions (in kg of CO₂eq) for the entire backtesting run of that model. This allows for a direct comparison of the performance-vs-emissions trade-off.
+**To run:**
+```bash
+python agent_backtest.py
+```
+
+**Output:**
+-   `results/strategy_comparison.json`: A comprehensive JSON report that compares the performance of the full agent-based strategy against the simpler numerical strategies, providing a clear view of the trade-offs in performance, accuracy, and emissions.
 
 ## Project Structure
 
