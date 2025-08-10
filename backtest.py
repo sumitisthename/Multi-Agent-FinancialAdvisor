@@ -8,6 +8,7 @@ import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 import os
 import json
+from codecarbon import EmissionsTracker
 
 # Suppress yfinance and other warnings for cleaner output
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -70,11 +71,11 @@ def calculate_metrics(df):
     }
     return metrics
 
-def run_backtest(assets, days_to_backtest):
+def run_backtest(assets, days_to_backtest, model_type):
     """
     Runs the backtest for a given list of assets over a specified number of days.
     """
-    logger.info(f"Starting backtest for assets: {assets} over the last {days_to_backtest} days.")
+    logger.info(f"Starting backtest for model '{model_type}'...")
 
     end_date = datetime.now()
     start_date = end_date - timedelta(days=days_to_backtest)
@@ -85,10 +86,12 @@ def run_backtest(assets, days_to_backtest):
         current_date = start_date + timedelta(days=i)
         current_date_str = current_date.isoformat()
 
-        # No need for logger here as it doesn't show up in the environment
-        # logger.info(f"--- Backtesting for date: {current_date.strftime('%Y-%m-%d')} ---")
-
-        forecast_records = get_numerical_forecast(assets, current_date_str, save_intermediate_files=False)
+        forecast_records = get_numerical_forecast(
+            assets,
+            current_date_str,
+            model_type=model_type,
+            save_intermediate_files=False
+        )
 
         for record in forecast_records:
             if "Forecasted Price" in record:
@@ -106,7 +109,8 @@ def run_backtest(assets, days_to_backtest):
                         "Forecast_for_Date": forecast_date,
                         "Latest_Price_at_Forecast": latest_price,
                         "Forecasted_Price": forecasted_price,
-                        "Actual_Price": actual_price
+                        "Actual_Price": actual_price,
+                        "Model": model_type
                     })
 
     return pd.DataFrame(all_results)
@@ -115,37 +119,47 @@ def run_backtest(assets, days_to_backtest):
 if __name__ == "__main__":
     ASSETS_TO_TEST = ["SPY", "AAPL"]
     DAYS_TO_RUN = 30
+    MODELS_TO_TEST = ['arima', 'moving_average']
 
-    # Create results directory if it doesn't exist
     os.makedirs("results", exist_ok=True)
 
-    backtest_results_df = run_backtest(ASSETS_TO_TEST, DAYS_TO_RUN)
+    all_model_results = {}
 
-    if not backtest_results_df.empty:
-        # Save raw data
-        raw_data_path = "results/backtest_raw_data.csv"
-        backtest_results_df.to_csv(raw_data_path, index=False)
-        print(f"Full backtest data saved to {raw_data_path}")
+    for model in MODELS_TO_TEST:
+        print(f"\n--- Running Backtest for Model: {model} ---")
 
-        # Calculate and save metrics
-        all_metrics = {}
-        for asset in ASSETS_TO_TEST:
-            asset_df = backtest_results_df[backtest_results_df['Asset'] == asset].copy()
-            if not asset_df.empty:
-                metrics = calculate_metrics(asset_df)
-                all_metrics[asset] = metrics
+        tracker = EmissionsTracker(project_name=f"backtest_{model}", output_file="emissions.csv")
+        tracker.start()
 
-        summary_path = "results/performance_summary.json"
-        with open(summary_path, 'w') as f:
-            json.dump(all_metrics, f, indent=4)
-        print(f"Performance summary saved to {summary_path}")
+        backtest_df = run_backtest(ASSETS_TO_TEST, DAYS_TO_RUN, model_type=model)
 
-        # Also print summary to console
-        print("\n--- Performance Metrics Summary ---")
-        for asset, metrics in all_metrics.items():
-            print(f"\nMetrics for {asset}:")
-            for key, value in metrics.items():
-                print(f"  {key}: {value:.4f}")
+        emissions_kg = tracker.stop()
+        print(f"Emissions for {model} model: {emissions_kg:.6f} kg CO2eq")
 
-    else:
-        print("\nBacktest did not produce any results.")
+        if not backtest_df.empty:
+            model_metrics = {}
+            for asset in ASSETS_TO_TEST:
+                asset_df = backtest_df[backtest_df['Asset'] == asset].copy()
+                if not asset_df.empty:
+                    metrics = calculate_metrics(asset_df)
+                    model_metrics[asset] = metrics
+
+            all_model_results[model] = {
+                "performance_metrics": model_metrics,
+                "aggregated_emissions_kg": emissions_kg
+            }
+
+            # Save raw data for this model
+            raw_data_path = f"results/backtest_raw_data_{model}.csv"
+            backtest_df.to_csv(raw_data_path, index=False)
+            print(f"Full backtest data for {model} saved to {raw_data_path}")
+
+    # Save the final comparative summary
+    summary_path = "results/performance_summary.json"
+    with open(summary_path, 'w') as f:
+        json.dump(all_model_results, f, indent=4)
+    print(f"\nComparative performance summary saved to {summary_path}")
+
+    # Also print summary to console
+    print("\n--- Comparative Performance Metrics Summary ---")
+    print(json.dumps(all_model_results, indent=4))

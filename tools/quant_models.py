@@ -53,13 +53,14 @@ def format_forecast_table(forecast_records):
     
     return table
 
-def get_numerical_forecast(assets, end_date_str, save_intermediate_files=False):
+def get_numerical_forecast(assets, end_date_str, model_type='arima', save_intermediate_files=False):
     """
-    Runs ARIMA forecast for a list of assets up to a given end date.
+    Runs a forecast for a list of assets up to a given end date using the specified model.
     
     Args:
         assets (list[str]): List of asset tickers.
         end_date_str (str): The end date for historical data (ISO format).
+        model_type (str): The type of model to use ('arima' or 'moving_average').
         save_intermediate_files (bool): If True, saves raw asset data to CSV.
 
     Returns:
@@ -71,9 +72,6 @@ def get_numerical_forecast(assets, end_date_str, save_intermediate_files=False):
     for asset in assets:
         try:
             logger.info(f"📥 Fetching price data for {asset} up to {end_date.date()}")
-            # Fetch data up to the end_date. yfinance `end` is exclusive for dates.
-            # To include the end_date, we can either add a day or just use it as is,
-            # as the model needs data *before* the forecast point.
             df = yf.download(asset, end=end_date, period="60d", interval="1d", auto_adjust=False)
 
             if save_intermediate_files:
@@ -86,24 +84,37 @@ def get_numerical_forecast(assets, end_date_str, save_intermediate_files=False):
 
             prices = df[['Close']].dropna()
             if len(prices) < 10:
-                logger.warning(f"{asset}: Not enough data to forecast ({len(prices)} data points).")
+                logger.warning(f"({model_type}) {asset}: Not enough data to forecast ({len(prices)} data points).")
                 forecast_records.append({"Asset": asset, "Forecast": "Not enough data"})
                 continue
 
             price_series = prices['Close'].asfreq('D', method='pad')
+            forecast = 0.0
 
-            with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
-                model = ARIMA(price_series, order=(3, 1, 2))
-                fitted_model = model.fit()
-                # Forecast one step (day) ahead
-                forecast_value = fitted_model.forecast(steps=1)
+            if model_type == 'arima':
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    model = ARIMA(price_series, order=(3, 1, 2))
+                    fitted_model = model.fit()
+                    forecast_value = fitted_model.forecast(steps=1)
+                forecast = float(forecast_value.iloc[0])
 
-            forecast = float(forecast_value.iloc[0])
+            elif model_type == 'moving_average':
+                window_size = 5
+                if len(price_series) >= window_size:
+                    moving_average = price_series.rolling(window=window_size).mean()
+                    forecast = float(moving_average.iloc[-1])
+                else:
+                    logger.warning(f"({model_type}) {asset}: Not enough data for window size {window_size}.")
+                    forecast_records.append({"Asset": asset, "Forecast": "Not enough data"})
+                    continue
+
+            else:
+                raise ValueError(f"Unknown model_type: {model_type}")
+
             latest_price = float(price_series.iloc[-1])
             change_pct = ((forecast - latest_price) / latest_price) * 100
 
-            # The forecast is for the next day after the series ends
             forecast_date = price_series.index[-1] + pd.Timedelta(days=1)
 
             forecast_records.append({
@@ -111,12 +122,13 @@ def get_numerical_forecast(assets, end_date_str, save_intermediate_files=False):
                 "Latest Price": round(latest_price, 2),
                 "Forecasted Price": round(forecast, 2),
                 "Expected Return (%)": round(change_pct, 2),
-                "Forecast Date": forecast_date.strftime('%Y-%m-%d')
+                "Forecast Date": forecast_date.strftime('%Y-%m-%d'),
+                "Model": model_type
             })
 
         except Exception as e:
-            logger.error(f"❌ Forecasting failed for {asset}:\n{traceback.format_exc()}")
-            forecast_records.append({"Asset": asset, "Forecast": "Failed"})
+            logger.error(f"❌ Forecasting failed for {asset} with model {model_type}:\n{traceback.format_exc()}")
+            forecast_records.append({"Asset": asset, "Forecast": "Failed", "Model": model_type})
 
     return forecast_records
 
