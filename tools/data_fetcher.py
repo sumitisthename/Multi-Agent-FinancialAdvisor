@@ -29,10 +29,14 @@ def fetch_market_data(assets, date):
     logger.info(f"🔄 fetch_market_data() called - ID: {uuid.uuid4()}")
     caller = inspect.stack()[1].function
     timestamp = date
-    logger.info(f"📥 Fetching price data for {assets} on {timestamp} (called by {caller})")
+    
+    # Remove duplicates while preserving order
+    unique_assets = list(dict.fromkeys(assets))
+    
+    logger.info(f"📥 Fetching price data for {unique_assets} on {timestamp} (called by {caller})")
 
     results = []
-    for asset in assets:
+    for asset in unique_assets:
         try:
             logger.info(f"📥 Fetching price data for {asset} on {date}")
             # Fetch daily data for the last 60 days as an example
@@ -55,8 +59,11 @@ def fetch_news_data(assets):
     """
     Fetches news data for a list of assets and saves citations to a JSON file.
     """
+    # Remove duplicates from assets for news queries too
+    unique_assets = list(dict.fromkeys(assets))
+    
     news_api_key = os.getenv("NEWS_API_KEY")
-    query = " OR ".join(assets)
+    query = " OR ".join(unique_assets)
     url = f"https://newsapi.org/v2/everything?q={query}&sortBy=publishedAt&apiKey={news_api_key}"
 
     try:
@@ -96,6 +103,9 @@ def fetch_transaction_data(assets, date):
     """
     Fetches transaction data for a list of assets.
     """
+    # Remove duplicates from assets
+    unique_assets = list(dict.fromkeys(assets))
+    
     # Stub function — extend with real transactional logs or simulated examples
     logger.info("Fetching simulated transaction data")
-    return [{"asset": a, "volume": 1000, "price": 250 + i * 10} for i, a in enumerate(assets)]
+    return [{"asset": a, "volume": 1000, "price": 250 + i * 10} for i, a in enumerate(unique_assets)]

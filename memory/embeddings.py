@@ -36,3 +36,5 @@ def load_index():
         return faiss.read_index(VECTOR_DB_PATH)
     else:
         return faiss.IndexFlatL2(model.get_sentence_embedding_dimension())
+    
+

@@ -19,7 +19,7 @@ logger = get_logger()
 
 
 llm = ChatGroq(
-    model="llama3-8b-8192",
+    model="gemma2-9b-it",
     api_key=os.getenv("GROQ_API_KEY")
 )
 
@@ -53,7 +53,7 @@ def forecasting_node(config):
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)
         llm_input = prompt.format(**context)
 
-        llm = ChatGroq(model="llama3-8b-8192")
+        llm = ChatGroq(model="gemma2-9b-it")
         parser = StrOutputParser()
         output = parser.invoke(llm.invoke(llm_input))
 

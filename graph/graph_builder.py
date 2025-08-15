@@ -7,7 +7,9 @@ from IPython.display import display,Image
 import datetime
 from datetime import datetime, timezone # Add timezone here
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -24,7 +26,8 @@ class GraphState(TypedDict):
     final_decision: str
     reflection_lesson: str
     user_query: str  
-    economic_indicators: list[dict] 
+    economic_indicators: list[dict]
+    evaluation_results: dict
 
 def build_graph(config):
     """Build and return the compiled graph"""
@@ -44,6 +47,7 @@ def build_graph(config):
             from agents.compliance_monitor import compliance_node
             from agents.coordinator import coordinator_node
             from agents.memory_reflection import memory_reflection_node
+            from agents.evaluation import evaluation_node
             logger.info("All agent modules imported successfully")
         except ImportError as e:
             logger.error(f"Failed to import agent modules: {e}")
@@ -57,6 +61,7 @@ def build_graph(config):
             builder.add_node("economic_data", economic_indicator_node())
             builder.add_node("compliance", compliance_node(config))
             builder.add_node("coordinator", coordinator_node(config))
+            builder.add_node("evaluation", evaluation_node(config))
             builder.add_node("memory_reflection", memory_reflection_node(config))
             logger.info("All nodes added successfully")
         except Exception as e:
@@ -73,7 +78,8 @@ def build_graph(config):
             builder.add_edge("forecasting", "risk")
             builder.add_edge("risk", "compliance")
             builder.add_edge("compliance", "coordinator")
-            builder.add_edge("coordinator", "memory_reflection")
+            builder.add_edge("coordinator", "evaluation")
+            builder.add_edge("evaluation", "memory_reflection")
             
             builder.set_finish_point("memory_reflection")
             logger.info("Graph structure defined successfully")
@@ -99,9 +105,7 @@ def run():
     try:
         # Your config setup
         config = {
-            # Add your configuration here
-            "api_key": "your_api_key",  # Replace with actual config
-            # ... other config parameters
+            "GROQ_API_KEY": os.getenv("GROQ_API_KEY"),
         }
         
         # Build the graph with debugging

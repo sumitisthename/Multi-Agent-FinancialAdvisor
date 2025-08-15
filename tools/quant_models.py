@@ -1,4 +1,4 @@
-import glob  # Correct import for glob module
+import glob
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
@@ -18,40 +18,46 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
+
 def format_forecast_table(forecast_records):
     """Format forecast records into a readable table"""
     if not forecast_records:
         return "No forecast data available."
-    
-    # Create markdown table
-    table = "| Asset | Latest Price | Forecasted Price | Expected Return (%) | Status |\n"
-    table += "|-------|--------------|------------------|--------------------|---------|\n"
-    
+
+    # Markdown table header
+    table = "| Asset | Latest Price | Forecasted Price | Expected Return (%) | SMA_10 | SMA_30 | EMA_10 | EMA_30 | Status |\n"
+    table += "|-------|--------------|------------------|--------------------|--------|--------|--------|--------|---------|\n"
+
     for record in forecast_records:
         asset = record.get("Asset", "N/A")
-        
-        if "Forecast" in record:  # Error cases
+
+        if "Forecast" in record:  # Error or no-data cases
             status = record["Forecast"]
-            table += f"| {asset} | - | - | - | {status} |\n"
-        else:  # Successful forecasts
+            table += f"| {asset} | - | - | - | - | - | - | - | {status} |\n"
+        else:
             latest = record.get("Latest Price", "N/A")
             forecasted = record.get("Forecasted Price", "N/A")
             return_pct = record.get("Expected Return (%)", "N/A")
-            
-            # Add color indicators
+            sma10 = record.get("SMA_10", "-")
+            sma30 = record.get("SMA_30", "-")
+            ema10 = record.get("EMA_10", "-")
+            ema30 = record.get("EMA_30", "-")
+
+            # Status using forecast + SMA crossover
             if isinstance(return_pct, (int, float)):
-                if return_pct > 0:
+                if return_pct > 0 and sma10 > sma30:
                     status = "📈 Bullish"
-                elif return_pct < -5:
+                elif return_pct < -5 and sma10 < sma30:
                     status = "📉 Bearish"
                 else:
                     status = "📊 Neutral"
             else:
                 status = "❓ Unknown"
-            
-            table += f"| {asset} | ${latest} | ${forecasted} | {return_pct:+.2f}% | {status} |\n"
-    
+
+            table += f"| {asset} | ${latest} | ${forecasted} | {return_pct:+.2f}% | {sma10} | {sma30} | {ema10} | {ema30} | {status} |\n"
+
     return table
+
 
 def run_forecast_model(assets, date, config):
     forecasts = []
@@ -60,8 +66,8 @@ def run_forecast_model(assets, date, config):
     assets = config.get("assets", assets)  # allow dynamic override
 
     os.makedirs("forecasts", exist_ok=True)
-    
-    # Delete all files in 'forecasts' directory before new run
+
+    # Clean old forecast files
     files = glob.glob("forecasts/*")
     for f in files:
         try:
@@ -75,14 +81,19 @@ def run_forecast_model(assets, date, config):
             logger.info(f"📥 Fetching price data for {asset}")
             df = yf.download(asset, period="60d", interval="1d", auto_adjust=False)
 
-            # Save raw asset prices
-            df = df.reset_index()  # 'Date' column from index
+            df = df.reset_index()
             df['timestamp'] = pd.Timestamp.now()
+
+            # Moving averages
+            df['SMA_10'] = df['Close'].rolling(window=10).mean()
+            df['SMA_30'] = df['Close'].rolling(window=30).mean()
+            df['EMA_10'] = df['Close'].ewm(span=10, adjust=False).mean()
+            df['EMA_30'] = df['Close'].ewm(span=30, adjust=False).mean()
+
             safe_date = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
             asset_csv_path = f"forecasts/assets-{asset}-{safe_date}.csv"
             df.to_csv(asset_csv_path, index=False)
             logger.info(f"✅ Asset CSV saved: {asset_csv_path}")
-            logger.debug(df.head(6))
 
             # Forecast logic
             prices = df[['Date', 'Close']].dropna()
@@ -110,7 +121,11 @@ def run_forecast_model(assets, date, config):
                 "Asset": asset,
                 "Latest Price": round(latest_price, 2),
                 "Forecasted Price": round(forecast, 2),
-                "Expected Return (%)": round(change_pct, 2)
+                "Expected Return (%)": round(change_pct, 2),
+                "SMA_10": round(df['SMA_10'].iloc[-1], 2) if not pd.isna(df['SMA_10'].iloc[-1]) else None,
+                "SMA_30": round(df['SMA_30'].iloc[-1], 2) if not pd.isna(df['SMA_30'].iloc[-1]) else None,
+                "EMA_10": round(df['EMA_10'].iloc[-1], 2) if not pd.isna(df['EMA_10'].iloc[-1]) else None,
+                "EMA_30": round(df['EMA_30'].iloc[-1], 2) if not pd.isna(df['EMA_30'].iloc[-1]) else None
             })
 
         except Exception as e:
@@ -126,7 +141,6 @@ def run_forecast_model(assets, date, config):
     except Exception as e:
         logger.error(f"❌ Failed to save forecast CSV: {e}")
 
-    # Return formatted table instead of simple string list
     return format_forecast_table(forecast_records)
 
 
@@ -135,22 +149,37 @@ def detect_anomalies(transactions, forecast_text, config):
 
     try:
         df = pd.DataFrame(transactions)
+
+        # Integrate moving averages into anomaly detection
+        if 'price' in df.columns:
+            df['SMA_10'] = df['price'].rolling(window=10).mean()
+            df['SMA_30'] = df['price'].rolling(window=30).mean()
+            df['price_vs_sma10'] = df['price'] - df['SMA_10']
+            df['price_vs_sma30'] = df['price'] - df['SMA_30']
+
+        features = ['price', 'volume']
+        if 'price_vs_sma10' in df.columns:
+            features += ['price_vs_sma10', 'price_vs_sma30']
+
+        features_df = df[features].fillna(0)
+
         model = IsolationForest(contamination=0.2, random_state=42)
-        df['anomaly_score'] = model.fit_predict(df[['price', 'volume']])
+        df['anomaly_score'] = model.fit_predict(features_df)
+
         anomalies = df[df['anomaly_score'] == -1].to_dict(orient='records')
         return f"{len(anomalies)} anomalies detected: {anomalies}" if anomalies else "No anomalies."
+
     except Exception as e:
         logger.error(f"❌ Error during anomaly detection: {e}")
         return "Anomaly detection failed."
 
+
 def run_quant_models(assets, date, transactions, config):
     logger.info("🔍 Running quantitative models...")
 
-    # Run forecast model
     forecast_text = run_forecast_model(assets, date, config)
     logger.info(f"Forecast results:\n{forecast_text}")
 
-    # Run anomaly detection
     anomaly_text = detect_anomalies(transactions, forecast_text, config)
     logger.info(f"Anomaly detection results:\n{anomaly_text}")
 

@@ -1,0 +1,6 @@
+Strategy Type,Asset,RMSE,MAPE,Directional Accuracy,Total Return (%),Sharpe Ratio,Aggregated Emissions (kg CO?),Total Predictions,,,
+Agent Strategy,—,—,—,—,0,0,—,— (11 trades),,,0.401463192
+ARIMA,TSLA,12.229,0.028,0.44898,-19.98,-1.7666,0.003065,98,,,
+,AAPL,2.9115,0.01027,0.42857,7.6192,1.7405,0.003065,98,,,
+Moving Average,TSLA,16.976,0.03977,0.46939,-7.3119,-0.4029,0.002187,98,,,
+,AAPL,6.307,0.02029,0.5102,-19.9521,-5.171,0.002187,98,,,

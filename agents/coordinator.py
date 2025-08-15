@@ -17,7 +17,7 @@ logger = get_logger()
 
 
 llm = ChatGroq(
-    model="llama3-8b-8192",
+    model="gemma2-9b-it",
     api_key=os.getenv("GROQ_API_KEY")
 )
 
@@ -61,7 +61,7 @@ def coordinator_node(config):
             prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
             llm_input = prompt.format(**context)
 
-            llm = ChatGroq(model="llama3-8b-8192")
+            llm = ChatGroq(model="gemma2-9b-it")
             parser = StrOutputParser()
             print("\n=== Coordinator Prompt Input ===\n", llm_input, "\n============================\n")
             final_decision = parser.invoke(llm.invoke(llm_input))

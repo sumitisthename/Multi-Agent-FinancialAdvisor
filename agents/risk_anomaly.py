@@ -59,7 +59,7 @@ def risk_node(config):
 
             # Initialize LLM
             llm = ChatGroq(
-                model="llama3-8b-8192",
+                model="gemma2-9b-it",
                 api_key=os.getenv("GROQ_API_KEY"),
                 temperature=0
             )

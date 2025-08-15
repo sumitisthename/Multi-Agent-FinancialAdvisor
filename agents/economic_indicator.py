@@ -26,7 +26,7 @@ if not api_key:
 
 # Initialize LLM globally with API key
 llm = ChatGroq(
-    model="llama3-8b-8192",
+    model="gemma2-9b-it",
     api_key=api_key,
     temperature=0.2
 )

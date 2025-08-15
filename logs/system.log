@@ -3920,3 +3920,1287 @@ ValueError: No objects to concatenate
 2025-08-04 13:51:05,959 [INFO] Logging decision and lesson to memory
 2025-08-04 13:51:05,963 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
 2025-08-04 13:51:06,502 [INFO] Emissions returned by tracker: None
+2025-08-04 18:59:26,861 [ERROR] Graph is None. Cannot proceed.
+2025-08-04 19:01:54,681 [ERROR] Graph is None. Cannot proceed.
+2025-08-04 19:03:00,938 [INFO] Running graph...
+2025-08-04 19:03:00,939 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000001A183112A50>
+2025-08-04 19:03:00,943 [INFO] Running Economic Indicator Agent
+2025-08-04 19:03:01,316 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 19:03:01,605 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 19:03:02,034 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 19:03:02,968 [INFO] Economic Summary Generated
+2025-08-04 19:03:02,970 [INFO] Running Market Analysis Agent
+2025-08-04 19:03:09,610 [INFO] Market Summary Generated
+2025-08-04 19:03:09,612 [INFO] Running Forecasting Agent
+2025-08-04 19:03:09,612 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-04 19:03:09,615 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-04_23-46-14.csv
+2025-08-04 19:03:09,621 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-04_23-46-14.csv
+2025-08-04 19:03:09,622 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-04_23-46-13.csv
+2025-08-04 19:03:12,683 [INFO] Forecast Generated
+2025-08-04 19:03:12,685 [INFO] Logging decision and lesson to memory
+2025-08-04 19:03:12,693 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:03:12,704 [INFO] Running Compliance Monitoring Agent
+2025-08-04 19:03:12,707 [INFO] Extracting compliance rules (stub)
+2025-08-04 19:03:12,708 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 19:03:14,015 [INFO] Compliance Evaluation Completed
+2025-08-04 19:03:14,468 [INFO] Anomaly Report Generated
+2025-08-04 19:04:34,733 [INFO] Running graph...
+2025-08-04 19:04:34,747 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000016724032270>
+2025-08-04 19:04:34,770 [INFO] Running Economic Indicator Agent
+2025-08-04 19:04:35,012 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 19:04:35,316 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 19:04:35,521 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 19:04:36,668 [INFO] Economic Summary Generated
+2025-08-04 19:04:36,669 [INFO] Running Market Analysis Agent
+2025-08-04 19:04:39,619 [INFO] Market Summary Generated
+2025-08-04 19:04:39,621 [INFO] Running Forecasting Agent
+2025-08-04 19:04:39,621 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-04 19:04:39,623 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_00-03-09.csv
+2025-08-04 19:04:39,625 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_00-03-11.csv
+2025-08-04 19:04:39,627 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_00-03-10.csv
+2025-08-04 19:04:39,633 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 19:04:42,180 [INFO] Forecast Generated
+2025-08-04 19:04:42,180 [INFO] Logging decision and lesson to memory
+2025-08-04 19:04:42,184 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:04:42,185 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 19:04:43,926 [INFO] Anomaly Report Generated
+2025-08-04 19:04:43,928 [INFO] Running Compliance Monitoring Agent
+2025-08-04 19:04:43,962 [INFO] Extracting compliance rules (stub)
+2025-08-04 19:04:45,048 [INFO] Compliance Evaluation Completed
+2025-08-04 19:04:45,049 [INFO] Running Coordinator Agent
+2025-08-04 19:04:46,378 [INFO] Final Decision Synthesized
+2025-08-04 19:04:46,379 [INFO] Running Memory Reflection Agent
+2025-08-04 19:04:46,387 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:04:47,098 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 19:04:47,098 [INFO] Logging decision and lesson to memory
+2025-08-04 19:04:47,102 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:04:47,664 [INFO] Emissions returned by tracker: 0.0003988732903821959
+2025-08-04 19:11:27,728 [INFO] Running graph...
+2025-08-04 19:11:27,746 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000027DBDB3E120>
+2025-08-04 19:11:27,757 [INFO] Running Economic Indicator Agent
+2025-08-04 19:11:28,168 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'error': 'No data available.'}
+2025-08-04 19:11:28,599 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'error': 'No data available.'}
+2025-08-04 19:11:29,009 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'error': 'No data available.'}
+2025-08-04 19:11:30,070 [INFO] Economic Summary Generated
+2025-08-04 19:11:30,074 [INFO] Running Market Analysis Agent
+2025-08-04 19:11:40,525 [INFO] Market Summary Generated
+2025-08-04 19:11:40,527 [INFO] Running Forecasting Agent
+2025-08-04 19:11:40,528 [INFO] ARIMA model invoked for assets: ['AAPL', 'NVDA', 'TSLA']
+2025-08-04 19:11:40,534 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_00-04-40.csv
+2025-08-04 19:11:40,537 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_00-04-39.csv
+2025-08-04 19:11:40,541 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_00-04-40.csv
+2025-08-04 19:11:40,543 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 19:11:46,213 [INFO] Forecast Generated
+2025-08-04 19:11:46,214 [INFO] Logging decision and lesson to memory
+2025-08-04 19:11:46,223 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:11:46,230 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 19:11:49,535 [INFO] Anomaly Report Generated
+2025-08-04 19:11:49,698 [INFO] Running Compliance Monitoring Agent
+2025-08-04 19:11:49,714 [INFO] Extracting compliance rules (stub)
+2025-08-04 19:11:52,255 [INFO] Compliance Evaluation Completed
+2025-08-04 19:11:52,256 [INFO] Running Coordinator Agent
+2025-08-04 19:11:55,026 [INFO] Final Decision Synthesized
+2025-08-04 19:11:55,051 [INFO] Running Memory Reflection Agent
+2025-08-04 19:11:55,078 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:11:55,869 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 19:11:55,870 [INFO] Logging decision and lesson to memory
+2025-08-04 19:11:55,881 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:11:56,474 [INFO] Emissions returned by tracker: 0.0008868853056078986
+2025-08-04 19:14:11,723 [INFO] Running graph...
+2025-08-04 19:14:11,725 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000023EFFB82510>
+2025-08-04 19:14:11,730 [INFO] Running Economic Indicator Agent
+2025-08-04 19:14:12,319 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator_id': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000, 'unit': 'Current US$'}
+2025-08-04 19:14:12,951 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator_id': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207, 'unit': '% annual'}
+2025-08-04 19:14:13,460 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator_id': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106, 'unit': '% of labor force'}
+2025-08-04 19:14:14,502 [INFO] Economic Summary Generated
+2025-08-04 19:14:14,505 [INFO] Running Market Analysis Agent
+2025-08-04 19:14:18,173 [INFO] Market Summary Generated
+2025-08-04 19:14:18,175 [INFO] Running Forecasting Agent
+2025-08-04 19:14:18,175 [INFO] ARIMA model invoked for assets: ['TSLA', 'AAPL', 'NVDA']
+2025-08-04 19:14:18,177 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_00-11-41.csv
+2025-08-04 19:14:18,178 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_00-11-42.csv
+2025-08-04 19:14:18,180 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_00-11-43.csv
+2025-08-04 19:14:18,185 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 19:14:21,654 [INFO] Forecast Generated
+2025-08-04 19:14:21,655 [INFO] Logging decision and lesson to memory
+2025-08-04 19:14:21,661 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:14:21,668 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 19:14:23,690 [INFO] Anomaly Report Generated
+2025-08-04 19:14:23,692 [INFO] Running Compliance Monitoring Agent
+2025-08-04 19:14:23,693 [INFO] Extracting compliance rules (stub)
+2025-08-04 19:14:25,107 [INFO] Compliance Evaluation Completed
+2025-08-04 19:14:25,108 [INFO] Running Coordinator Agent
+2025-08-04 19:14:26,567 [INFO] Final Decision Synthesized
+2025-08-04 19:14:26,567 [INFO] Running Memory Reflection Agent
+2025-08-04 19:14:26,571 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:14:27,291 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 19:14:27,291 [INFO] Logging decision and lesson to memory
+2025-08-04 19:14:27,295 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:14:27,852 [INFO] Emissions returned by tracker: 0.0004980637098223682
+2025-08-04 19:21:27,562 [INFO] Running graph...
+2025-08-04 19:21:27,563 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000021C61D12120>
+2025-08-04 19:21:27,605 [INFO] Running Economic Indicator Agent
+2025-08-04 19:21:29,164 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 19:21:29,445 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 19:21:29,781 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 19:21:30,990 [INFO] Economic Summary Generated
+2025-08-04 19:21:30,995 [INFO] Running Market Analysis Agent
+2025-08-04 19:21:34,136 [INFO] Market Summary Generated
+2025-08-04 19:21:34,290 [INFO] Running Forecasting Agent
+2025-08-04 19:21:34,336 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-04 19:21:34,429 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_00-14-19.csv
+2025-08-04 19:21:34,443 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_00-14-19.csv
+2025-08-04 19:21:34,463 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_00-14-18.csv
+2025-08-04 19:21:34,468 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 19:21:38,692 [INFO] Forecast Generated
+2025-08-04 19:21:38,692 [INFO] Logging decision and lesson to memory
+2025-08-04 19:21:38,699 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:21:38,702 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 19:21:41,763 [INFO] Anomaly Report Generated
+2025-08-04 19:21:41,764 [INFO] Running Compliance Monitoring Agent
+2025-08-04 19:21:41,766 [INFO] Extracting compliance rules (stub)
+2025-08-04 19:21:44,325 [INFO] Compliance Evaluation Completed
+2025-08-04 19:21:44,326 [INFO] Running Coordinator Agent
+2025-08-04 19:21:47,520 [INFO] Final Decision Synthesized
+2025-08-04 19:21:47,599 [INFO] Running Memory Reflection Agent
+2025-08-04 19:21:47,844 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:21:48,564 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 19:21:48,581 [INFO] Logging decision and lesson to memory
+2025-08-04 19:21:48,592 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 19:21:49,255 [INFO] Emissions returned by tracker: 0.0006708098360258452
+2025-08-04 22:27:19,828 [INFO] Running graph...
+2025-08-04 22:27:19,829 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x00000183ED126270>
+2025-08-04 22:27:19,871 [INFO] Running Economic Indicator Agent
+2025-08-04 22:27:20,053 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 22:27:20,229 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 22:27:20,535 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 22:27:21,480 [INFO] Economic Summary Generated
+2025-08-04 22:27:21,487 [INFO] Running Market Analysis Agent
+2025-08-04 22:27:28,117 [INFO] Market Summary Generated
+2025-08-04 22:27:28,118 [INFO] Running Forecasting Agent
+2025-08-04 22:27:28,119 [INFO] ARIMA model invoked for assets: ['TSLA', 'NVDA', 'AAPL']
+2025-08-04 22:27:28,121 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_00-21-34.csv
+2025-08-04 22:27:28,123 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 22:27:31,099 [INFO] Forecast Generated
+2025-08-04 22:27:31,100 [INFO] Logging decision and lesson to memory
+2025-08-04 22:27:31,105 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 22:27:31,107 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 22:27:33,237 [INFO] Anomaly Report Generated
+2025-08-04 22:27:33,238 [INFO] Running Compliance Monitoring Agent
+2025-08-04 22:27:33,239 [INFO] Extracting compliance rules (stub)
+2025-08-04 22:27:34,566 [INFO] Compliance Evaluation Completed
+2025-08-04 22:27:34,568 [INFO] Running Coordinator Agent
+2025-08-04 22:27:36,001 [INFO] Final Decision Synthesized
+2025-08-04 22:27:36,003 [INFO] Running Memory Reflection Agent
+2025-08-04 22:27:36,009 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 22:27:36,717 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 22:27:36,718 [INFO] Logging decision and lesson to memory
+2025-08-04 22:27:36,723 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 22:27:37,300 [INFO] Emissions returned by tracker: 0.0005391488640677605
+2025-08-04 22:35:56,407 [INFO] Running graph...
+2025-08-04 22:35:56,408 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x00000259353A2120>
+2025-08-04 22:35:56,411 [INFO] Running Economic Indicator Agent
+2025-08-04 22:35:56,731 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 22:35:56,933 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 22:35:57,179 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 22:35:58,102 [INFO] Economic Summary Generated
+2025-08-04 22:35:58,115 [INFO] Running Market Analysis Agent
+2025-08-04 22:36:00,624 [INFO] Market Summary Generated
+2025-08-04 22:36:00,625 [INFO] Running Forecasting Agent
+2025-08-04 22:36:00,626 [INFO] ARIMA model invoked for assets: ['TSLA', 'NVDA', 'AAPL']
+2025-08-04 22:36:00,628 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_03-27-29.csv
+2025-08-04 22:36:00,629 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_03-27-29.csv
+2025-08-04 22:36:00,631 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_03-27-28.csv
+2025-08-04 22:36:00,640 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 22:36:05,540 [INFO] Forecast Generated
+2025-08-04 22:36:05,541 [INFO] Logging decision and lesson to memory
+2025-08-04 22:36:05,546 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 22:36:05,547 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 22:36:07,688 [INFO] Anomaly Report Generated
+2025-08-04 22:36:07,690 [INFO] Running Compliance Monitoring Agent
+2025-08-04 22:36:07,690 [INFO] Extracting compliance rules (stub)
+2025-08-04 22:36:09,104 [INFO] Compliance Evaluation Completed
+2025-08-04 22:36:09,105 [INFO] Running Coordinator Agent
+2025-08-04 22:36:10,554 [INFO] Final Decision Synthesized
+2025-08-04 22:36:10,556 [INFO] Running Memory Reflection Agent
+2025-08-04 22:36:10,560 [ERROR] Failed to read memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 22:36:11,067 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 22:36:11,068 [INFO] Logging decision and lesson to memory
+2025-08-04 22:36:11,073 [ERROR] Failed to write to memory log: Expecting ',' delimiter: line 3362 column 1 (char 246856)
+2025-08-04 22:36:11,631 [INFO] Emissions returned by tracker: 0.0004698474351788604
+2025-08-04 22:38:50,716 [INFO] Running graph...
+2025-08-04 22:38:50,716 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000001F98AA92120>
+2025-08-04 22:38:50,720 [INFO] Running Economic Indicator Agent
+2025-08-04 22:38:50,855 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-04 22:38:51,223 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-04 22:38:51,425 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-04 22:38:52,459 [INFO] Economic Summary Generated
+2025-08-04 22:38:52,461 [INFO] Running Market Analysis Agent
+2025-08-04 22:39:04,735 [INFO] Market Summary Generated
+2025-08-04 22:39:04,736 [INFO] Running Forecasting Agent
+2025-08-04 22:39:04,737 [INFO] ARIMA model invoked for assets: ['NVDA', 'TSLA', 'AAPL']
+2025-08-04 22:39:04,738 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_03-36-03.csv
+2025-08-04 22:39:04,740 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_03-36-01.csv
+2025-08-04 22:39:04,755 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_03-36-00.csv
+2025-08-04 22:39:04,766 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-04 22:39:08,218 [INFO] Forecast Generated
+2025-08-04 22:39:08,219 [INFO] Logging decision and lesson to memory
+2025-08-04 22:39:08,222 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-04 22:39:10,060 [INFO] Anomaly Report Generated
+2025-08-04 22:39:10,062 [INFO] Running Compliance Monitoring Agent
+2025-08-04 22:39:10,063 [INFO] Extracting compliance rules (stub)
+2025-08-04 22:39:11,699 [INFO] Compliance Evaluation Completed
+2025-08-04 22:39:11,700 [INFO] Running Coordinator Agent
+2025-08-04 22:39:13,339 [INFO] Final Decision Synthesized
+2025-08-04 22:39:13,341 [INFO] Running Memory Reflection Agent
+2025-08-04 22:39:14,054 [INFO] Reflection Completed - Lesson Logged
+2025-08-04 22:39:14,055 [INFO] Logging decision and lesson to memory
+2025-08-04 22:39:14,622 [INFO] Emissions returned by tracker: 0.0007369146451023524
+2025-08-05 00:18:16,974 [INFO] Running graph...
+2025-08-05 00:18:16,980 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000020163C56120>
+2025-08-05 00:18:17,067 [INFO] Running Economic Indicator Agent
+2025-08-05 00:18:17,251 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:18:17,499 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:18:17,820 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:18:19,104 [INFO] Economic Summary Generated
+2025-08-05 00:18:19,106 [INFO] Running Market Analysis Agent
+2025-08-05 00:18:28,652 [INFO] Market Summary Generated
+2025-08-05 00:18:28,654 [INFO] Running Forecasting Agent
+2025-08-05 00:18:28,655 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 00:18:28,663 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_03-39-06.csv
+2025-08-05 00:18:28,668 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_03-39-05.csv
+2025-08-05 00:18:28,670 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_03-39-05.csv
+2025-08-05 00:18:28,673 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 00:18:31,694 [INFO] Forecast Generated
+2025-08-05 00:18:31,695 [INFO] Logging decision and lesson to memory
+2025-08-05 00:18:31,734 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:18:34,152 [INFO] Anomaly Report Generated
+2025-08-05 00:18:34,154 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:18:34,155 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:18:36,025 [INFO] Compliance Evaluation Completed
+2025-08-05 00:18:36,028 [INFO] Running Coordinator Agent
+2025-08-05 00:18:38,073 [INFO] Final Decision Synthesized
+2025-08-05 00:18:38,075 [INFO] Running Memory Reflection Agent
+2025-08-05 00:18:38,585 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:18:38,586 [INFO] Logging decision and lesson to memory
+2025-08-05 00:18:39,188 [INFO] Emissions returned by tracker: 0.0006873319802279042
+2025-08-05 00:21:24,630 [INFO] Running graph...
+2025-08-05 00:21:24,630 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000002441A19D940>
+2025-08-05 00:21:24,636 [INFO] Running Economic Indicator Agent
+2025-08-05 00:21:24,799 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:21:24,973 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:21:25,135 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:21:26,187 [INFO] Economic Summary Generated
+2025-08-05 00:21:26,193 [INFO] Running Market Analysis Agent
+2025-08-05 00:21:28,878 [INFO] Market Summary Generated
+2025-08-05 00:21:28,882 [INFO] Running Forecasting Agent
+2025-08-05 00:21:28,889 [INFO] ARIMA model invoked for assets: ['NVDA', 'TSLA', 'AAPL']
+2025-08-05 00:21:28,891 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-18-29.csv
+2025-08-05 00:21:28,892 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-04.csv
+2025-08-05 00:21:32,153 [INFO] Forecast Generated
+2025-08-05 00:21:32,154 [INFO] Logging decision and lesson to memory
+2025-08-05 00:21:32,179 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:21:34,005 [INFO] Anomaly Report Generated
+2025-08-05 00:21:34,017 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:21:34,022 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:21:35,529 [INFO] Compliance Evaluation Completed
+2025-08-05 00:21:35,530 [INFO] Running Coordinator Agent
+2025-08-05 00:21:36,968 [INFO] Final Decision Synthesized
+2025-08-05 00:21:36,979 [INFO] Running Memory Reflection Agent
+2025-08-05 00:21:37,672 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:21:37,673 [INFO] Logging decision and lesson to memory
+2025-08-05 00:21:38,236 [INFO] Emissions returned by tracker: 0.00041996011633217614
+2025-08-05 00:21:59,541 [INFO] Running graph...
+2025-08-05 00:21:59,542 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x00000244543ADF90>
+2025-08-05 00:21:59,556 [INFO] Running Economic Indicator Agent
+2025-08-05 00:21:59,748 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:21:59,910 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:22:00,105 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:22:01,130 [INFO] Economic Summary Generated
+2025-08-05 00:22:01,133 [INFO] Running Market Analysis Agent
+2025-08-05 00:22:02,667 [INFO] Market Summary Generated
+2025-08-05 00:22:02,670 [INFO] Running Forecasting Agent
+2025-08-05 00:22:02,671 [INFO] ARIMA model invoked for assets: ['NVDA', 'TSLA', 'AAPL']
+2025-08-05 00:22:02,673 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_05-21-30.csv
+2025-08-05 00:22:02,674 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_05-21-29.csv
+2025-08-05 00:22:02,678 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-21-29.csv
+2025-08-05 00:22:02,679 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 00:22:07,155 [INFO] Forecast Generated
+2025-08-05 00:22:07,156 [INFO] Logging decision and lesson to memory
+2025-08-05 00:22:07,194 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:22:09,834 [INFO] Anomaly Report Generated
+2025-08-05 00:22:09,836 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:22:09,837 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:22:11,693 [INFO] Compliance Evaluation Completed
+2025-08-05 00:22:11,696 [INFO] Running Coordinator Agent
+2025-08-05 00:22:13,724 [INFO] Final Decision Synthesized
+2025-08-05 00:22:13,726 [INFO] Running Memory Reflection Agent
+2025-08-05 00:22:14,441 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:22:14,442 [INFO] Logging decision and lesson to memory
+2025-08-05 00:22:15,036 [INFO] Emissions returned by tracker: 0.0004774934253196366
+2025-08-05 00:23:07,324 [INFO] Running graph...
+2025-08-05 00:23:07,325 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000001D3A5C9A510>
+2025-08-05 00:23:07,330 [INFO] Running Economic Indicator Agent
+2025-08-05 00:23:07,584 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:23:07,788 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:23:07,993 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:23:09,031 [INFO] Economic Summary Generated
+2025-08-05 00:23:09,034 [INFO] Running Market Analysis Agent
+2025-08-05 00:23:10,966 [INFO] Market Summary Generated
+2025-08-05 00:23:10,968 [INFO] Running Forecasting Agent
+2025-08-05 00:23:10,968 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 00:23:10,970 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_05-22-04.csv
+2025-08-05 00:23:10,986 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_05-22-02.csv
+2025-08-05 00:23:10,988 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-22-03.csv
+2025-08-05 00:23:10,990 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 00:23:13,012 [INFO] Forecast Generated
+2025-08-05 00:23:13,014 [INFO] Logging decision and lesson to memory
+2025-08-05 00:23:13,038 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:23:14,755 [INFO] Anomaly Report Generated
+2025-08-05 00:23:14,756 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:23:14,756 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:23:16,192 [INFO] Compliance Evaluation Completed
+2025-08-05 00:23:16,193 [INFO] Running Coordinator Agent
+2025-08-05 00:23:17,621 [INFO] Final Decision Synthesized
+2025-08-05 00:23:17,622 [INFO] Running Memory Reflection Agent
+2025-08-05 00:23:18,337 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:23:18,338 [INFO] Logging decision and lesson to memory
+2025-08-05 00:23:18,906 [INFO] Emissions returned by tracker: 0.00035698669322701073
+2025-08-05 00:47:58,950 [INFO] Running graph...
+2025-08-05 00:47:58,951 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000001C301172900>
+2025-08-05 00:47:58,959 [INFO] Running Economic Indicator Agent
+2025-08-05 00:47:59,195 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:47:59,369 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:47:59,513 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:48:00,542 [INFO] Economic Summary Generated
+2025-08-05 00:48:00,546 [INFO] Running Market Analysis Agent
+2025-08-05 00:48:02,917 [INFO] Market Summary Generated
+2025-08-05 00:48:02,918 [INFO] Running Forecasting Agent
+2025-08-05 00:48:02,918 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 00:48:02,924 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-23-11.csv
+2025-08-05 00:48:02,926 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 00:48:05,065 [INFO] Forecast Generated
+2025-08-05 00:48:05,066 [INFO] Logging decision and lesson to memory
+2025-08-05 00:48:05,097 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:48:06,906 [INFO] Anomaly Report Generated
+2025-08-05 00:48:06,908 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:48:06,908 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:48:08,135 [INFO] Compliance Evaluation Completed
+2025-08-05 00:48:08,137 [INFO] Running Coordinator Agent
+2025-08-05 00:48:09,677 [INFO] Final Decision Synthesized
+2025-08-05 00:48:09,678 [INFO] Running Memory Reflection Agent
+2025-08-05 00:48:10,249 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:48:10,250 [INFO] Logging decision and lesson to memory
+2025-08-05 00:48:10,846 [INFO] Emissions returned by tracker: 0.00036600337209468666
+2025-08-05 00:51:46,207 [INFO] Running graph...
+2025-08-05 00:51:46,210 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000002387DC72A50>
+2025-08-05 00:51:46,226 [INFO] Running Economic Indicator Agent
+2025-08-05 00:51:46,450 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:51:46,656 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:51:46,861 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:51:47,897 [INFO] Economic Summary Generated
+2025-08-05 00:51:47,901 [INFO] Running Market Analysis Agent
+2025-08-05 00:51:50,151 [INFO] Market Summary Generated
+2025-08-05 00:51:50,152 [INFO] Running Forecasting Agent
+2025-08-05 00:51:50,153 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 00:51:50,155 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-48-03.csv
+2025-08-05 00:51:50,157 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-04.csv
+2025-08-05 00:51:52,291 [INFO] Forecast Generated
+2025-08-05 00:51:52,293 [INFO] Logging decision and lesson to memory
+2025-08-05 00:51:52,331 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:51:54,114 [INFO] Anomaly Report Generated
+2025-08-05 00:51:54,116 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:51:54,117 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:51:55,671 [INFO] Compliance Evaluation Completed
+2025-08-05 00:51:55,673 [INFO] Running Coordinator Agent
+2025-08-05 00:51:57,118 [INFO] Final Decision Synthesized
+2025-08-05 00:51:57,120 [INFO] Running Memory Reflection Agent
+2025-08-05 00:51:57,817 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:51:57,818 [INFO] Logging decision and lesson to memory
+2025-08-05 00:51:58,393 [INFO] Emissions returned by tracker: 0.0003755542108886962
+2025-08-05 00:55:44,581 [INFO] Running graph...
+2025-08-05 00:55:44,582 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000002B62CA9EA50>
+2025-08-05 00:55:44,586 [INFO] Running Economic Indicator Agent
+2025-08-05 00:55:44,748 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 00:55:44,904 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 00:55:45,140 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 00:55:46,071 [INFO] Economic Summary Generated
+2025-08-05 00:55:46,072 [INFO] Running Market Analysis Agent
+2025-08-05 00:55:47,904 [INFO] Market Summary Generated
+2025-08-05 00:55:47,905 [INFO] Running Forecasting Agent
+2025-08-05 00:55:47,906 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 00:55:47,907 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-51-50.csv
+2025-08-05 00:55:47,907 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-04.csv
+2025-08-05 00:55:49,850 [INFO] Forecast Generated
+2025-08-05 00:55:49,851 [INFO] Logging decision and lesson to memory
+2025-08-05 00:55:49,870 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 00:55:51,609 [INFO] Anomaly Report Generated
+2025-08-05 00:55:51,611 [INFO] Running Compliance Monitoring Agent
+2025-08-05 00:55:51,612 [INFO] Extracting compliance rules (stub)
+2025-08-05 00:55:53,029 [INFO] Compliance Evaluation Completed
+2025-08-05 00:55:53,031 [INFO] Running Coordinator Agent
+2025-08-05 00:55:54,609 [INFO] Final Decision Synthesized
+2025-08-05 00:55:54,613 [INFO] Running Memory Reflection Agent
+2025-08-05 00:55:55,690 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 00:55:55,691 [INFO] Logging decision and lesson to memory
+2025-08-05 00:55:56,275 [INFO] Emissions returned by tracker: 0.00035999067409127724
+2025-08-05 01:08:14,327 [INFO] Running graph...
+2025-08-05 01:08:14,329 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000018D62D96900>
+2025-08-05 01:08:14,333 [INFO] Running Economic Indicator Agent
+2025-08-05 01:08:14,598 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:08:14,798 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:08:14,919 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:08:15,837 [INFO] Economic Summary Generated
+2025-08-05 01:08:15,841 [INFO] Running Market Analysis Agent
+2025-08-05 01:08:18,384 [INFO] Market Summary Generated
+2025-08-05 01:08:18,386 [INFO] Running Forecasting Agent
+2025-08-05 01:08:18,386 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-05 01:08:18,388 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_05-55-48.csv
+2025-08-05 01:08:18,390 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-04.csv
+2025-08-05 01:08:21,970 [INFO] Forecast Generated
+2025-08-05 01:08:21,970 [INFO] Logging decision and lesson to memory
+2025-08-05 01:08:22,005 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:08:24,150 [INFO] Anomaly Report Generated
+2025-08-05 01:08:24,152 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:08:24,153 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:08:26,064 [INFO] Compliance Evaluation Completed
+2025-08-05 01:08:26,066 [INFO] Running Coordinator Agent
+2025-08-05 01:08:28,439 [INFO] Final Decision Synthesized
+2025-08-05 01:08:28,441 [INFO] Running Memory Reflection Agent
+2025-08-05 01:08:29,239 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:08:29,239 [INFO] Logging decision and lesson to memory
+2025-08-05 01:08:29,821 [INFO] Emissions returned by tracker: 0.000477829193707136
+2025-08-05 01:17:43,062 [INFO] Running graph...
+2025-08-05 01:17:43,076 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x00000263A424A3C0>
+2025-08-05 01:17:43,081 [INFO] Running Economic Indicator Agent
+2025-08-05 01:17:43,319 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:17:43,624 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:17:43,828 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:17:44,769 [INFO] Economic Summary Generated
+2025-08-05 01:17:44,771 [INFO] Running Market Analysis Agent
+2025-08-05 01:17:47,005 [INFO] Market Summary Generated
+2025-08-05 01:17:47,006 [INFO] Running Forecasting Agent
+2025-08-05 01:17:47,007 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-05 01:17:47,009 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-08-18.csv
+2025-08-05 01:17:47,010 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-08-20.csv
+2025-08-05 01:17:47,011 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-08-19.csv
+2025-08-05 01:17:47,012 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:17:51,718 [INFO] Forecast Generated
+2025-08-05 01:17:51,719 [INFO] Logging decision and lesson to memory
+2025-08-05 01:17:51,746 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:17:53,660 [INFO] Anomaly Report Generated
+2025-08-05 01:17:53,662 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:17:53,662 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:17:54,968 [INFO] Compliance Evaluation Completed
+2025-08-05 01:17:54,969 [INFO] Running Coordinator Agent
+2025-08-05 01:17:56,425 [INFO] Final Decision Synthesized
+2025-08-05 01:17:56,426 [INFO] Running Memory Reflection Agent
+2025-08-05 01:17:56,936 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:17:56,937 [INFO] Logging decision and lesson to memory
+2025-08-05 01:17:57,524 [INFO] Emissions returned by tracker: 0.00044581473563893063
+2025-08-05 01:18:20,950 [INFO] Running graph...
+2025-08-05 01:18:20,950 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000026381E4A210>
+2025-08-05 01:18:20,952 [INFO] Running Economic Indicator Agent
+2025-08-05 01:18:21,210 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:18:21,408 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:18:21,614 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:18:22,639 [INFO] Economic Summary Generated
+2025-08-05 01:18:22,640 [INFO] Running Market Analysis Agent
+2025-08-05 01:18:24,599 [INFO] Market Summary Generated
+2025-08-05 01:18:24,601 [INFO] Running Forecasting Agent
+2025-08-05 01:18:24,602 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-05 01:18:24,604 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-17-48.csv
+2025-08-05 01:18:24,605 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-17-47.csv
+2025-08-05 01:18:24,606 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-17-49.csv
+2025-08-05 01:18:24,607 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:18:27,656 [INFO] Forecast Generated
+2025-08-05 01:18:27,656 [INFO] Logging decision and lesson to memory
+2025-08-05 01:18:27,680 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:18:29,602 [INFO] Anomaly Report Generated
+2025-08-05 01:18:29,603 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:18:29,603 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:18:30,833 [INFO] Compliance Evaluation Completed
+2025-08-05 01:18:30,834 [INFO] Running Coordinator Agent
+2025-08-05 01:18:32,264 [INFO] Final Decision Synthesized
+2025-08-05 01:18:32,266 [INFO] Running Memory Reflection Agent
+2025-08-05 01:18:32,880 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:18:32,881 [INFO] Logging decision and lesson to memory
+2025-08-05 01:18:33,453 [INFO] Emissions returned by tracker: 0.00038544242109244255
+2025-08-05 01:19:14,958 [INFO] Running graph...
+2025-08-05 01:19:14,964 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x000002636049DD10>
+2025-08-05 01:19:14,971 [INFO] Running Economic Indicator Agent
+2025-08-05 01:19:15,169 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:19:15,319 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:19:15,581 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:19:16,586 [INFO] Economic Summary Generated
+2025-08-05 01:19:16,588 [INFO] Running Market Analysis Agent
+2025-08-05 01:19:18,551 [INFO] Market Summary Generated
+2025-08-05 01:19:18,552 [INFO] Running Forecasting Agent
+2025-08-05 01:19:18,553 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-05 01:19:18,556 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-18-25.csv
+2025-08-05 01:19:18,558 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-18-24.csv
+2025-08-05 01:19:18,560 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-18-25.csv
+2025-08-05 01:19:18,562 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:19:22,723 [INFO] Forecast Generated
+2025-08-05 01:19:22,723 [INFO] Logging decision and lesson to memory
+2025-08-05 01:19:22,753 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:19:24,591 [INFO] Anomaly Report Generated
+2025-08-05 01:19:24,592 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:19:24,593 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:19:25,823 [INFO] Compliance Evaluation Completed
+2025-08-05 01:19:25,825 [INFO] Running Coordinator Agent
+2025-08-05 01:19:27,151 [INFO] Final Decision Synthesized
+2025-08-05 01:19:27,156 [INFO] Running Memory Reflection Agent
+2025-08-05 01:19:27,868 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:19:27,869 [INFO] Logging decision and lesson to memory
+2025-08-05 01:19:28,459 [INFO] Emissions returned by tracker: 0.00041739392439596045
+2025-08-05 01:24:47,420 [INFO] Running graph...
+2025-08-05 01:24:47,421 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x00000245A9C26270>
+2025-08-05 01:24:47,438 [INFO] Running Economic Indicator Agent
+2025-08-05 01:24:47,655 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:24:47,777 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:24:47,962 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:24:48,900 [INFO] Economic Summary Generated
+2025-08-05 01:24:48,902 [INFO] Running Market Analysis Agent
+2025-08-05 01:24:51,453 [INFO] Market Summary Generated
+2025-08-05 01:24:51,455 [INFO] Running Forecasting Agent
+2025-08-05 01:24:51,455 [INFO] ARIMA model invoked for assets: ['AAPL', 'NVDA', 'TSLA']
+2025-08-05 01:24:51,459 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-19-19.csv
+2025-08-05 01:24:51,461 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-19-18.csv
+2025-08-05 01:24:51,465 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-19-20.csv
+2025-08-05 01:24:51,466 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:24:54,518 [INFO] Forecast Generated
+2025-08-05 01:24:54,521 [INFO] Logging decision and lesson to memory
+2025-08-05 01:24:54,557 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:24:56,566 [INFO] Anomaly Report Generated
+2025-08-05 01:24:56,567 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:24:56,568 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:24:57,818 [INFO] Compliance Evaluation Completed
+2025-08-05 01:24:57,820 [INFO] Running Coordinator Agent
+2025-08-05 01:24:59,132 [INFO] Final Decision Synthesized
+2025-08-05 01:24:59,142 [INFO] Running Memory Reflection Agent
+2025-08-05 01:24:59,740 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:24:59,741 [INFO] Logging decision and lesson to memory
+2025-08-05 01:25:00,306 [INFO] Emissions returned by tracker: 0.000397451443172928
+2025-08-05 01:26:28,453 [INFO] Running graph...
+2025-08-05 01:26:28,454 [INFO] Graph object: <langgraph.graph.state.CompiledStateGraph object at 0x0000024588FD7390>
+2025-08-05 01:26:28,457 [INFO] Running Economic Indicator Agent
+2025-08-05 01:26:28,607 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:26:28,819 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:26:29,134 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:26:30,159 [INFO] Economic Summary Generated
+2025-08-05 01:26:30,161 [INFO] Running Market Analysis Agent
+2025-08-05 01:26:31,887 [INFO] Market Summary Generated
+2025-08-05 01:26:31,890 [INFO] Running Forecasting Agent
+2025-08-05 01:26:31,891 [INFO] ARIMA model invoked for assets: ['AAPL', 'NVDA', 'TSLA']
+2025-08-05 01:26:31,892 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-24-51.csv
+2025-08-05 01:26:31,893 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-24-52.csv
+2025-08-05 01:26:31,896 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-24-52.csv
+2025-08-05 01:26:31,897 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:26:35,074 [INFO] Forecast Generated
+2025-08-05 01:26:35,075 [INFO] Logging decision and lesson to memory
+2025-08-05 01:26:35,103 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:26:37,021 [INFO] Anomaly Report Generated
+2025-08-05 01:26:37,058 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:26:37,059 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:26:38,352 [INFO] Compliance Evaluation Completed
+2025-08-05 01:26:38,353 [INFO] Running Coordinator Agent
+2025-08-05 01:26:39,888 [INFO] Final Decision Synthesized
+2025-08-05 01:26:39,891 [INFO] Running Memory Reflection Agent
+2025-08-05 01:26:40,518 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:26:40,518 [INFO] Logging decision and lesson to memory
+2025-08-05 01:26:41,087 [INFO] Emissions returned by tracker: 0.0003897437190968755
+2025-08-05 01:29:34,027 [INFO] Running graph...
+2025-08-05 01:29:34,031 [INFO] Running Economic Indicator Agent
+2025-08-05 01:29:34,274 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:29:34,431 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:29:34,679 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:29:35,719 [INFO] Economic Summary Generated
+2025-08-05 01:29:35,721 [INFO] Running Market Analysis Agent
+2025-08-05 01:29:38,154 [INFO] Market Summary Generated
+2025-08-05 01:29:38,155 [INFO] Running Forecasting Agent
+2025-08-05 01:29:38,156 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-05 01:29:38,158 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-26-32.csv
+2025-08-05 01:29:38,160 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-26-32.csv
+2025-08-05 01:29:38,161 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-26-33.csv
+2025-08-05 01:29:38,163 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:29:41,439 [INFO] Forecast Generated
+2025-08-05 01:29:41,440 [INFO] Logging decision and lesson to memory
+2025-08-05 01:29:41,466 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:29:43,286 [INFO] Anomaly Report Generated
+2025-08-05 01:29:43,287 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:29:43,288 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:29:44,922 [INFO] Compliance Evaluation Completed
+2025-08-05 01:29:44,923 [INFO] Running Coordinator Agent
+2025-08-05 01:29:46,354 [INFO] Final Decision Synthesized
+2025-08-05 01:29:46,355 [INFO] Running Memory Reflection Agent
+2025-08-05 01:29:47,174 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:29:47,175 [INFO] Logging decision and lesson to memory
+2025-08-05 01:29:47,740 [INFO] Emissions returned by tracker: 0.00042310626934579824
+2025-08-05 01:33:35,698 [INFO] Running graph...
+2025-08-05 01:33:35,728 [INFO] Running Economic Indicator Agent
+2025-08-05 01:33:36,035 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:33:36,238 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:33:36,444 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:33:37,370 [INFO] Economic Summary Generated
+2025-08-05 01:33:37,372 [INFO] Running Market Analysis Agent
+2025-08-05 01:33:38,801 [INFO] Market Summary Generated
+2025-08-05 01:33:38,803 [INFO] Running Forecasting Agent
+2025-08-05 01:33:38,805 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 01:33:38,808 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-29-38.csv
+2025-08-05 01:33:38,813 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-29-38.csv
+2025-08-05 01:33:38,814 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-29-39.csv
+2025-08-05 01:33:38,815 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:33:41,773 [INFO] Forecast Generated
+2025-08-05 01:33:41,774 [INFO] Logging decision and lesson to memory
+2025-08-05 01:33:41,824 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:33:44,234 [INFO] Anomaly Report Generated
+2025-08-05 01:33:44,236 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:33:44,237 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:33:46,173 [INFO] Compliance Evaluation Completed
+2025-08-05 01:33:46,175 [INFO] Running Coordinator Agent
+2025-08-05 01:33:48,121 [INFO] Final Decision Synthesized
+2025-08-05 01:33:48,123 [INFO] Running Memory Reflection Agent
+2025-08-05 01:33:48,735 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:33:48,736 [INFO] Logging decision and lesson to memory
+2025-08-05 01:33:49,322 [INFO] Emissions returned by tracker: 0.0004203078949118532
+2025-08-05 01:37:27,569 [INFO] Running graph...
+2025-08-05 01:37:27,571 [INFO] Running Economic Indicator Agent
+2025-08-05 01:37:27,728 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:37:27,965 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:37:28,095 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:37:28,993 [INFO] Economic Summary Generated
+2025-08-05 01:37:28,994 [INFO] Running Market Analysis Agent
+2025-08-05 01:37:31,043 [INFO] Market Summary Generated
+2025-08-05 01:37:31,045 [INFO] Running Forecasting Agent
+2025-08-05 01:37:31,045 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-05 01:37:31,047 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-33-39.csv
+2025-08-05 01:37:31,048 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-04.csv
+2025-08-05 01:37:34,317 [INFO] Forecast Generated
+2025-08-05 01:37:34,317 [INFO] Logging decision and lesson to memory
+2025-08-05 01:37:34,357 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:37:36,059 [INFO] Anomaly Report Generated
+2025-08-05 01:37:36,061 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:37:36,061 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:37:37,287 [INFO] Compliance Evaluation Completed
+2025-08-05 01:37:37,289 [INFO] Running Coordinator Agent
+2025-08-05 01:37:38,619 [INFO] Final Decision Synthesized
+2025-08-05 01:37:38,623 [INFO] Running Memory Reflection Agent
+2025-08-05 01:37:39,131 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:37:39,131 [INFO] Logging decision and lesson to memory
+2025-08-05 01:37:39,730 [INFO] Emissions returned by tracker: 0.00037417128153839066
+2025-08-05 01:40:58,945 [INFO] Running graph...
+2025-08-05 01:40:58,947 [INFO] Running Economic Indicator Agent
+2025-08-05 01:40:59,214 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 01:40:59,422 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 01:40:59,582 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 01:41:00,650 [INFO] Economic Summary Generated
+2025-08-05 01:41:00,652 [INFO] Running Market Analysis Agent
+2025-08-05 01:41:02,469 [INFO] Market Summary Generated
+2025-08-05 01:41:02,471 [INFO] Running Forecasting Agent
+2025-08-05 01:41:02,471 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-05 01:41:02,474 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-37-31.csv
+2025-08-05 01:41:02,476 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-37-31.csv
+2025-08-05 01:41:02,477 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-37-32.csv
+2025-08-05 01:41:02,481 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 01:41:05,973 [INFO] Forecast Generated
+2025-08-05 01:41:05,974 [INFO] Logging decision and lesson to memory
+2025-08-05 01:41:05,999 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 01:41:07,718 [INFO] Anomaly Report Generated
+2025-08-05 01:41:07,719 [INFO] Running Compliance Monitoring Agent
+2025-08-05 01:41:07,720 [INFO] Extracting compliance rules (stub)
+2025-08-05 01:41:09,149 [INFO] Compliance Evaluation Completed
+2025-08-05 01:41:09,150 [INFO] Running Coordinator Agent
+2025-08-05 01:41:10,685 [INFO] Final Decision Synthesized
+2025-08-05 01:41:10,687 [INFO] Running Memory Reflection Agent
+2025-08-05 01:41:11,300 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 01:41:11,301 [INFO] Logging decision and lesson to memory
+2025-08-05 01:41:11,866 [INFO] Emissions returned by tracker: 0.0003996502310110802
+2025-08-05 10:30:26,992 [INFO] Running graph...
+2025-08-05 10:30:27,001 [INFO] Running Economic Indicator Agent
+2025-08-05 10:30:27,318 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 10:30:27,522 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 10:30:27,731 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 10:30:28,686 [INFO] Economic Summary Generated
+2025-08-05 10:30:28,688 [INFO] Running Market Analysis Agent
+2025-08-05 10:30:31,109 [INFO] Market Summary Generated
+2025-08-05 10:30:31,111 [INFO] Running Forecasting Agent
+2025-08-05 10:30:31,111 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-05 10:30:31,115 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_06-41-03.csv
+2025-08-05 10:30:31,119 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_06-41-02.csv
+2025-08-05 10:30:31,125 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_06-41-04.csv
+2025-08-05 10:30:31,127 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 10:30:34,053 [INFO] Forecast Generated
+2025-08-05 10:30:34,054 [INFO] Logging decision and lesson to memory
+2025-08-05 10:30:34,110 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 10:30:36,541 [INFO] Anomaly Report Generated
+2025-08-05 10:30:36,544 [INFO] Running Compliance Monitoring Agent
+2025-08-05 10:30:36,546 [INFO] Extracting compliance rules (stub)
+2025-08-05 10:30:38,071 [INFO] Compliance Evaluation Completed
+2025-08-05 10:30:38,073 [INFO] Running Coordinator Agent
+2025-08-05 10:30:39,300 [INFO] Final Decision Synthesized
+2025-08-05 10:30:39,302 [INFO] Running Memory Reflection Agent
+2025-08-05 10:30:39,919 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 10:30:39,920 [INFO] Logging decision and lesson to memory
+2025-08-05 10:30:40,474 [INFO] Emissions returned by tracker: 0.0004162091893404627
+2025-08-05 10:35:33,131 [INFO] Running Economic Indicator Agent
+2025-08-05 10:35:33,489 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 10:35:33,890 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 10:35:34,294 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 10:35:35,355 [INFO] Economic Summary Generated
+2025-08-05 10:35:35,357 [INFO] Running Market Analysis Agent
+2025-08-05 10:35:38,220 [INFO] Market Summary Generated
+2025-08-05 10:35:38,223 [INFO] Running Forecasting Agent
+2025-08-05 10:35:38,224 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-05 10:35:38,228 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_15-30-31.csv
+2025-08-05 10:35:38,231 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-05.csv
+2025-08-05 10:35:42,502 [INFO] Forecast Generated
+2025-08-05 10:35:42,503 [INFO] Logging decision and lesson to memory
+2025-08-05 10:35:42,547 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 10:35:44,963 [INFO] Anomaly Report Generated
+2025-08-05 10:35:44,968 [INFO] Running Compliance Monitoring Agent
+2025-08-05 10:35:44,990 [INFO] Extracting compliance rules (stub)
+2025-08-05 10:35:46,852 [INFO] Compliance Evaluation Completed
+2025-08-05 10:35:46,855 [INFO] Running Coordinator Agent
+2025-08-05 10:35:48,905 [INFO] Final Decision Synthesized
+2025-08-05 10:35:48,906 [INFO] Running Memory Reflection Agent
+2025-08-05 10:35:49,672 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 10:35:49,673 [INFO] Logging decision and lesson to memory
+2025-08-05 10:36:59,706 [INFO] Running Economic Indicator Agent
+2025-08-05 10:36:59,978 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 10:37:00,146 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 10:37:00,360 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 10:37:01,342 [INFO] Economic Summary Generated
+2025-08-05 10:37:01,344 [INFO] Running Market Analysis Agent
+2025-08-05 10:37:04,015 [INFO] Market Summary Generated
+2025-08-05 10:37:04,027 [INFO] Running Forecasting Agent
+2025-08-05 10:37:04,036 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-05 10:37:04,042 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_15-35-38.csv
+2025-08-05 10:37:04,048 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_15-35-40.csv
+2025-08-05 10:37:04,052 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_15-35-39.csv
+2025-08-05 10:37:04,056 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 10:37:08,415 [INFO] Forecast Generated
+2025-08-05 10:37:08,416 [INFO] Logging decision and lesson to memory
+2025-08-05 10:37:08,475 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 10:37:10,932 [INFO] Anomaly Report Generated
+2025-08-05 10:37:10,934 [INFO] Running Compliance Monitoring Agent
+2025-08-05 10:37:10,934 [INFO] Extracting compliance rules (stub)
+2025-08-05 10:37:12,820 [INFO] Compliance Evaluation Completed
+2025-08-05 10:37:12,823 [INFO] Running Coordinator Agent
+2025-08-05 10:37:14,824 [INFO] Final Decision Synthesized
+2025-08-05 10:37:14,826 [INFO] Running Memory Reflection Agent
+2025-08-05 10:37:15,379 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 10:37:15,381 [INFO] Logging decision and lesson to memory
+2025-08-05 10:47:24,605 [INFO] Running Economic Indicator Agent
+2025-08-05 10:47:25,160 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-05 10:47:25,367 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-05 10:47:25,546 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-05 10:47:27,869 [INFO] Economic Summary Generated
+2025-08-05 10:47:27,870 [INFO] Running Market Analysis Agent
+2025-08-05 10:47:28,676 [INFO] Market Summary Generated
+2025-08-05 10:47:28,678 [INFO] Running Forecasting Agent
+2025-08-05 10:47:28,679 [INFO] ARIMA model invoked for assets: ['']
+2025-08-05 10:47:28,684 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-05_15-37-04.csv
+2025-08-05 10:47:28,688 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-05_15-37-05.csv
+2025-08-05 10:47:28,690 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-05_15-37-05.csv
+2025-08-05 10:47:28,693 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-05 10:47:30,692 [INFO] Forecast Generated
+2025-08-05 10:47:30,693 [INFO] Logging decision and lesson to memory
+2025-08-05 10:47:30,747 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-05 10:47:33,291 [INFO] Anomaly Report Generated
+2025-08-05 10:47:33,293 [INFO] Running Compliance Monitoring Agent
+2025-08-05 10:47:33,294 [INFO] Extracting compliance rules (stub)
+2025-08-05 10:47:35,075 [INFO] Compliance Evaluation Completed
+2025-08-05 10:47:35,077 [INFO] Running Coordinator Agent
+2025-08-05 10:47:37,349 [INFO] Final Decision Synthesized
+2025-08-05 10:47:37,351 [INFO] Running Memory Reflection Agent
+2025-08-05 10:47:38,076 [INFO] Reflection Completed - Lesson Logged
+2025-08-05 10:47:38,077 [INFO] Logging decision and lesson to memory
+2025-08-09 09:24:09,414 [INFO] Running Economic Indicator Agent
+2025-08-09 09:24:09,789 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-09 09:24:09,946 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-09 09:24:10,178 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-09 09:24:11,072 [INFO] Economic Summary Generated
+2025-08-09 09:24:11,074 [INFO] Running Market Analysis Agent
+2025-08-09 09:24:19,040 [INFO] Market Summary Generated
+2025-08-09 09:24:19,041 [INFO] Running Forecasting Agent
+2025-08-09 09:24:19,042 [INFO] ARIMA model invoked for assets: ['TSLA', 'AAPL', 'NVDA']
+2025-08-09 09:24:19,045 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-5.csv
+2025-08-09 09:24:21,785 [INFO] Forecast Generated
+2025-08-09 09:24:21,786 [INFO] Logging decision and lesson to memory
+2025-08-09 09:24:21,832 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-09 09:24:23,375 [INFO] Anomaly Report Generated
+2025-08-09 09:24:23,376 [INFO] Running Compliance Monitoring Agent
+2025-08-09 09:24:23,377 [INFO] Extracting compliance rules (stub)
+2025-08-09 09:24:24,393 [INFO] Compliance Evaluation Completed
+2025-08-09 09:24:24,394 [INFO] Running Coordinator Agent
+2025-08-09 09:24:25,463 [INFO] Final Decision Synthesized
+2025-08-09 09:24:25,464 [INFO] Running Memory Reflection Agent
+2025-08-09 09:24:26,009 [INFO] Reflection Completed - Lesson Logged
+2025-08-09 09:24:26,010 [INFO] Logging decision and lesson to memory
+2025-08-09 09:31:17,648 [INFO] Running Economic Indicator Agent
+2025-08-09 09:31:17,886 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-09 09:31:18,045 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-09 09:31:18,222 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-09 09:31:19,109 [INFO] Economic Summary Generated
+2025-08-09 09:31:19,111 [INFO] Running Market Analysis Agent
+2025-08-09 09:31:21,276 [INFO] Market Summary Generated
+2025-08-09 09:31:21,278 [INFO] Running Forecasting Agent
+2025-08-09 09:31:21,279 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-09 09:31:21,281 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-09_14-24-20.csv
+2025-08-09 09:31:21,283 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-09_14-24-20.csv
+2025-08-09 09:31:21,284 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-09_14-24-19.csv
+2025-08-09 09:31:21,285 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-09 09:31:22,889 [INFO] Forecast Generated
+2025-08-09 09:31:22,890 [INFO] Logging decision and lesson to memory
+2025-08-09 09:31:22,936 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-09 09:31:24,475 [INFO] Anomaly Report Generated
+2025-08-09 09:31:24,476 [INFO] Running Compliance Monitoring Agent
+2025-08-09 09:31:24,477 [INFO] Extracting compliance rules (stub)
+2025-08-09 09:31:25,540 [INFO] Compliance Evaluation Completed
+2025-08-09 09:31:25,541 [INFO] Running Coordinator Agent
+2025-08-09 09:31:26,786 [INFO] Final Decision Synthesized
+2025-08-09 09:31:26,788 [INFO] Running Memory Reflection Agent
+2025-08-09 09:31:27,413 [INFO] Reflection Completed - Lesson Logged
+2025-08-09 09:31:27,414 [INFO] Logging decision and lesson to memory
+2025-08-09 09:57:36,376 [INFO] Running Economic Indicator Agent
+2025-08-09 09:57:36,598 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-09 09:57:36,740 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-09 09:57:36,869 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-09 09:57:37,785 [INFO] Economic Summary Generated
+2025-08-09 09:57:37,789 [INFO] Running Market Analysis Agent
+2025-08-09 09:57:39,859 [INFO] Market Summary Generated
+2025-08-09 09:57:39,861 [INFO] Running Forecasting Agent
+2025-08-09 09:57:39,862 [INFO] ARIMA model invoked for assets: ['ETN']
+2025-08-09 09:57:39,872 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-09_14-53-52.csv
+2025-08-09 09:57:39,876 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-GOOGL-2025-08-09_14-53-52.csv
+2025-08-09 09:57:39,880 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-09.csv
+2025-08-09 09:57:42,681 [INFO] Forecast Generated
+2025-08-09 09:57:42,682 [INFO] Logging decision and lesson to memory
+2025-08-09 09:57:42,744 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-09 09:57:44,898 [INFO] Anomaly Report Generated
+2025-08-09 09:57:44,900 [INFO] Running Compliance Monitoring Agent
+2025-08-09 09:57:44,900 [INFO] Extracting compliance rules (stub)
+2025-08-09 09:57:46,659 [INFO] Compliance Evaluation Completed
+2025-08-09 09:57:46,661 [INFO] Running Coordinator Agent
+2025-08-09 09:57:48,590 [INFO] Final Decision Synthesized
+2025-08-09 09:57:48,593 [INFO] Running Memory Reflection Agent
+2025-08-09 09:57:49,141 [INFO] Reflection Completed - Lesson Logged
+2025-08-09 09:57:49,142 [INFO] Logging decision and lesson to memory
+2025-08-10 12:26:42,441 [INFO] Running Economic Indicator Agent
+2025-08-10 12:26:42,717 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-10 12:26:42,924 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-10 12:26:43,116 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-10 12:26:44,143 [INFO] Economic Summary Generated
+2025-08-10 12:26:44,146 [INFO] Running Market Analysis Agent
+2025-08-10 12:26:52,196 [INFO] Market Summary Generated
+2025-08-10 12:26:52,197 [INFO] Running Forecasting Agent
+2025-08-10 12:26:52,198 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-10 12:26:52,199 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-ETN-2025-08-09_14-57-40.csv
+2025-08-10 12:26:52,201 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-08.csv
+2025-08-10 12:26:55,558 [INFO] Forecast Generated
+2025-08-10 12:26:55,559 [INFO] Logging decision and lesson to memory
+2025-08-10 12:26:55,625 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-10 12:26:57,257 [INFO] Anomaly Report Generated
+2025-08-10 12:26:57,261 [INFO] Running Compliance Monitoring Agent
+2025-08-10 12:26:57,263 [INFO] Extracting compliance rules (stub)
+2025-08-10 12:26:58,447 [INFO] Compliance Evaluation Completed
+2025-08-10 12:26:58,450 [INFO] Running Coordinator Agent
+2025-08-10 12:26:59,677 [INFO] Final Decision Synthesized
+2025-08-10 12:26:59,678 [INFO] Running Memory Reflection Agent
+2025-08-10 12:27:00,355 [INFO] Reflection Completed - Lesson Logged
+2025-08-10 12:27:00,355 [INFO] Logging decision and lesson to memory
+2025-08-12 20:43:43,986 [INFO] Running Economic Indicator Agent
+2025-08-12 20:43:44,300 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-12 20:43:44,466 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-12 20:43:44,857 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-12 20:43:45,965 [INFO] Economic Summary Generated
+2025-08-12 20:43:45,968 [INFO] Running Market Analysis Agent
+2025-08-12 20:43:53,700 [INFO] Market Summary Generated
+2025-08-12 20:43:53,702 [INFO] Running Forecasting Agent
+2025-08-12 20:43:53,702 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-12 20:43:53,706 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-10_17-26-52.csv
+2025-08-12 20:43:53,710 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-10_17-26-54.csv
+2025-08-12 20:43:53,714 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-10_17-26-53.csv
+2025-08-12 20:43:53,715 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-08.csv
+2025-08-12 20:43:56,835 [INFO] Forecast Generated
+2025-08-12 20:43:56,836 [INFO] Logging decision and lesson to memory
+2025-08-12 20:43:56,880 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-12 20:43:58,781 [INFO] Anomaly Report Generated
+2025-08-12 20:43:58,783 [INFO] Running Compliance Monitoring Agent
+2025-08-12 20:43:58,783 [INFO] Extracting compliance rules (stub)
+2025-08-12 20:44:00,100 [INFO] Compliance Evaluation Completed
+2025-08-12 20:44:00,101 [INFO] Running Coordinator Agent
+2025-08-12 20:44:01,613 [INFO] Final Decision Synthesized
+2025-08-12 20:44:01,614 [INFO] Running Memory Reflection Agent
+2025-08-12 20:44:02,333 [INFO] Reflection Completed - Lesson Logged
+2025-08-12 20:44:02,334 [INFO] Logging decision and lesson to memory
+2025-08-15 11:04:35,585 [INFO] Running Economic Indicator Agent
+2025-08-15 11:04:35,797 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-15 11:04:35,954 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-15 11:04:36,208 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-15 11:04:37,143 [INFO] Economic Summary Generated
+2025-08-15 11:04:37,145 [INFO] Running Market Analysis Agent
+2025-08-15 11:04:42,978 [INFO] Market Summary Generated
+2025-08-15 11:04:42,982 [INFO] Running Forecasting Agent
+2025-08-15 11:04:42,983 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-15 11:04:42,989 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-15_15-30-07.csv
+2025-08-15 11:04:42,995 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-15_15-30-06.csv
+2025-08-15 11:04:42,997 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-15_15-30-06.csv
+2025-08-15 11:04:45,128 [INFO] Forecast Generated
+2025-08-15 11:04:45,128 [INFO] Logging decision and lesson to memory
+2025-08-15 11:04:45,159 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-15 11:04:46,704 [INFO] Anomaly Report Generated
+2025-08-15 11:04:46,705 [INFO] Running Compliance Monitoring Agent
+2025-08-15 11:04:46,706 [INFO] Extracting compliance rules (stub)
+2025-08-15 11:04:47,881 [INFO] Compliance Evaluation Completed
+2025-08-15 11:04:47,882 [INFO] Running Coordinator Agent
+2025-08-15 11:04:49,060 [INFO] Final Decision Synthesized
+2025-08-15 11:04:49,062 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-15 11:04:49,821 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  "The market is showing mixed sentiment today"
+    * "stocks reacting to a 'hot PPI report'"
+    * "Musk's claim about 'obliterating' TSLA shorts"
+    * "This is a clear bearish signal"
+    * "past performance is not indicative of future results"
+    * "The news presents conflicting signals"
+* **Factual Grounding References (FGR): 2**
+    * "likely referring to the Producer Price Index, a measure of inflation"
+    * "Guggenheim's Sell Rating" 
+* **Fictional Disclaimer Frequency (FDF): 0**  There are no explicit disclaimers framing the content as fictional.
+* **Explicit Contextualization Score (ECS): 0** The text is presented as a factual analysis of market trends and events related to Tesla. 
+
+
+**Important Note:** While the text presents information as factual, it's crucial to remember that investment analysis often involves interpretation and speculation.  The "big if" in Musk's statement highlights the uncertainty inherent in such predictions.  Always conduct thorough research and consider multiple perspectives before making investment decisions.
+
+2025-08-15 11:04:50,748 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 7,
+  "fgr": 3,
+  "fdf": 1,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 7** 
+    *  TSLA's forecast predicts a slight negative movement (-0.40% expected return)
+    *  Short-term SMA_10 (327.28) is slightly higher than the current price
+    *  Long-term SMA_30 (319.12) and EMA_30 (323.61) are below the current price
+    *  Musk's statement is positive
+    *  Guggenheim's sell rating
+    *  The slight negative forecast and mixed technical indicators suggest a volatile week
+    *  Holding allows you to monitor the situation and potentially capitalize on future opportunities
+
+* **Factual Grounding References (FGR): 3**
+    *  "quantitative data"
+    *  "historical records" (implied by "long-term trends")
+    *  "data from..." (implied by "technical indicators")
+
+* **Fictional Disclaimer Frequency (FDF): 1**
+    *  "This is not financial advice."
+
+* **Explicit Contextualization Score (ECS): 0.1** 
+    While the disclaimer exists, the text primarily presents information and analysis in a factual manner, aiming to inform investment decisions. The ECS is slightly below 0.5 because the disclaimer, while present, doesn't explicitly frame the content as fictional. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:04:51,671 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 7,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 7** 
+    *  The text makes several claims that could be verified as facts:
+        * "The forecast summary presents a cautious outlook on TSLA for next week, recommending a 'Hold' position."
+        * "The anomaly report states 'No anomalies.'"
+        * "Musk's statement is conditional ('big if')"
+        * "Guggenheim's Sell Rating"
+        * "The 'hot PPI report'"
+        * "The 'Hold' recommendation is prudent"
+        * "Further research into the 'big if' in Musk's statement and Guggenheim's reasoning is crucial"
+* **Factual Grounding References (FGR): 2**
+    *  The text references external sources to ground some claims:
+        * "The anomaly report states..."
+        * "Guggenheim's Sell Rating"
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * The text does not contain any explicit disclaimers stating the information is fictional.
+* **Explicit Contextualization Score (ECS): 0.1**
+    * While the text doesn't explicitly state it's fictional, the language used ("forecast summary," "anomaly report," "recommendation") suggests it's presenting an analysis rather than a factual account. The inclusion of "risks" and "potential" further indicates a degree of speculation.  Therefore, a score of 0.1 is given, reflecting a slight leaning towards non-factual presentation. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:04:51,673 [INFO] Evaluation results: {'market_summary': {'fcd': 0.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 0.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 0.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-15 11:04:51,675 [INFO] Running Memory Reflection Agent
+2025-08-15 11:04:52,285 [INFO] Reflection Completed - Lesson Logged
+2025-08-15 11:04:52,285 [INFO] Logging decision and lesson to memory
+2025-08-15 11:20:07,836 [INFO] Running Economic Indicator Agent
+2025-08-15 11:20:08,135 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-15 11:20:08,377 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-15 11:20:08,574 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-15 11:20:09,555 [INFO] Economic Summary Generated
+2025-08-15 11:20:09,557 [INFO] Running Market Analysis Agent
+2025-08-15 11:20:12,339 [INFO] Market Summary Generated
+2025-08-15 11:20:12,342 [INFO] Running Forecasting Agent
+2025-08-15 11:20:12,365 [INFO] ARIMA model invoked for assets: ['AAPL', 'NVDA', 'TSLA']
+2025-08-15 11:20:12,372 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-15_16-04-43.csv
+2025-08-15 11:20:12,386 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-15 11:20:16,924 [INFO] Forecast Generated
+2025-08-15 11:20:16,925 [INFO] Logging decision and lesson to memory
+2025-08-15 11:20:16,995 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-15 11:20:19,519 [INFO] Anomaly Report Generated
+2025-08-15 11:20:19,521 [INFO] Running Compliance Monitoring Agent
+2025-08-15 11:20:19,523 [INFO] Extracting compliance rules (stub)
+2025-08-15 11:20:21,479 [INFO] Compliance Evaluation Completed
+2025-08-15 11:20:21,481 [INFO] Running Coordinator Agent
+2025-08-15 11:20:23,501 [INFO] Final Decision Synthesized
+2025-08-15 11:20:23,503 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-15 11:20:24,422 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 1,
+  "ecs": 0.2 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  "The news suggests a mixed market sentiment."
+    * "While the PPI inflation report was hotter than expected..."
+    * "...causing the Dow, S&P 500, and Nasdaq to slip"
+    * "Nvidia (NVDA) saw a positive reaction to news of increased investment from Bridgewater."
+    * "Nvidia (NVDA) is seeing positive sentiment due to increased investment and industry comparisons."
+    * "The provided data does not offer enough insight into TSLA's specific situation..."
+
+* **Factual Grounding References (FGR): 2**
+    * "The news suggests..."
+    * "data from..."
+
+* **Fictional Disclaimer Frequency (FDF): 1**
+    * "Remember, this analysis is based solely on the limited information given and should not be considered financial advice."
+
+* **Explicit Contextualization Score (ECS): 0.2** 
+    While there is a disclaimer, it doesn't explicitly frame the entire analysis as fictional. The text primarily presents information and analysis as if it were based on real-world data, even though it acknowledges the limitations of that data. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:20:25,258 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 5,
+  "fgr": 2,
+  "fdf": 1,
+  "ecs": 0.2 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 5** 
+    * "TSLA: Forecasted to slightly decrease (-0.43%) next week."
+    * "SMA and EMA indicators are showing a general upward trend"
+    * "the short-term (SMA_10) is slightly below the long-term (SMA_30)"
+    * "AAPL: Neutral with a slight downward movement (-0.72%) expected."
+    * "NVDA: Bullish with a slight upward movement (+0.12%) expected."
+
+* **Factual Grounding References (FGR): 2**
+    * "SMA and EMA indicators are showing a general upward trend" (refers to technical indicators)
+    * "the short-term (SMA_10) is slightly below the long-term (SMA_30)" (refers to specific technical indicators)
+
+* **Fictional Disclaimer Frequency (FDF): 1**
+    * "Disclaimer: This is not financial advice."
+
+* **Explicit Contextualization Score (ECS): 0.2** 
+    * While the disclaimer attempts to mitigate potential misinterpretations, the text primarily presents financial forecasts and analysis using technical indicators. The language used suggests a factual basis, even though the predictions are inherently uncertain. The ECS is therefore a low score, indicating a leaning towards factual presentation. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:20:26,163 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 3,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8** 
+    The text makes several claims presented as facts:
+    * "The anomaly report highlights a potential issue with AAPL..."
+    * "This suggests a potential deviation from the expected price and volume patterns for AAPL."
+    * "The reported 'nan' values for SMA_10, SMA_30, 'price_vs_sma10', and 'price_vs_sma30' for AAPL indicate missing or incomplete data."
+    * "A sudden spike or drop in AAPL's volume or price could trigger the anomaly detection..."
+    * "Relying on incomplete or inaccurate data can lead to flawed investment decisions."
+    * "The market is inherently unpredictable."
+    * "This makes it challenging to assess the full picture and make a well-informed decision."
+
+* **Factual Grounding References (FGR): 3**
+    The text references "real-world" evidence:
+    * "anomaly report"
+    * "historical trends captured by the SMAs"
+    * "data collection or processing"
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0**
+    The text is presented as a factual analysis of an anomaly report, lacking any indication of fictionality. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:20:26,166 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-15 11:20:26,168 [INFO] Running Memory Reflection Agent
+2025-08-15 11:20:26,774 [INFO] Reflection Completed - Lesson Logged
+2025-08-15 11:20:26,774 [INFO] Logging decision and lesson to memory
+2025-08-15 11:22:34,047 [INFO] Running Economic Indicator Agent
+2025-08-15 11:22:34,360 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-15 11:22:34,666 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-15 11:22:34,791 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-15 11:22:35,843 [INFO] Economic Summary Generated
+2025-08-15 11:22:35,844 [INFO] Running Market Analysis Agent
+2025-08-15 11:22:38,476 [INFO] Market Summary Generated
+2025-08-15 11:22:38,477 [INFO] Running Forecasting Agent
+2025-08-15 11:22:38,478 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-15 11:22:38,479 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-15_16-20-12.csv
+2025-08-15 11:22:38,480 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-15_16-20-13.csv
+2025-08-15 11:22:38,480 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-15_16-20-14.csv
+2025-08-15 11:22:38,481 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-15 11:22:41,326 [INFO] Forecast Generated
+2025-08-15 11:22:41,327 [INFO] Logging decision and lesson to memory
+2025-08-15 11:22:41,376 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-15 11:22:42,979 [INFO] Anomaly Report Generated
+2025-08-15 11:22:42,981 [INFO] Running Compliance Monitoring Agent
+2025-08-15 11:22:42,981 [INFO] Extracting compliance rules (stub)
+2025-08-15 11:22:44,094 [INFO] Compliance Evaluation Completed
+2025-08-15 11:22:44,096 [INFO] Running Coordinator Agent
+2025-08-15 11:22:45,459 [INFO] Final Decision Synthesized
+2025-08-15 11:22:45,460 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-15 11:22:46,343 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 3,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8** 
+    The text makes several factual claims, such as:
+    * "The market appears mixed."
+    * "The news mentions a hot PPI report causing the Dow, S&P 500, and Nasdaq to slip."
+    * "Nvidia (NVDA) saw a positive reaction to news of a significant investment from Bridgewater."
+    * "The provided data only shows TSLA's price history up to June 10th, 2025..."
+* **Factual Grounding References (FGR): 3**
+    The text grounds some claims with references to external sources:
+    * "The news mentions..."
+    * "The provided data..."
+* **Fictional Disclaimer Frequency (FDF): 0**
+    There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    While the text doesn't explicitly state it's fictional, the phrase "Based on the limited information provided, it's impossible to definitively say..."  suggests a degree of uncertainty and acknowledges the limitations of the analysis. This, combined with the lack of strong factual grounding, pushes the ECS slightly below 0.5. 
+
+
+
+**Overall:** The text presents information as factual but acknowledges limitations and avoids strong definitive statements.  It leans more towards providing an informed opinion based on available data rather than presenting hard facts.
+
+2025-08-15 11:22:47,060 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 0,
+  "fdf": 1,
+  "ecs": 0.7 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * "TSLA is forecast to have a slight decrease (-0.40%) next week."
+    * "The potential loss is small"
+    * "the asset is not showing strong bearish signals"
+    * "the overall market sentiment is mixed"
+
+* **Factual Grounding References (FGR): 0**  The text makes claims about future performance and market sentiment without citing any sources or data to support them.
+
+* **Fictional Disclaimer Frequency (FDF): 1**  The text includes the disclaimer: "This is not financial advice." While this is a standard disclaimer, it does suggest that the content should not be taken as factual financial guidance.
+
+* **Explicit Contextualization Score (ECS): 0.7** The text presents its analysis as a recommendation, using language like "forecast," "limited downside," and "neutral sentiment." However, the lack of factual grounding and the disclaimer contribute to a score closer to 0.7, indicating that while not explicitly fictional, the text is presented with a degree of uncertainty and should not be considered definitive. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:22:47,894 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 10,
+  "fgr": 3,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 10** 
+    The text makes numerous factual claims, such as:
+    * "The forecast for TSLA recommends holding"
+    * "The anomaly report flags a potential issue with AAPL"
+    * "The anomaly report shows a high volume (1000) and price (250) for AAPL"
+    * "This suggests a data issue or missing historical price data for AAPL"
+    * "The market is described as mixed"
+    * "The PPI report potentially causing negative sentiment"
+
+* **Factual Grounding References (FGR): 3**
+    The text references "real-world" evidence in these instances:
+    * "The anomaly report"
+    * "data feed providing price history"
+    * "PPI report"
+
+* **Fictional Disclaimer Frequency (FDF): 0**
+    There are no explicit disclaimers stating the content is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    While the text presents information as factual, the mention of an "anomaly report" and the focus on potential data issues suggest a degree of uncertainty and analysis rather than definitive statements. The score is slightly above 0 due to this ambiguity. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:22:47,898 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-15 11:22:47,900 [INFO] Running Memory Reflection Agent
+2025-08-15 11:22:48,451 [INFO] Reflection Completed - Lesson Logged
+2025-08-15 11:22:48,452 [INFO] Logging decision and lesson to memory
