@@ -68,7 +68,9 @@ def run_graph_with_streaming(initial_state):
     if graph is None:
         st.error("❌ Failed to build graph. Check logs for details.")
         return
-
+    
+    if os.path.exists("emissions.csv") and os.path.getsize("emissions.csv") == 0:
+        os.remove("emissions.csv")
     tracker = EmissionsTracker(project_name="financial_multi_agent_system", output_file="emissions.csv")
     tracker.start()
 

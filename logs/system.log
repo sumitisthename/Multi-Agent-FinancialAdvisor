@@ -4716,3 +4716,491 @@ ValueError: No objects to concatenate
 2025-08-05 10:47:37,351 [INFO] Running Memory Reflection Agent
 2025-08-05 10:47:38,076 [INFO] Reflection Completed - Lesson Logged
 2025-08-05 10:47:38,077 [INFO] Logging decision and lesson to memory
+2025-08-09 09:24:09,414 [INFO] Running Economic Indicator Agent
+2025-08-09 09:24:09,789 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-09 09:24:09,946 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-09 09:24:10,178 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-09 09:24:11,072 [INFO] Economic Summary Generated
+2025-08-09 09:24:11,074 [INFO] Running Market Analysis Agent
+2025-08-09 09:24:19,040 [INFO] Market Summary Generated
+2025-08-09 09:24:19,041 [INFO] Running Forecasting Agent
+2025-08-09 09:24:19,042 [INFO] ARIMA model invoked for assets: ['TSLA', 'AAPL', 'NVDA']
+2025-08-09 09:24:19,045 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-5.csv
+2025-08-09 09:24:21,785 [INFO] Forecast Generated
+2025-08-09 09:24:21,786 [INFO] Logging decision and lesson to memory
+2025-08-09 09:24:21,832 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-09 09:24:23,375 [INFO] Anomaly Report Generated
+2025-08-09 09:24:23,376 [INFO] Running Compliance Monitoring Agent
+2025-08-09 09:24:23,377 [INFO] Extracting compliance rules (stub)
+2025-08-09 09:24:24,393 [INFO] Compliance Evaluation Completed
+2025-08-09 09:24:24,394 [INFO] Running Coordinator Agent
+2025-08-09 09:24:25,463 [INFO] Final Decision Synthesized
+2025-08-09 09:24:25,464 [INFO] Running Memory Reflection Agent
+2025-08-09 09:24:26,009 [INFO] Reflection Completed - Lesson Logged
+2025-08-09 09:24:26,010 [INFO] Logging decision and lesson to memory
+2025-08-09 09:31:17,648 [INFO] Running Economic Indicator Agent
+2025-08-09 09:31:17,886 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-09 09:31:18,045 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-09 09:31:18,222 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-09 09:31:19,109 [INFO] Economic Summary Generated
+2025-08-09 09:31:19,111 [INFO] Running Market Analysis Agent
+2025-08-09 09:31:21,276 [INFO] Market Summary Generated
+2025-08-09 09:31:21,278 [INFO] Running Forecasting Agent
+2025-08-09 09:31:21,279 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-09 09:31:21,281 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-09_14-24-20.csv
+2025-08-09 09:31:21,283 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-09_14-24-20.csv
+2025-08-09 09:31:21,284 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-09_14-24-19.csv
+2025-08-09 09:31:21,285 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-09 09:31:22,889 [INFO] Forecast Generated
+2025-08-09 09:31:22,890 [INFO] Logging decision and lesson to memory
+2025-08-09 09:31:22,936 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-09 09:31:24,475 [INFO] Anomaly Report Generated
+2025-08-09 09:31:24,476 [INFO] Running Compliance Monitoring Agent
+2025-08-09 09:31:24,477 [INFO] Extracting compliance rules (stub)
+2025-08-09 09:31:25,540 [INFO] Compliance Evaluation Completed
+2025-08-09 09:31:25,541 [INFO] Running Coordinator Agent
+2025-08-09 09:31:26,786 [INFO] Final Decision Synthesized
+2025-08-09 09:31:26,788 [INFO] Running Memory Reflection Agent
+2025-08-09 09:31:27,413 [INFO] Reflection Completed - Lesson Logged
+2025-08-09 09:31:27,414 [INFO] Logging decision and lesson to memory
+2025-08-09 09:57:36,376 [INFO] Running Economic Indicator Agent
+2025-08-09 09:57:36,598 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-09 09:57:36,740 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-09 09:57:36,869 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-09 09:57:37,785 [INFO] Economic Summary Generated
+2025-08-09 09:57:37,789 [INFO] Running Market Analysis Agent
+2025-08-09 09:57:39,859 [INFO] Market Summary Generated
+2025-08-09 09:57:39,861 [INFO] Running Forecasting Agent
+2025-08-09 09:57:39,862 [INFO] ARIMA model invoked for assets: ['ETN']
+2025-08-09 09:57:39,872 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-09_14-53-52.csv
+2025-08-09 09:57:39,876 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-GOOGL-2025-08-09_14-53-52.csv
+2025-08-09 09:57:39,880 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-09.csv
+2025-08-09 09:57:42,681 [INFO] Forecast Generated
+2025-08-09 09:57:42,682 [INFO] Logging decision and lesson to memory
+2025-08-09 09:57:42,744 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-09 09:57:44,898 [INFO] Anomaly Report Generated
+2025-08-09 09:57:44,900 [INFO] Running Compliance Monitoring Agent
+2025-08-09 09:57:44,900 [INFO] Extracting compliance rules (stub)
+2025-08-09 09:57:46,659 [INFO] Compliance Evaluation Completed
+2025-08-09 09:57:46,661 [INFO] Running Coordinator Agent
+2025-08-09 09:57:48,590 [INFO] Final Decision Synthesized
+2025-08-09 09:57:48,593 [INFO] Running Memory Reflection Agent
+2025-08-09 09:57:49,141 [INFO] Reflection Completed - Lesson Logged
+2025-08-09 09:57:49,142 [INFO] Logging decision and lesson to memory
+2025-08-10 12:26:42,441 [INFO] Running Economic Indicator Agent
+2025-08-10 12:26:42,717 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-10 12:26:42,924 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-10 12:26:43,116 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-10 12:26:44,143 [INFO] Economic Summary Generated
+2025-08-10 12:26:44,146 [INFO] Running Market Analysis Agent
+2025-08-10 12:26:52,196 [INFO] Market Summary Generated
+2025-08-10 12:26:52,197 [INFO] Running Forecasting Agent
+2025-08-10 12:26:52,198 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-10 12:26:52,199 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-ETN-2025-08-09_14-57-40.csv
+2025-08-10 12:26:52,201 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-08.csv
+2025-08-10 12:26:55,558 [INFO] Forecast Generated
+2025-08-10 12:26:55,559 [INFO] Logging decision and lesson to memory
+2025-08-10 12:26:55,625 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-10 12:26:57,257 [INFO] Anomaly Report Generated
+2025-08-10 12:26:57,261 [INFO] Running Compliance Monitoring Agent
+2025-08-10 12:26:57,263 [INFO] Extracting compliance rules (stub)
+2025-08-10 12:26:58,447 [INFO] Compliance Evaluation Completed
+2025-08-10 12:26:58,450 [INFO] Running Coordinator Agent
+2025-08-10 12:26:59,677 [INFO] Final Decision Synthesized
+2025-08-10 12:26:59,678 [INFO] Running Memory Reflection Agent
+2025-08-10 12:27:00,355 [INFO] Reflection Completed - Lesson Logged
+2025-08-10 12:27:00,355 [INFO] Logging decision and lesson to memory
+2025-08-12 20:43:43,986 [INFO] Running Economic Indicator Agent
+2025-08-12 20:43:44,300 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-12 20:43:44,466 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-12 20:43:44,857 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-12 20:43:45,965 [INFO] Economic Summary Generated
+2025-08-12 20:43:45,968 [INFO] Running Market Analysis Agent
+2025-08-12 20:43:53,700 [INFO] Market Summary Generated
+2025-08-12 20:43:53,702 [INFO] Running Forecasting Agent
+2025-08-12 20:43:53,702 [INFO] ARIMA model invoked for assets: ['AAPL', 'TSLA', 'NVDA']
+2025-08-12 20:43:53,706 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-10_17-26-52.csv
+2025-08-12 20:43:53,710 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-10_17-26-54.csv
+2025-08-12 20:43:53,714 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-10_17-26-53.csv
+2025-08-12 20:43:53,715 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-08.csv
+2025-08-12 20:43:56,835 [INFO] Forecast Generated
+2025-08-12 20:43:56,836 [INFO] Logging decision and lesson to memory
+2025-08-12 20:43:56,880 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-12 20:43:58,781 [INFO] Anomaly Report Generated
+2025-08-12 20:43:58,783 [INFO] Running Compliance Monitoring Agent
+2025-08-12 20:43:58,783 [INFO] Extracting compliance rules (stub)
+2025-08-12 20:44:00,100 [INFO] Compliance Evaluation Completed
+2025-08-12 20:44:00,101 [INFO] Running Coordinator Agent
+2025-08-12 20:44:01,613 [INFO] Final Decision Synthesized
+2025-08-12 20:44:01,614 [INFO] Running Memory Reflection Agent
+2025-08-12 20:44:02,333 [INFO] Reflection Completed - Lesson Logged
+2025-08-12 20:44:02,334 [INFO] Logging decision and lesson to memory
+2025-08-15 11:04:35,585 [INFO] Running Economic Indicator Agent
+2025-08-15 11:04:35,797 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-15 11:04:35,954 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-15 11:04:36,208 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-15 11:04:37,143 [INFO] Economic Summary Generated
+2025-08-15 11:04:37,145 [INFO] Running Market Analysis Agent
+2025-08-15 11:04:42,978 [INFO] Market Summary Generated
+2025-08-15 11:04:42,982 [INFO] Running Forecasting Agent
+2025-08-15 11:04:42,983 [INFO] ARIMA model invoked for assets: ['TSLA']
+2025-08-15 11:04:42,989 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-15_15-30-07.csv
+2025-08-15 11:04:42,995 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-15_15-30-06.csv
+2025-08-15 11:04:42,997 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-15_15-30-06.csv
+2025-08-15 11:04:45,128 [INFO] Forecast Generated
+2025-08-15 11:04:45,128 [INFO] Logging decision and lesson to memory
+2025-08-15 11:04:45,159 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-15 11:04:46,704 [INFO] Anomaly Report Generated
+2025-08-15 11:04:46,705 [INFO] Running Compliance Monitoring Agent
+2025-08-15 11:04:46,706 [INFO] Extracting compliance rules (stub)
+2025-08-15 11:04:47,881 [INFO] Compliance Evaluation Completed
+2025-08-15 11:04:47,882 [INFO] Running Coordinator Agent
+2025-08-15 11:04:49,060 [INFO] Final Decision Synthesized
+2025-08-15 11:04:49,062 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-15 11:04:49,821 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  "The market is showing mixed sentiment today"
+    * "stocks reacting to a 'hot PPI report'"
+    * "Musk's claim about 'obliterating' TSLA shorts"
+    * "This is a clear bearish signal"
+    * "past performance is not indicative of future results"
+    * "The news presents conflicting signals"
+* **Factual Grounding References (FGR): 2**
+    * "likely referring to the Producer Price Index, a measure of inflation"
+    * "Guggenheim's Sell Rating" 
+* **Fictional Disclaimer Frequency (FDF): 0**  There are no explicit disclaimers framing the content as fictional.
+* **Explicit Contextualization Score (ECS): 0** The text is presented as a factual analysis of market trends and events related to Tesla. 
+
+
+**Important Note:** While the text presents information as factual, it's crucial to remember that investment analysis often involves interpretation and speculation.  The "big if" in Musk's statement highlights the uncertainty inherent in such predictions.  Always conduct thorough research and consider multiple perspectives before making investment decisions.
+
+2025-08-15 11:04:50,748 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 7,
+  "fgr": 3,
+  "fdf": 1,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 7** 
+    *  TSLA's forecast predicts a slight negative movement (-0.40% expected return)
+    *  Short-term SMA_10 (327.28) is slightly higher than the current price
+    *  Long-term SMA_30 (319.12) and EMA_30 (323.61) are below the current price
+    *  Musk's statement is positive
+    *  Guggenheim's sell rating
+    *  The slight negative forecast and mixed technical indicators suggest a volatile week
+    *  Holding allows you to monitor the situation and potentially capitalize on future opportunities
+
+* **Factual Grounding References (FGR): 3**
+    *  "quantitative data"
+    *  "historical records" (implied by "long-term trends")
+    *  "data from..." (implied by "technical indicators")
+
+* **Fictional Disclaimer Frequency (FDF): 1**
+    *  "This is not financial advice."
+
+* **Explicit Contextualization Score (ECS): 0.1** 
+    While the disclaimer exists, the text primarily presents information and analysis in a factual manner, aiming to inform investment decisions. The ECS is slightly below 0.5 because the disclaimer, while present, doesn't explicitly frame the content as fictional. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:04:51,671 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 7,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 7** 
+    *  The text makes several claims that could be verified as facts:
+        * "The forecast summary presents a cautious outlook on TSLA for next week, recommending a 'Hold' position."
+        * "The anomaly report states 'No anomalies.'"
+        * "Musk's statement is conditional ('big if')"
+        * "Guggenheim's Sell Rating"
+        * "The 'hot PPI report'"
+        * "The 'Hold' recommendation is prudent"
+        * "Further research into the 'big if' in Musk's statement and Guggenheim's reasoning is crucial"
+* **Factual Grounding References (FGR): 2**
+    *  The text references external sources to ground some claims:
+        * "The anomaly report states..."
+        * "Guggenheim's Sell Rating"
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * The text does not contain any explicit disclaimers stating the information is fictional.
+* **Explicit Contextualization Score (ECS): 0.1**
+    * While the text doesn't explicitly state it's fictional, the language used ("forecast summary," "anomaly report," "recommendation") suggests it's presenting an analysis rather than a factual account. The inclusion of "risks" and "potential" further indicates a degree of speculation.  Therefore, a score of 0.1 is given, reflecting a slight leaning towards non-factual presentation. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:04:51,673 [INFO] Evaluation results: {'market_summary': {'fcd': 0.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 0.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 0.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-15 11:04:51,675 [INFO] Running Memory Reflection Agent
+2025-08-15 11:04:52,285 [INFO] Reflection Completed - Lesson Logged
+2025-08-15 11:04:52,285 [INFO] Logging decision and lesson to memory
+2025-08-15 11:20:07,836 [INFO] Running Economic Indicator Agent
+2025-08-15 11:20:08,135 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-15 11:20:08,377 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-15 11:20:08,574 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-15 11:20:09,555 [INFO] Economic Summary Generated
+2025-08-15 11:20:09,557 [INFO] Running Market Analysis Agent
+2025-08-15 11:20:12,339 [INFO] Market Summary Generated
+2025-08-15 11:20:12,342 [INFO] Running Forecasting Agent
+2025-08-15 11:20:12,365 [INFO] ARIMA model invoked for assets: ['AAPL', 'NVDA', 'TSLA']
+2025-08-15 11:20:12,372 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-15_16-04-43.csv
+2025-08-15 11:20:12,386 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-15 11:20:16,924 [INFO] Forecast Generated
+2025-08-15 11:20:16,925 [INFO] Logging decision and lesson to memory
+2025-08-15 11:20:16,995 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-15 11:20:19,519 [INFO] Anomaly Report Generated
+2025-08-15 11:20:19,521 [INFO] Running Compliance Monitoring Agent
+2025-08-15 11:20:19,523 [INFO] Extracting compliance rules (stub)
+2025-08-15 11:20:21,479 [INFO] Compliance Evaluation Completed
+2025-08-15 11:20:21,481 [INFO] Running Coordinator Agent
+2025-08-15 11:20:23,501 [INFO] Final Decision Synthesized
+2025-08-15 11:20:23,503 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-15 11:20:24,422 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 1,
+  "ecs": 0.2 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  "The news suggests a mixed market sentiment."
+    * "While the PPI inflation report was hotter than expected..."
+    * "...causing the Dow, S&P 500, and Nasdaq to slip"
+    * "Nvidia (NVDA) saw a positive reaction to news of increased investment from Bridgewater."
+    * "Nvidia (NVDA) is seeing positive sentiment due to increased investment and industry comparisons."
+    * "The provided data does not offer enough insight into TSLA's specific situation..."
+
+* **Factual Grounding References (FGR): 2**
+    * "The news suggests..."
+    * "data from..."
+
+* **Fictional Disclaimer Frequency (FDF): 1**
+    * "Remember, this analysis is based solely on the limited information given and should not be considered financial advice."
+
+* **Explicit Contextualization Score (ECS): 0.2** 
+    While there is a disclaimer, it doesn't explicitly frame the entire analysis as fictional. The text primarily presents information and analysis as if it were based on real-world data, even though it acknowledges the limitations of that data. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:20:25,258 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 5,
+  "fgr": 2,
+  "fdf": 1,
+  "ecs": 0.2 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 5** 
+    * "TSLA: Forecasted to slightly decrease (-0.43%) next week."
+    * "SMA and EMA indicators are showing a general upward trend"
+    * "the short-term (SMA_10) is slightly below the long-term (SMA_30)"
+    * "AAPL: Neutral with a slight downward movement (-0.72%) expected."
+    * "NVDA: Bullish with a slight upward movement (+0.12%) expected."
+
+* **Factual Grounding References (FGR): 2**
+    * "SMA and EMA indicators are showing a general upward trend" (refers to technical indicators)
+    * "the short-term (SMA_10) is slightly below the long-term (SMA_30)" (refers to specific technical indicators)
+
+* **Fictional Disclaimer Frequency (FDF): 1**
+    * "Disclaimer: This is not financial advice."
+
+* **Explicit Contextualization Score (ECS): 0.2** 
+    * While the disclaimer attempts to mitigate potential misinterpretations, the text primarily presents financial forecasts and analysis using technical indicators. The language used suggests a factual basis, even though the predictions are inherently uncertain. The ECS is therefore a low score, indicating a leaning towards factual presentation. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:20:26,163 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 3,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8** 
+    The text makes several claims presented as facts:
+    * "The anomaly report highlights a potential issue with AAPL..."
+    * "This suggests a potential deviation from the expected price and volume patterns for AAPL."
+    * "The reported 'nan' values for SMA_10, SMA_30, 'price_vs_sma10', and 'price_vs_sma30' for AAPL indicate missing or incomplete data."
+    * "A sudden spike or drop in AAPL's volume or price could trigger the anomaly detection..."
+    * "Relying on incomplete or inaccurate data can lead to flawed investment decisions."
+    * "The market is inherently unpredictable."
+    * "This makes it challenging to assess the full picture and make a well-informed decision."
+
+* **Factual Grounding References (FGR): 3**
+    The text references "real-world" evidence:
+    * "anomaly report"
+    * "historical trends captured by the SMAs"
+    * "data collection or processing"
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0**
+    The text is presented as a factual analysis of an anomaly report, lacking any indication of fictionality. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:20:26,166 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-15 11:20:26,168 [INFO] Running Memory Reflection Agent
+2025-08-15 11:20:26,774 [INFO] Reflection Completed - Lesson Logged
+2025-08-15 11:20:26,774 [INFO] Logging decision and lesson to memory
+2025-08-15 11:22:34,047 [INFO] Running Economic Indicator Agent
+2025-08-15 11:22:34,360 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-15 11:22:34,666 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-15 11:22:34,791 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-15 11:22:35,843 [INFO] Economic Summary Generated
+2025-08-15 11:22:35,844 [INFO] Running Market Analysis Agent
+2025-08-15 11:22:38,476 [INFO] Market Summary Generated
+2025-08-15 11:22:38,477 [INFO] Running Forecasting Agent
+2025-08-15 11:22:38,478 [INFO] ARIMA model invoked for assets: ['NVDA', 'AAPL', 'TSLA']
+2025-08-15 11:22:38,479 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-15_16-20-12.csv
+2025-08-15 11:22:38,480 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-15_16-20-13.csv
+2025-08-15 11:22:38,480 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-TSLA-2025-08-15_16-20-14.csv
+2025-08-15 11:22:38,481 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-06-10.csv
+2025-08-15 11:22:41,326 [INFO] Forecast Generated
+2025-08-15 11:22:41,327 [INFO] Logging decision and lesson to memory
+2025-08-15 11:22:41,376 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-15 11:22:42,979 [INFO] Anomaly Report Generated
+2025-08-15 11:22:42,981 [INFO] Running Compliance Monitoring Agent
+2025-08-15 11:22:42,981 [INFO] Extracting compliance rules (stub)
+2025-08-15 11:22:44,094 [INFO] Compliance Evaluation Completed
+2025-08-15 11:22:44,096 [INFO] Running Coordinator Agent
+2025-08-15 11:22:45,459 [INFO] Final Decision Synthesized
+2025-08-15 11:22:45,460 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-15 11:22:46,343 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 3,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8** 
+    The text makes several factual claims, such as:
+    * "The market appears mixed."
+    * "The news mentions a hot PPI report causing the Dow, S&P 500, and Nasdaq to slip."
+    * "Nvidia (NVDA) saw a positive reaction to news of a significant investment from Bridgewater."
+    * "The provided data only shows TSLA's price history up to June 10th, 2025..."
+* **Factual Grounding References (FGR): 3**
+    The text grounds some claims with references to external sources:
+    * "The news mentions..."
+    * "The provided data..."
+* **Fictional Disclaimer Frequency (FDF): 0**
+    There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    While the text doesn't explicitly state it's fictional, the phrase "Based on the limited information provided, it's impossible to definitively say..."  suggests a degree of uncertainty and acknowledges the limitations of the analysis. This, combined with the lack of strong factual grounding, pushes the ECS slightly below 0.5. 
+
+
+
+**Overall:** The text presents information as factual but acknowledges limitations and avoids strong definitive statements.  It leans more towards providing an informed opinion based on available data rather than presenting hard facts.
+
+2025-08-15 11:22:47,060 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 0,
+  "fdf": 1,
+  "ecs": 0.7 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * "TSLA is forecast to have a slight decrease (-0.40%) next week."
+    * "The potential loss is small"
+    * "the asset is not showing strong bearish signals"
+    * "the overall market sentiment is mixed"
+
+* **Factual Grounding References (FGR): 0**  The text makes claims about future performance and market sentiment without citing any sources or data to support them.
+
+* **Fictional Disclaimer Frequency (FDF): 1**  The text includes the disclaimer: "This is not financial advice." While this is a standard disclaimer, it does suggest that the content should not be taken as factual financial guidance.
+
+* **Explicit Contextualization Score (ECS): 0.7** The text presents its analysis as a recommendation, using language like "forecast," "limited downside," and "neutral sentiment." However, the lack of factual grounding and the disclaimer contribute to a score closer to 0.7, indicating that while not explicitly fictional, the text is presented with a degree of uncertainty and should not be considered definitive. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:22:47,894 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 10,
+  "fgr": 3,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 10** 
+    The text makes numerous factual claims, such as:
+    * "The forecast for TSLA recommends holding"
+    * "The anomaly report flags a potential issue with AAPL"
+    * "The anomaly report shows a high volume (1000) and price (250) for AAPL"
+    * "This suggests a data issue or missing historical price data for AAPL"
+    * "The market is described as mixed"
+    * "The PPI report potentially causing negative sentiment"
+
+* **Factual Grounding References (FGR): 3**
+    The text references "real-world" evidence in these instances:
+    * "The anomaly report"
+    * "data feed providing price history"
+    * "PPI report"
+
+* **Fictional Disclaimer Frequency (FDF): 0**
+    There are no explicit disclaimers stating the content is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    While the text presents information as factual, the mention of an "anomaly report" and the focus on potential data issues suggest a degree of uncertainty and analysis rather than definitive statements. The score is slightly above 0 due to this ambiguity. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-15 11:22:47,898 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-15 11:22:47,900 [INFO] Running Memory Reflection Agent
+2025-08-15 11:22:48,451 [INFO] Reflection Completed - Lesson Logged
+2025-08-15 11:22:48,452 [INFO] Logging decision and lesson to memory
