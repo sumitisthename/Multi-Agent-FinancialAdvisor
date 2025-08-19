@@ -24,19 +24,18 @@ print("[DEBUG] Using GROQ Key:", api_key)
 if not api_key:
     raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
 
-# Initialize LLM globally with API key
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=api_key,
-    temperature=0.2
-)
-
 # Load prompt template from file
 with open("prompts/economic.txt") as f:
     ECONOMIC_PROMPT = f.read()
 
 def economic_indicator_node():
     def run(state):
+        # Initialize LLM inside the function
+        llm = ChatGroq(
+            model="gemma2-9b-it",
+            api_key=os.getenv("GROQ_API_KEY"),
+            temperature=0.2
+        )
         logger.info("Running Economic Indicator Agent")
 
         # Define indicators to fetch

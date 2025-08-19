@@ -17,13 +17,6 @@ print(os.getenv("GROQ_API_KEY"))
 
 logger = get_logger()
 
-
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY")
-)
-
-
 # Load prompt
 with open("prompts/forecast.txt") as f:
     FORECAST_PROMPT = f.read()
@@ -32,7 +25,6 @@ with open("prompts/forecast.txt") as f:
 def forecasting_node(config):
     def run(state):
         logger.info("Running Forecasting Agent")
-
 
         market_summary = state.get("market_summary", "")
         assets = list(set(state["assets"]))
@@ -53,7 +45,10 @@ def forecasting_node(config):
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)
         llm_input = prompt.format(**context)
 
-        llm = ChatGroq(model="gemma2-9b-it")
+        llm = ChatGroq(
+            model="gemma2-9b-it",
+            api_key=os.getenv("GROQ_API_KEY")
+        )
         parser = StrOutputParser()
         output = parser.invoke(llm.invoke(llm_input))
 

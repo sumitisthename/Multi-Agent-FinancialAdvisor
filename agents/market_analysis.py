@@ -24,19 +24,18 @@ print("[DEBUG] Using GROQ Key:", api_key)
 if not api_key:
     raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
 
-# Initialize LLM globally with API key
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY"),
-    temperature=0.2
-)
-
 # Load prompt template from file
 with open("prompts/market.txt") as f:
     MARKET_PROMPT = f.read()
 
 def market_analysis_node(config):
     def run(state):
+        # Initialize LLM inside the function
+        llm = ChatGroq(
+            model="gemma2-9b-it",
+            api_key=os.getenv("GROQ_API_KEY"),
+            temperature=0.2
+        )
         logger.info("Running Market Analysis Agent")
 
         # ✅ FIXED: Fetch data with correct arguments

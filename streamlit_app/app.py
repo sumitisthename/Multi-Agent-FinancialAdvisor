@@ -113,6 +113,42 @@ def run_graph_with_streaming(initial_state):
     for title, content in agent_outputs.items():
         with st.expander(f"📌 {title}"):
             st.markdown(f"```\n{content}\n```")
+
+    # Step 5: Display Hallucination KPI Evaluation
+    st.markdown("---")
+    st.markdown("### 🕵️ Hallucination KPI Evaluation")
+    evaluation_results = result.get("evaluation_results", {})
+
+    if not evaluation_results:
+        st.warning("⚠️ No evaluation results available.")
+    else:
+        for agent_name, metrics in evaluation_results.items():
+            with st.expander(f"📊 Evaluation for: {agent_name.replace('_', ' ').title()}"):
+                st.markdown(f"**Word Count:** {metrics.get('word_count', 'N/A')}")
+
+                st.markdown("#### Raw KPI Counts")
+                raw_kpis = metrics.get("raw_kpis", {})
+                raw_ths = metrics.get("raw_ths", 0.0)
+
+                col1, col2, col3, col4 = st.columns(4)
+                col1.metric("Factual Claim Density (FCD)", f"{raw_kpis.get('fcd', 0)}")
+                col2.metric("Factual Grounding Refs (FGR)", f"{raw_kpis.get('fgr', 0)}")
+                col3.metric("Fictional Disclaimer Freq (FDF)", f"{raw_kpis.get('fdf', 0)}")
+                col4.metric("Explicit Context Score (ECS)", f"{raw_kpis.get('ecs', 0.0):.2f}")
+                st.metric("Raw Total Hallucination Score (THS)", f"{raw_ths:.4f}")
+
+                st.markdown("---")
+
+                st.markdown("#### Normalized KPIs (per 100 words)")
+                norm_kpis = metrics.get("normalized_kpis", {})
+                norm_ths = metrics.get("ths", 0.0)
+
+                col1, col2, col3, col4 = st.columns(4)
+                col1.metric("Factual Claim Density (FCD)", f"{norm_kpis.get('fcd', 0.0):.2f}")
+                col2.metric("Factual Grounding Refs (FGR)", f"{norm_kpis.get('fgr', 0.0):.2f}")
+                col3.metric("Fictional Disclaimer Freq (FDF)", f"{norm_kpis.get('fdf', 0.0):.2f}")
+                col4.metric("Explicit Context Score (ECS)", f"{norm_kpis.get('ecs', 0.0):.2f}")
+                st.metric("Normalized Total Hallucination Score (THS)", f"{norm_ths:.4f}")
     st.markdown("---")
 
     # Emissions
