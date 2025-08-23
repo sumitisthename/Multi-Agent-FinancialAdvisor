@@ -28,6 +28,7 @@ class GraphState(TypedDict):
     user_query: str  
     economic_indicators: list[dict]
     evaluation_results: dict
+    cycle_start_time: float
 
 def build_graph(config):
     """Build and return the compiled graph"""

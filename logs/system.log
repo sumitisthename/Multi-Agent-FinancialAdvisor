@@ -5204,3 +5204,38 @@ Let me know if you have any other text you'd like me to analyze!
 2025-08-15 11:22:47,900 [INFO] Running Memory Reflection Agent
 2025-08-15 11:22:48,451 [INFO] Reflection Completed - Lesson Logged
 2025-08-15 11:22:48,452 [INFO] Logging decision and lesson to memory
+2025-08-23 16:03:10,792 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 16:03:36,309 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 16:03:39,407 [INFO] Running Economic Indicator Agent
+2025-08-23 16:03:39,659 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-23 16:03:39,819 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-23 16:03:40,175 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-23 16:31:33,246 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 16:32:05,758 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 16:32:09,797 [INFO] Running Economic Indicator Agent
+2025-08-23 16:32:09,957 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-23 16:32:10,105 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-23 16:32:10,382 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-23 16:32:10,385 [INFO] Economic Summary Generated
+2025-08-23 16:32:10,386 [INFO] Running Market Analysis Agent
+2025-08-23 16:32:10,794 [INFO] Market Summary Generated
+2025-08-23 16:32:10,795 [INFO] Running Forecasting Agent
+2025-08-23 16:32:10,795 [INFO] ARIMA model invoked for assets: []
+2025-08-23 16:32:10,802 [INFO] ✅ Forecast summary saved to forecasts/forecast-2025-08-23T16:32:09.794173.csv
+2025-08-23 16:32:10,803 [INFO] Forecast Generated
+2025-08-23 16:32:10,803 [INFO] Logging decision and lesson to memory
+2025-08-23 16:32:10,853 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-23 16:32:10,853 [INFO] 📊 Running anomaly detection on transaction data
+2025-08-23 16:32:10,858 [ERROR] ❌ Error during anomaly detection: "None of [Index(['price', 'volume'], dtype='object')] are in the [columns]"
+2025-08-23 16:32:10,860 [INFO] Anomaly Report Generated
+2025-08-23 16:32:10,861 [INFO] Running Compliance Monitoring Agent
+2025-08-23 16:32:10,861 [INFO] Extracting compliance rules (stub)
+2025-08-23 16:32:10,862 [INFO] Compliance Evaluation Completed
+2025-08-23 16:32:10,862 [INFO] Running Coordinator Agent
+2025-08-23 16:32:10,863 [INFO] Final Decision Synthesized
+2025-08-23 16:32:10,864 [INFO] Evaluating agent outputs...
+2025-08-23 16:32:10,866 [INFO] Full cycle latency: 1.07 seconds
+2025-08-23 16:32:10,866 [INFO] Evaluation results: {'market_summary': {'fcd': 0.99, 'fgr': 0.09, 'fdf': 0.8, 'ecs': 0.7}, 'forecast': {'fcd': 0.99, 'fgr': 0.09, 'fdf': 0.8, 'ecs': 0.7}, 'risk_report': {'fcd': 0.99, 'fgr': 0.09, 'fdf': 0.8, 'ecs': 0.7}, 'latency': {'value': 1.0724947452545166, 'unit': 'seconds'}}
+2025-08-23 16:32:10,867 [INFO] Running Memory Reflection Agent
+2025-08-23 16:32:10,870 [INFO] Reflection Completed - Lesson Logged
+2025-08-23 16:32:10,870 [INFO] Logging decision and lesson to memory

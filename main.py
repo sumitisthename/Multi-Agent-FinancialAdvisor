@@ -6,6 +6,7 @@ from utils.logger import setup_logger
 from dotenv import load_dotenv
 from datetime import datetime
 import os
+import time
 
 
 from dotenv import load_dotenv
@@ -29,7 +30,8 @@ def run():
     initial_state = {
         "assets": [],
         "timestamp": datetime.utcnow().isoformat(),
-        "memory": None
+        "memory": None,
+        "cycle_start_time": time.time()
     }
 
     # Run the graph for a single cycle
