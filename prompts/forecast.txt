@@ -11,6 +11,9 @@ Assets: {assets}
 --- Forecast Data ---
 {forecast_table}
 
+--- Recent Lessons ---
+{lessons}
+
 User Question:
 {user_question}
 

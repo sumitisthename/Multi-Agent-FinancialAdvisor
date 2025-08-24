@@ -6,7 +6,7 @@ from utils.logger import get_logger
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
-from memory.memory_store import log_decision
+from memory.memory_store import log_decision, retrieve_recent_memory
 import os
 from dotenv import load_dotenv
 
@@ -38,15 +38,19 @@ def forecasting_node(config):
         assets = list(set(state["assets"]))
         date = state["timestamp"]
 
+        # Retrieve recent lessons from memory
+        lessons = retrieve_recent_memory(config)
+
         logger.info("ARIMA model invoked for assets: %s", assets)
 
-        forecast_data = run_forecast_model(assets, date, config)
+        forecast_data, mape = run_forecast_model(assets, date, config)
 
         context = {
             "date": date,
             "assets": ", ".join(assets),
             "market_summary": market_summary,
             "forecast_table": forecast_data,
+            "lessons": lessons,
             "user_question": state.get("user_query", "")
         }
 
@@ -60,6 +64,7 @@ def forecasting_node(config):
         logger.info("Forecast Generated")
 
         state["forecast"] = output
+        state["mape"] = mape  # Store MAPE in the state
         log_decision(state, output, config)
         return state
 

@@ -32,6 +32,13 @@ def run():
     print("\n======= REFLECTION LESSON =======")
     print(result.get("reflection_lesson", "No reflection produced"))
 
+    print("\n======= PERFORMANCE METRICS =======")
+    mape = result.get("mape")
+    if mape is not None:
+        print(f"Average MAPE: {mape:.2f}%")
+    else:
+        print("MAPE not available.")
+
 
 if __name__ == "__main__":
     run()

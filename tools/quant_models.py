@@ -19,25 +19,31 @@ warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 
+def calculate_mape(y_true, y_pred):
+    """Calculate Mean Absolute Percentage Error"""
+    y_true, y_pred = np.array(y_true), np.array(y_pred)
+    return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
 def format_forecast_table(forecast_records):
     """Format forecast records into a readable table"""
     if not forecast_records:
         return "No forecast data available."
 
     # Markdown table header
-    table = "| Asset | Latest Price | Forecasted Price | Expected Return (%) | SMA_10 | SMA_30 | EMA_10 | EMA_30 | Status |\n"
-    table += "|-------|--------------|------------------|--------------------|--------|--------|--------|--------|---------|\n"
+    table = "| Asset | Latest Price | Forecasted Price | Expected Return (%) | MAPE (%) | SMA_10 | SMA_30 | EMA_10 | EMA_30 | Status |\n"
+    table += "|-------|--------------|------------------|--------------------|----------|--------|--------|--------|--------|---------|\n"
 
     for record in forecast_records:
         asset = record.get("Asset", "N/A")
 
         if "Forecast" in record:  # Error or no-data cases
             status = record["Forecast"]
-            table += f"| {asset} | - | - | - | - | - | - | - | {status} |\n"
+            table += f"| {asset} | - | - | - | - | - | - | - | - | {status} |\n"
         else:
             latest = record.get("Latest Price", "N/A")
             forecasted = record.get("Forecasted Price", "N/A")
             return_pct = record.get("Expected Return (%)", "N/A")
+            mape = record.get("MAPE", "N/A")
             sma10 = record.get("SMA_10", "-")
             sma30 = record.get("SMA_30", "-")
             ema10 = record.get("EMA_10", "-")
@@ -54,7 +60,7 @@ def format_forecast_table(forecast_records):
             else:
                 status = "❓ Unknown"
 
-            table += f"| {asset} | ${latest} | ${forecasted} | {return_pct:+.2f}% | {sma10} | {sma30} | {ema10} | {ema30} | {status} |\n"
+            table += f"| {asset} | ${latest} | ${forecasted} | {return_pct:+.2f}% | {mape:.2f} | {sma10} | {sma30} | {ema10} | {ema30} | {status} |\n"
 
     return table
 
@@ -62,6 +68,7 @@ def format_forecast_table(forecast_records):
 def run_forecast_model(assets, date, config):
     forecasts = []
     forecast_records = []
+    all_mapes = []
 
     assets = config.get("assets", assets)  # allow dynamic override
 
@@ -97,7 +104,7 @@ def run_forecast_model(assets, date, config):
 
             # Forecast logic
             prices = df[['Date', 'Close']].dropna()
-            if len(prices) < 10:
+            if len(prices) < 20: # Need enough data for train/test split
                 forecasts.append(f"{asset}: Not enough data to forecast.")
                 forecast_records.append({"Asset": asset, "Forecast": "Not enough data"})
                 continue
@@ -106,22 +113,36 @@ def run_forecast_model(assets, date, config):
             prices.index = pd.to_datetime(prices.index)
             price_series = prices['Close'].asfreq('D', method='pad')
 
+            # Train/test split for MAPE calculation
+            train_size = int(len(price_series) * 0.9)
+            train, test = price_series[0:train_size], price_series[train_size:]
+
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                model = ARIMA(price_series, order=(3, 1, 2))
+                model = ARIMA(train, order=(3, 1, 2))
                 fitted_model = model.fit()
-                forecast_value = fitted_model.forecast(steps=1)
+
+                # Forecast for the test period to calculate MAPE
+                test_forecast = fitted_model.forecast(steps=len(test))
+                mape = calculate_mape(test.values, test_forecast.values)
+                all_mapes.append(mape)
+
+                # Full model forecast
+                full_model = ARIMA(price_series, order=(3, 1, 2))
+                fitted_full_model = full_model.fit()
+                forecast_value = fitted_full_model.forecast(steps=1)
 
             forecast = float(forecast_value.iloc[0])
             latest_price = float(price_series.iloc[-1].item())
             change_pct = ((forecast - latest_price) / latest_price) * 100
 
-            forecasts.append(f"{asset}: expected return {change_pct:+.2f}%")
+            forecasts.append(f"{asset}: expected return {change_pct:+.2f}% (MAPE: {mape:.2f}%)")
             forecast_records.append({
                 "Asset": asset,
                 "Latest Price": round(latest_price, 2),
                 "Forecasted Price": round(forecast, 2),
                 "Expected Return (%)": round(change_pct, 2),
+                "MAPE": mape,
                 "SMA_10": round(df['SMA_10'].iloc[-1], 2) if not pd.isna(df['SMA_10'].iloc[-1]) else None,
                 "SMA_30": round(df['SMA_30'].iloc[-1], 2) if not pd.isna(df['SMA_30'].iloc[-1]) else None,
                 "EMA_10": round(df['EMA_10'].iloc[-1], 2) if not pd.isna(df['EMA_10'].iloc[-1]) else None,
@@ -141,7 +162,9 @@ def run_forecast_model(assets, date, config):
     except Exception as e:
         logger.error(f"❌ Failed to save forecast CSV: {e}")
 
-    return format_forecast_table(forecast_records)
+    # Return both the formatted table and the average MAPE
+    avg_mape = np.mean(all_mapes) if all_mapes else 0
+    return format_forecast_table(forecast_records), avg_mape
 
 
 def detect_anomalies(transactions, forecast_text, config):
@@ -177,13 +200,15 @@ def detect_anomalies(transactions, forecast_text, config):
 def run_quant_models(assets, date, transactions, config):
     logger.info("🔍 Running quantitative models...")
 
-    forecast_text = run_forecast_model(assets, date, config)
+    forecast_text, avg_mape = run_forecast_model(assets, date, config)
     logger.info(f"Forecast results:\n{forecast_text}")
+    logger.info(f"Average MAPE: {avg_mape:.2f}%")
 
     anomaly_text = detect_anomalies(transactions, forecast_text, config)
     logger.info(f"Anomaly detection results:\n{anomaly_text}")
 
     return {
         "forecast": forecast_text,
-        "anomalies": anomaly_text
+        "anomalies": anomaly_text,
+        "mape": avg_mape
     }
