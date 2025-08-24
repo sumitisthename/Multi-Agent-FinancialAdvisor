@@ -18,7 +18,7 @@ def run():
 
     # Test scenario input
     initial_state = {
-        "assets": [],
+        "assets": ["NVDA"],
         "timestamp": datetime.utcnow().isoformat(),
         "memory": None
     }

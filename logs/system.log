@@ -5225,3 +5225,1331 @@ Let me know if you have any other text you'd like me to analyze!
 2025-08-24 03:56:25,881 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
 2025-08-24 03:56:26,037 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
 2025-08-24 03:56:26,155 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-23 23:20:49,142 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 23:21:05,825 [INFO] Running Economic Indicator Agent
+2025-08-23 23:21:06,092 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-23 23:21:06,245 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-23 23:21:06,488 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-23 23:21:07,438 [INFO] Economic Summary Generated
+2025-08-23 23:21:07,440 [INFO] Running Market Analysis Agent
+2025-08-23 23:21:08,493 [INFO] Market Summary Generated
+2025-08-23 23:21:08,494 [INFO] Running Forecasting Agent
+2025-08-23 23:21:08,497 [INFO] ARIMA model invoked for assets: []
+2025-08-23 23:21:10,106 [INFO] Forecast Generated
+2025-08-23 23:21:10,106 [INFO] Logging decision and lesson to memory
+2025-08-23 23:21:10,120 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-23 23:21:11,631 [INFO] Anomaly Report Generated
+2025-08-23 23:21:11,632 [INFO] Running Compliance Monitoring Agent
+2025-08-23 23:21:11,632 [INFO] Retrieving compliance rules for query: 'I can't provide specific buy, hold, or sell recommendations without the price data and news headlines you mentioned. 
+
+However, based on the provided "Recent Lessons," here's a general interpretation of the market sentiment and potential asset performance:
+
+**Market Sentiment:**
+
+* **Mixed:** The market appears to be in a state of consolidation with no clear dominant trend. 
+
+* **Volatility:** Broader market volatility driven by inflation concerns is a factor to consider.
+
+**Asset Direction & Strength:**
+
+* **TSLA:** Slightly decreasing (-0.43%) next week.  
+
+* **AAPL:** Neutral with a slight downward movement (-0.72%) expected. 
+
+* **NVDA:** Bullish with a slight upward movement (+0.12%) expected.
+
+
+**General Recommendations:**
+
+* **TSLA:** Given the slight decrease forecast and mixed market sentiment, a "Hold" position seems prudent. Monitor the situation closely and reassess based on new information.
+
+* **AAPL & NVDA:**  AAPL's slight downward movement and NVDA's positive forecast suggest potential for either asset. Further analysis of their respective news and price trends is needed to make a more informed decision.
+
+
+**Remember:** 
+
+* These are general observations based on limited data. 
+* Always conduct your own research and consider your risk tolerance before making investment decisions.
+* The "Recent Lessons" highlight the importance of reliable data and a cautious approach in volatile markets.
+
+
+
+Please provide the missing price data and news headlines so I can give you a more precise and actionable analysis. 
+
+'
+2025-08-23 23:21:11,633 [INFO] Searching similar embeddings
+2025-08-23 23:21:11,633 [INFO] Generating embeddings
+2025-08-23 23:21:11,724 [INFO] Retrieved chunk IDs: [3 1 6]
+2025-08-23 23:21:11,726 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-23 23:21:13,310 [INFO] Compliance Evaluation Completed
+2025-08-23 23:21:13,311 [INFO] Running Coordinator Agent
+2025-08-23 23:21:14,562 [INFO] Final Decision Synthesized
+2025-08-23 23:21:14,563 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-23 23:21:15,302 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * The text makes several claims presented as facts:
+        * "I will look for patterns in the price data to understand the overall direction of the market."
+        * "I will highlight significant price movements and events that could be influencing the market."
+        * "I will determine whether the sentiment for each major asset is bullish (positive) or bearish (negative)."
+        * "I will deliver a clear and concise analysis, avoiding speculation and sticking to the facts provided."
+
+* **Factual Grounding References (FGR): 0** 
+    * There are no references to external sources or data to support the claims.
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * The text does not contain any disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0** 
+    * The text is presented as if it is capable of performing real market analysis, leading to a score of 0. 
+
+
+**Overall:** The text presents itself as capable of factual market analysis but lacks grounding in real-world data or sources. This suggests a potential for generating misinformation or hallucinations if provided with incomplete or biased information. 
+
+2025-08-23 23:21:16,319 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  The text makes several claims that could be verified as facts:
+        * "Market appears to be in a state of consolidation"
+        * "Broader market volatility driven by inflation concerns"
+        * "TSLA: Slightly decreasing (-0.43%) next week"
+        * "AAPL: Neutral with a slight downward movement (-0.72%) expected"
+        * "NVDA: Bullish with a slight upward movement (+0.12%) expected"
+    *  Note: The accuracy of these claims depends on the source of the "Recent Lessons" and the specific time frame.
+
+* **Factual Grounding References (FGR): 2**
+    *  The text references "Recent Lessons" as the basis for its observations.
+    *  It also mentions "inflation concerns" as a factor influencing market volatility.
+
+* **Fictional Disclaimer Frequency (FDF): 0**
+    * The text does not contain any explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    * While the text doesn't explicitly state it's fictional, the phrase "general interpretation" and the repeated emphasis on the limitations of the data ("based on limited data," "monitor the situation closely," "further analysis needed") suggest a degree of caution and prevent it from being presented as definitive factual information. 
+
+
+
+**Important Considerations:**
+
+* **Source Reliability:** The evaluation heavily relies on the assumption that the "Recent Lessons" are a credible source of information. Without knowing the source, it's impossible to fully assess the accuracy of the claims made.
+* **Data Specificity:** The text lacks specific details about the price data and news headlines it references. This makes it difficult to determine the validity of the predictions and recommendations.
+* **Investment Advice Disclaimer:**  The text includes a disclaimer advising readers to conduct their own research and consider their risk tolerance. This is a standard practice in financial content and helps mitigate potential liability.
+
+2025-08-23 23:21:17,219 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8** 
+    The text makes several claims presented as facts:
+    * "The anomaly report stating 'Anomaly detection failed' is a significant red flag."
+    * "This could mean: Missing Data Points... Data Corruption... System Malfunction."
+    * "Without a functioning anomaly detection system, the provided forecasts... cannot be trusted."
+    * "Relying on potentially inaccurate forecasts could lead to poor investment decisions and financial losses."
+    * "Anomalies often signal unusual market events that could present investment opportunities."
+    * "Failing to detect them could mean missing out on potential gains."
+    * "If the faulty anomaly detection system leads to poor investment advice, it could damage the analyst's credibility and reputation."
+
+* **Factual Grounding References (FGR): 2**
+    The text provides limited grounding references:
+    * "Missing Data Points: Essential price or news data might be missing, leading to inaccurate forecasts."
+    * "Data Corruption: Errors in the data could be skewing the analysis."
+
+* **Fictional Disclaimer Frequency (FDF): 0**
+    There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    While the text doesn't explicitly state it's fictional, the language used ("could mean," "might be missing," "could damage") suggests a degree of speculation and uncertainty. This leans slightly towards a non-factual presentation, hence the score of 0.1. 
+
+
+
+**Important Note:**  The text presents a plausible scenario but lacks concrete evidence to support its claims.  The analysis relies on assumptions about how anomaly detection systems work and the potential consequences of their failure.  
+
+2025-08-23 23:21:17,220 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-23 23:21:17,220 [INFO] Running Memory Reflection Agent
+2025-08-23 23:21:18,081 [INFO] Reflection Completed - Lesson Logged
+2025-08-23 23:21:18,081 [INFO] Logging decision and lesson to memory
+2025-08-23 23:22:48,593 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 23:23:05,502 [INFO] Running Economic Indicator Agent
+2025-08-23 23:23:05,769 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-23 23:23:06,047 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-23 23:23:06,431 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-23 23:23:07,425 [INFO] Economic Summary Generated
+2025-08-23 23:23:07,430 [INFO] Running Market Analysis Agent
+2025-08-23 23:23:09,154 [INFO] Market Summary Generated
+2025-08-23 23:23:09,155 [INFO] Running Forecasting Agent
+2025-08-23 23:23:09,197 [INFO] ARIMA model invoked for assets: []
+2025-08-23 23:23:11,481 [INFO] Forecast Generated
+2025-08-23 23:23:11,482 [INFO] Logging decision and lesson to memory
+2025-08-23 23:23:11,526 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-23 23:23:13,530 [INFO] Anomaly Report Generated
+2025-08-23 23:23:13,531 [INFO] Running Compliance Monitoring Agent
+2025-08-23 23:23:13,531 [INFO] Retrieving compliance rules for query: '## Financial Recommendations: 
+
+**TSLA:**  Hold 
+
+**Direction:** Slightly decreasing (-0.43%) next week.
+**Strength:** Weak downward movement.
+**Justification:** While TSLA's long-term trend remains bullish, the slight projected dip and mixed market sentiment suggest consolidation rather than significant growth.
+
+**AAPL:** Review
+
+**Direction:** Neutral with a slight downward movement (-0.72%) expected.
+**Strength:** Weak downward movement.
+**Justification:** The mixed forecast and limited information warrant further analysis of AAPL's news and price trends before making a decision.
+
+**NVDA:** Limited Allocation 
+
+**Direction:** Slightly increasing (+0.12%) next week.
+**Strength:** Moderate upward movement.
+**Justification:**  NVDA shows bullish sentiment, but the anomaly detection failure and potential data issues necessitate a cautious approach. Limit exposure until data integrity is confirmed and forecasts recalculated.
+
+
+
+**Remember:** These recommendations are based on the limited data provided and should be considered alongside your own research and risk tolerance. 
+'
+2025-08-23 23:23:13,532 [INFO] Searching similar embeddings
+2025-08-23 23:23:13,532 [INFO] Generating embeddings
+2025-08-23 23:23:13,728 [INFO] Retrieved chunk IDs: [3 1 5]
+2025-08-23 23:23:13,729 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-23 23:23:15,051 [INFO] Compliance Evaluation Completed
+2025-08-23 23:23:15,052 [INFO] Running Coordinator Agent
+2025-08-23 23:23:16,395 [INFO] Final Decision Synthesized
+2025-08-23 23:23:16,396 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-23 23:23:17,087 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    * The text makes several factual claims, such as:
+        * "I will look for patterns in the price data..."
+        * "I will read the news headlines..."
+        * "I will highlight significant events..."
+        * "My analysis is based solely on the data provided..."
+* **Factual Grounding References (FGR): 2**
+    * The text references "real-world" evidence in these claims:
+        * "...patterns in the price data..."
+        * "...news headlines..."
+* **Fictional Disclaimer Frequency (FDF): 0**
+    * There are no explicit disclaimers framing the content as fictional.
+* **Explicit Contextualization Score (ECS): 0.0**
+    * The text is presented as factual and does not contain any language suggesting it is fictional. 
+
+
+While the AI states it cannot offer financial advice, the language used throughout the text implies it can analyze real-world data and provide insights based on that analysis. 
+
+2025-08-23 23:23:17,932 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  "TSLA's long-term trend remains bullish"
+    * "the slight projected dip"
+    * "mixed market sentiment"
+    * "The mixed forecast"
+    * "NVDA shows bullish sentiment"
+    * "anomaly detection failure"
+* **Factual Grounding References (FGR): 2**
+    * "mixed market sentiment" (implies reliance on market data)
+    * "anomaly detection failure" (suggests use of data analysis)
+* **Fictional Disclaimer Frequency (FDF): 0** There are no explicit disclaimers stating the information is fictional.
+* **Explicit Contextualization Score (ECS): 0.1**  While the text states "These recommendations are based on the limited data provided and should be considered alongside your own research and risk tolerance," it doesn't explicitly frame itself as fictional. The language leans towards presenting the information as potentially factual but requiring further verification. 
+
+
+
+**Important Note:**  The text exhibits characteristics that could lead to hallucinations or misinformation.  
+
+* **Vague Language:** Phrases like "mixed market sentiment" and "limited information" are subjective and lack specific grounding.
+* **Unclear Data Sources:** The text doesn't specify the sources of its data or the methodology used for analysis.
+* **Potential Bias:** The recommendations are presented without disclosing any potential conflicts of interest or biases. 
+
+
+Users should be cautious about relying solely on this text for financial decisions.  Further research and consultation with financial experts are strongly recommended.
+
+2025-08-23 23:23:18,680 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8** 
+    The text makes numerous claims presented as facts:
+    * Anomaly detection failure is a red flag.
+    * It suggests unreliable predictions.
+    * Data integrity issues could be the cause.
+    * The model might have weaknesses.
+    * Faulty forecasts lead to financial losses.
+    * Anomaly detection helps identify trends and opportunities.
+    *  The issue needs immediate investigation.
+    *  Recommendations should be treated with caution.
+
+* **Factual Grounding References (FGR): 0** 
+    There are no references to external sources, studies, or data to support these claims.
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    The text does not contain any disclaimers indicating it is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0** 
+    The text is presented in a factual and authoritative tone, making no explicit indication that it is not real. 
+
+
+**Hallucination and Misinformation Potential:**
+
+While the text raises valid concerns about the potential consequences of anomaly detection failures, it lacks factual grounding.  The claims are presented as absolute truths without evidence. This makes the text susceptible to being perceived as misinformation, especially by readers who may not be familiar with the complexities of anomaly detection and financial modeling. 
+
+2025-08-23 23:23:18,681 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-23 23:23:18,682 [INFO] Running Memory Reflection Agent
+2025-08-23 23:23:19,503 [INFO] Reflection Completed - Lesson Logged
+2025-08-23 23:23:19,504 [INFO] Logging decision and lesson to memory
+2025-08-23 23:24:14,630 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 23:24:24,813 [INFO] Running Economic Indicator Agent
+2025-08-23 23:24:25,025 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-23 23:24:25,242 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-23 23:24:25,436 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-23 23:24:26,298 [INFO] Economic Summary Generated
+2025-08-23 23:24:26,299 [INFO] Running Market Analysis Agent
+2025-08-23 23:24:27,233 [INFO] Market Summary Generated
+2025-08-23 23:24:27,234 [INFO] Running Forecasting Agent
+2025-08-23 23:24:27,254 [INFO] ARIMA model invoked for assets: []
+2025-08-23 23:24:28,459 [INFO] Forecast Generated
+2025-08-23 23:24:28,460 [INFO] Logging decision and lesson to memory
+2025-08-23 23:24:28,475 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-23 23:24:29,757 [INFO] Anomaly Report Generated
+2025-08-23 23:24:29,757 [INFO] Running Compliance Monitoring Agent
+2025-08-23 23:24:29,758 [INFO] Retrieving compliance rules for query: 'Here's a concise interpretation and recommendation for each asset:
+
+**TSLA:**
+
+* **Direction & Strength:** Slightly decreasing (-0.43%) next week with weak downward movement.
+* **Recommendation:** Hold
+* **Justification:** While TSLA's long-term trend remains bullish, the slight dip and mixed market sentiment suggest consolidation rather than significant growth.
+
+**AAPL:**
+
+* **Direction & Strength:** Neutral with a slight downward movement (-0.72%) expected, showing weak downward movement.
+* **Recommendation:** Review
+* **Justification:**  The mixed forecast and limited information warrant further analysis of AAPL's news and price trends before making a decision.
+
+**NVDA:**
+
+* **Direction & Strength:**  Slightly increasing (+0.12%) next week with moderate upward movement.
+* **Recommendation:** Limited Allocation 
+* **Justification:** NVDA shows bullish sentiment, but the anomaly detection failure necessitates a cautious approach.  Limit exposure until data integrity is confirmed.
+
+
+
+ **Important Note:** These recommendations are based on the provided data and should be considered alongside your own research and risk tolerance. 
+'
+2025-08-23 23:24:29,759 [INFO] Searching similar embeddings
+2025-08-23 23:24:29,759 [INFO] Generating embeddings
+2025-08-23 23:24:29,838 [INFO] Retrieved chunk IDs: [3 1 5]
+2025-08-23 23:24:29,839 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-23 23:24:31,088 [INFO] Compliance Evaluation Completed
+2025-08-23 23:24:31,089 [INFO] Running Coordinator Agent
+2025-08-23 23:24:32,545 [INFO] Final Decision Synthesized
+2025-08-23 23:24:32,546 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-23 23:24:33,206 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * The text makes several factual claims:
+        * It states its inability to provide a market analysis without price data and news headlines.
+        * It outlines the steps it would take to analyze the market (identifying trends, analyzing sentiment, summarizing developments).
+        * It clarifies that it cannot offer financial advice.
+* **Factual Grounding References (FGR): 0** 
+    * There are no references to external sources or data to support the claims made.
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * The text does not contain any explicit disclaimers framing the content as fictional.
+* **Explicit Contextualization Score (ECS): 0.0** 
+    * The text is presented as factual and capable of performing real-world tasks (market analysis). There is no indication that it is a fictional or hypothetical scenario. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-23 23:24:33,916 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  Examples: "TSLA's long-term trend remains bullish", "NVDA shows bullish sentiment", "the slight dip and mixed market sentiment suggest consolidation", "the mixed forecast and limited information warrant further analysis".
+
+* **Factual Grounding References (FGR): 2**
+    * Examples: "provided data", "news and price trends"
+
+* **Fictional Disclaimer Frequency (FDF): 0**  There are no explicit disclaimers stating the information is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1** While the text states "These recommendations are based on the provided data and should be considered alongside your own research and risk tolerance," it doesn't explicitly frame itself as fictional. However, the language used ("slightly decreasing," "moderate upward movement," "bullish sentiment") suggests an interpretation of market trends rather than definitive factual statements. This ambiguity leads to a low ECS score. 
+
+
+
+**Important Note:**  The text walks a fine line between presenting information as factual and acknowledging its limitations.  The reliance on terms like "slightly" and "moderate"  indicates a degree of uncertainty, but the overall tone leans towards presenting an analysis of market trends. 
+
+2025-08-23 23:24:34,711 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8**  The text makes numerous claims presented as facts:
+    * "Anomaly detection relies on analyzing numerical data points..."
+    * "Without these features, the system cannot perform its core function."
+    * "The lack of anomaly detection means we're missing crucial insights..."
+    * "Anomalies could indicate unusual market activity, manipulation, or other factors..."
+    * "There might be a problem with how the price data and other relevant numerical information is being fed into the system."
+    * "The system might not be correctly extracting or transforming the necessary numerical features..."
+    * "Without anomaly detection, we're operating in the dark regarding potential risks."
+    * "Unidentified anomalies can contribute to market volatility..."
+
+* **Factual Grounding References (FGR): 0**  There are no references to external sources, studies, or data to support these claims.
+
+* **Fictional Disclaimer Frequency (FDF): 0** The text does not contain any disclaimers indicating it is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0** The text is presented as a factual analysis of a situation, lacking any elements that clearly signal it as fictional. 
+
+
+
+**Important Note:** While the text presents information as factual, it lacks supporting evidence.  The claims about the consequences of missing anomaly detection (e.g., "missed opportunities," "increased volatility") are presented as likely outcomes but are not substantiated. 
+
+2025-08-23 23:24:34,712 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-23 23:24:34,713 [INFO] Running Memory Reflection Agent
+2025-08-23 23:24:35,446 [INFO] Reflection Completed - Lesson Logged
+2025-08-23 23:24:35,446 [INFO] Logging decision and lesson to memory
+2025-08-23 23:24:58,685 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 23:25:34,033 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-23 23:25:49,077 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 00:10:55,269 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 00:13:14,273 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 00:17:40,839 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 00:24:22,237 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 00:24:39,738 [INFO] Running Economic Indicator Agent
+2025-08-24 00:24:40,030 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-24 00:24:40,167 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-24 00:24:40,334 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-24 00:24:41,240 [INFO] Economic Summary Generated
+2025-08-24 00:24:41,241 [INFO] Running Market Analysis Agent
+2025-08-24 00:24:42,287 [INFO] Market Summary Generated
+2025-08-24 00:24:42,288 [INFO] Running Forecasting Agent
+2025-08-24 00:24:42,307 [INFO] ARIMA model invoked for assets: []
+2025-08-24 00:24:43,006 [INFO] Forecast Generated
+2025-08-24 00:24:43,007 [INFO] Logging decision and lesson to memory
+2025-08-24 00:24:43,030 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-24 00:24:44,308 [INFO] Anomaly Report Generated
+2025-08-24 00:24:44,309 [INFO] Running Compliance Monitoring Agent
+2025-08-24 00:24:44,310 [INFO] Retrieving compliance rules for query: 'Here's a breakdown of the recommendations based on the provided data:
+
+**TSLA:**
+
+* **Direction & Strength:** Slightly decreasing (-0.43%) next week with weak downward movement.
+* **Recommendation:** Hold
+* **Justification:**  The slight dip, coupled with the mixed market sentiment, suggests consolidation rather than a significant decline. 
+
+**AAPL:**
+
+* **Direction & Strength:** Neutral with a slight downward movement (-0.72%) expected, showing weak downward movement.
+* **Recommendation:** Review
+* **Justification:** The limited information and mixed forecast warrant further analysis of AAPL's news and price trends before making a decision.
+
+**NVDA:**
+
+* **Direction & Strength:**  Slightly increasing (+0.12%) next week with moderate upward movement.
+* **Recommendation:** Limited Allocation 
+* **Justification:**  While showing bullish sentiment, the critical "anomaly detection failure" raises serious concerns about data integrity.  Limiting exposure until the issue is resolved is crucial. 
+
+
+**Important Note:** These recommendations are based on the provided data and should be considered alongside your own research, risk tolerance, and investment strategy. 
+'
+2025-08-24 00:24:44,311 [INFO] Searching similar embeddings
+2025-08-24 00:24:44,312 [INFO] Generating embeddings
+2025-08-24 00:24:44,491 [INFO] Retrieved chunk IDs: [3 1 5]
+2025-08-24 00:24:44,492 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-24 00:24:45,895 [INFO] Compliance Evaluation Completed
+2025-08-24 00:24:45,896 [INFO] Running Coordinator Agent
+2025-08-24 00:24:47,259 [INFO] Final Decision Synthesized
+2025-08-24 00:24:47,260 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-24 00:24:47,975 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    * The text makes several factual claims, such as:
+        * "I will look for trends, patterns, and significant price movements."
+        * "I will identify key events and news related to the assets."
+        * "My analysis will be purely based on the provided data."
+* **Factual Grounding References (FGR): 2**
+    * The text references "real-world" evidence in these statements:
+        * "I will look for trends, patterns, and significant price movements for each asset." (Implies reliance on existing price data)
+        * "I will identify key events and news related to the assets and the overall market." (Implies reliance on existing news sources)
+* **Fictional Disclaimer Frequency (FDF): 0**
+    * There are no explicit disclaimers framing the content as fictional.
+* **Explicit Contextualization Score (ECS): 0.0**
+    * The text is presented as a factual description of a service and its process, lacking any indication of fictionality. 
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-24 00:24:48,695 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  "Slightly decreasing (-0.43%) next week"
+    * "Neutral with a slight downward movement (-0.72%) expected"
+    * "Slightly increasing (+0.12%) next week"
+    * "mixed market sentiment"
+    * "bullish sentiment"
+    * "critical 'anomaly detection failure'"
+* **Factual Grounding References (FGR): 2**
+    * "based on the provided data"
+    * "data integrity" 
+* **Fictional Disclaimer Frequency (FDF): 0**  There are no explicit disclaimers stating the information is fictional.
+* **Explicit Contextualization Score (ECS): 0.1** While the text states the recommendations are based on data and should be considered alongside personal research, it doesn't explicitly frame itself as fictional. The  "anomaly detection failure"  suggests a potential for real-world data issues, further blurring the lines. 
+
+
+
+**Overall:** The text presents information as factual, using percentages and market terms. However, the lack of specific data sources and the mention of an "anomaly detection failure" raise questions about the reliability of the information. The  ECS score reflects this ambiguity. 
+
+2025-08-24 00:24:49,322 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 10,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD):** The text makes numerous claims presented as facts, such as:
+    * Anomaly detection algorithms rely on numerical data.
+    *  Anomalies often signal potential problems like market manipulation.
+    *  A sudden drop in volume or a spike in volatility might foreshadow a negative news event.
+* **Factual Grounding References (FGR):**  There are no references to external sources or evidence to support these claims. 
+* **Fictional Disclaimer Frequency (FDF):** The text does not contain any disclaimers indicating it is fictional.
+* **Explicit Contextualization Score (ECS):** The text is presented in a matter-of-fact tone and does not contain any elements that clearly signal it as fictional. It reads like a technical analysis or report. 
+
+
+**Important Note:** While the text presents information in a seemingly factual manner, the lack of grounding references raises concerns.  It's crucial to verify these claims with reliable sources and data before making any decisions based on them. 
+
+2025-08-24 00:24:49,323 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-24 00:24:49,324 [INFO] Running Memory Reflection Agent
+2025-08-24 00:24:50,185 [INFO] Reflection Completed - Lesson Logged
+2025-08-24 00:24:50,186 [INFO] Logging decision and lesson to memory
+2025-08-24 00:28:16,727 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 00:28:27,258 [INFO] Running Economic Indicator Agent
+2025-08-24 00:28:27,385 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-24 00:28:27,567 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-24 00:28:27,714 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-24 00:28:28,610 [INFO] Economic Summary Generated
+2025-08-24 00:28:28,612 [INFO] Running Market Analysis Agent
+2025-08-24 00:28:29,662 [INFO] Market Summary Generated
+2025-08-24 00:28:29,663 [INFO] Running Forecasting Agent
+2025-08-24 00:28:29,681 [INFO] ARIMA model invoked for assets: []
+2025-08-24 00:28:29,684 [INFO] Forecast summary saved to forecasts/forecast-2025-08-24_05-28-27.255855.csv
+2025-08-24 00:28:30,342 [INFO] Forecast Generated
+2025-08-24 00:28:30,343 [INFO] Logging decision and lesson to memory
+2025-08-24 00:28:30,356 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-24 00:28:30,356 [INFO] Running anomaly detection on transaction data
+2025-08-24 00:28:31,556 [INFO] Anomaly Report Generated
+2025-08-24 00:28:31,557 [INFO] Running Compliance Monitoring Agent
+2025-08-24 00:28:31,558 [INFO] Retrieving compliance rules for query: '## Financial Recommendations: 
+
+**TSLA:**
+
+1. **Direction & Strength:** Slightly decreasing (-0.43%) next week with weak downward movement.
+2. **Recommendation:** Hold
+3. **Justification:** The slight dip, coupled with the mixed market sentiment, suggests consolidation rather than a significant decline. 
+
+**AAPL:**
+
+1. **Direction & Strength:**  Neutral with a slight downward movement (-0.72%) expected, showing weak downward movement.
+2. **Recommendation:** Review
+3. **Justification:** The limited information and mixed forecast warrant further analysis of AAPL's news and price trends before making a decision.
+
+**NVDA:**
+
+1. **Direction & Strength:** Slightly increasing (+0.12%) next week with moderate upward movement.
+2. **Recommendation:** Limited Allocation 
+3. **Justification:** While showing bullish sentiment, the critical "anomaly detection failure" raises serious concerns about data integrity.  Limiting exposure until the issue is resolved is crucial. 
+
+
+
+**Important Note:** These recommendations are based on the limited provided data and should be considered alongside your own research, risk tolerance, and investment strategy. 
+'
+2025-08-24 00:28:31,559 [INFO] Searching similar embeddings
+2025-08-24 00:28:31,559 [INFO] Generating embeddings
+2025-08-24 00:28:31,665 [INFO] Retrieved chunk IDs: [3 1 5]
+2025-08-24 00:28:31,666 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-24 00:28:32,887 [INFO] Compliance Evaluation Completed
+2025-08-24 00:28:32,889 [INFO] Running Coordinator Agent
+2025-08-24 00:28:34,087 [INFO] Final Decision Synthesized
+2025-08-24 00:28:34,088 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-24 00:28:34,596 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 0,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD):** There are no claims presented as verifiable facts. The text focuses on the process of analysis and the types of information needed.
+* **Factual Grounding References (FGR):** There are no references to real-world evidence or data sources.
+* **Fictional Disclaimer Frequency (FDF):** There are no explicit disclaimers framing the content as fictional.
+* **Explicit Contextualization Score (ECS):** The text is presented as a factual description of how a market analysis would be conducted, not as a fictional scenario. 
+
+
+Therefore, the ECS is 0.0. 
+
+2025-08-24 00:28:35,426 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 5,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.2 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 5** 
+    *  "Slightly decreasing (-0.43%) next week"
+    * "Neutral with a slight downward movement (-0.72%) expected"
+    * "Slightly increasing (+0.12%) next week"
+    * "mixed market sentiment"
+    * "bullish sentiment"
+
+* **Factual Grounding References (FGR): 0**  The text makes claims about future market movements and sentiment but doesn't cite any sources or data to support these assertions.
+
+* **Fictional Disclaimer Frequency (FDF): 0** There are no explicit disclaimers stating the information is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.2** While the text includes a disclaimer about the limitations of the recommendations, it doesn't explicitly frame the content as fictional. The language used suggests a degree of confidence in the predictions, making the ECS closer to 0 than 1. 
+
+
+
+**Hallucination and Misinformation Concerns:**
+
+The text exhibits potential for hallucination and misinformation due to:
+
+* **Lack of Evidence:**  The predictions about stock movements and market sentiment are not grounded in any cited evidence.
+* **Vague Language:** Terms like "mixed market sentiment" and "bullish sentiment" are subjective and open to interpretation.
+* **Overly Specific Predictions:** Predicting precise percentage changes in stock prices over a short timeframe is highly unreliable. 
+
+
+It's crucial for readers to be aware of these limitations and not treat the text as definitive financial advice. 
+
+2025-08-24 00:28:36,168 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    The text makes several claims presented as facts:
+    * "Anomaly detection relies on analyzing numerical data patterns."
+    * "Without this data, the system cannot identify deviations from the norm..."
+    * "It's impossible to confidently assess the validity...without underlying price data..."
+    * "Relying solely on qualitative information...is inherently subjective..."
+    * "The absence of anomaly detection significantly increases the risk of making incorrect investment decisions..."
+    * "Failing to detect anomalies could lead to investments in assets that are experiencing hidden risks..."
+
+* **Factual Grounding References (FGR): 0** 
+    There are no references to external sources, studies, or data to support these claims.
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    The text does not contain any disclaimers indicating it is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0** 
+    The text is presented in a factual and authoritative tone, making no explicit indication that it is not based on real-world information. 
+
+
+**Important Note:** While the text presents information as factual, the lack of grounding references raises concerns about its accuracy.  The claims about anomaly detection and investment risks should be critically evaluated and corroborated with reliable sources. 
+
+2025-08-24 00:28:36,169 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-24 00:28:36,170 [INFO] Running Memory Reflection Agent
+2025-08-24 00:28:36,963 [INFO] Reflection Completed - Lesson Logged
+2025-08-24 00:28:36,963 [INFO] Logging decision and lesson to memory
+2025-08-24 01:02:19,470 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 01:02:29,902 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 01:03:31,238 [INFO] Running Economic Indicator Agent
+2025-08-24 01:03:31,436 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-24 01:03:31,653 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-24 01:03:32,065 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-24 01:03:33,207 [INFO] Economic Summary Generated
+2025-08-24 01:03:33,213 [INFO] Running Market Analysis Agent
+2025-08-24 01:03:36,208 [INFO] Market Summary Generated
+2025-08-24 01:03:36,211 [INFO] Running Forecasting Agent
+2025-08-24 01:03:36,353 [INFO] ARIMA model invoked for assets: []
+2025-08-24 01:03:36,389 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-24_05-28-27.255855.csv
+2025-08-24 01:03:36,465 [INFO] Forecast summary saved to forecasts/forecast-2025-08-24_06-03-31.226141.csv
+2025-08-24 01:03:37,291 [INFO] Forecast Generated
+2025-08-24 01:03:37,295 [INFO] Logging decision and lesson to memory
+2025-08-24 01:03:37,388 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-24 01:03:37,391 [INFO] Running anomaly detection on transaction data
+2025-08-24 01:03:41,590 [INFO] Anomaly Report Generated
+2025-08-24 01:03:41,596 [INFO] Running Compliance Monitoring Agent
+2025-08-24 01:03:41,626 [INFO] Retrieving compliance rules for query: '## Financial Recommendations:
+
+**TSLA:**
+
+1. **Direction & Strength:** Slightly decreasing (-0.43%) next week with weak downward movement.
+2. **Recommendation:** Hold
+3. **Justification:** The slight dip, coupled with the weak downward movement, suggests consolidation rather than a significant decline. 
+
+**AAPL:**
+
+1. **Direction & Strength:**  Neutral with a slight downward movement (-0.72%) expected, showing weak downward movement.
+2. **Recommendation:** Review 
+3. **Justification:** Limited information and mixed forecasts warrant further analysis. More data is needed to make a confident decision.
+
+**NVDA:**
+
+1. **Direction & Strength:** Slightly increasing (+0.12%) next week with moderate upward movement.
+2. **Recommendation:** Limited Allocation 
+3. **Justification:** While showing bullish sentiment, the critical "anomaly detection failure" raises serious concerns about data integrity.  Limiting exposure until the issue is resolved is crucial. 
+
+
+
+**Important Notes:**
+
+* These recommendations are based on the limited provided data and should be considered alongside your own research, risk tolerance, and investment strategy.
+* The "anomaly detection failure" poses a significant risk and needs immediate attention.
+* Further analysis of AAPL is required before making a definitive decision. 
+'
+2025-08-24 01:03:41,658 [INFO] Searching similar embeddings
+2025-08-24 01:03:41,680 [INFO] Generating embeddings
+2025-08-24 01:03:42,693 [INFO] Retrieved chunk IDs: [3 5 1]
+2025-08-24 01:03:42,706 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-24 01:03:46,182 [INFO] Compliance Evaluation Completed
+2025-08-24 01:03:46,195 [INFO] Running Coordinator Agent
+2025-08-24 01:03:50,093 [INFO] Final Decision Synthesized
+2025-08-24 01:03:50,106 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-24 01:03:51,123 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  The text makes several claims that can be verified as facts:
+        * "I can't provide a market analysis without the price data and news headlines."
+        * "I will look for patterns in the price data to understand the overall direction of the market."
+        * "I will assess the tone of the news headlines to determine if they are positive, negative, or neutral towards the assets."
+        * "I will provide a concise summary of the most important market events and their potential impact on asset prices."
+        * "I am an AI and cannot offer financial advice."
+        * "My analysis is based solely on the data provided and should not be considered a recommendation to buy or sell any assets."
+
+* **Factual Grounding References (FGR): 2**
+    * The text references "price data" and "news headlines" as sources of information.
+
+* **Fictional Disclaimer Frequency (FDF): 0**
+    * There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0**
+    * The text is presented as factual and informative, lacking any clear indication that it is fictional. 
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-24 01:03:52,178 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 5,
+  "fgr": 1,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 5** 
+    *  "Slightly decreasing (-0.43%) next week"
+    * "Neutral with a slight downward movement (-0.72%) expected"
+    * "Slightly increasing (+0.12%) next week"
+    * "bullish sentiment"
+    * "anomaly detection failure" 
+
+* **Factual Grounding References (FGR): 1**
+    * "The slight dip, coupled with the weak downward movement, suggests consolidation rather than a significant decline." (This implies grounding in some observed data, though not explicitly stated)
+
+* **Fictional Disclaimer Frequency (FDF): 0** There are no explicit disclaimers stating the information is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**  While the text uses language like "slightly decreasing" and "expected," the lack of specific sources or data grounding makes it difficult to definitively classify as factual. The mention of "anomaly detection failure" suggests a potential for real-world data issues, further blurring the lines.  The overall tone leans towards presenting information as potentially factual, but the lack of strong evidence warrants a low ECS score. 
+
+
+
+**Important Note:** This analysis is based on the provided text alone.  To make more informed judgments about the potential for hallucinations or misinformation, it would be necessary to:
+
+* **Investigate the source:** Who created this financial analysis? What is their reputation and track record?
+* **Examine the data sources:** Where did the information about stock movements and "anomaly detection failure" come from? Are these reliable sources?
+* **Look for corroborating evidence:** Can you find independent sources that support or refute the claims made in the text?
+
+2025-08-24 01:03:53,190 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 8,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 8**  The text makes numerous claims presented as facts:
+    * "Anomaly detection relies on analyzing numerical data..."
+    * "Without numeric features, the system cannot perform its core function."
+    * "Anomalies often signal potential risks or opportunities..."
+    * "Failing to detect these anomalies could mean missing out on potential gains."
+    * "The missing data raises questions about the overall integrity of the data..."
+* **Factual Grounding References (FGR): 0**  There are no references to external sources, studies, or data to support the claims made. 
+* **Fictional Disclaimer Frequency (FDF): 0** The text does not contain any disclaimers indicating it is fictional.
+* **Explicit Contextualization Score (ECS): 0.0** The text is presented in a factual and authoritative tone, without any indication that it is not based on real-world information. 
+
+
+**Important Note:** While the text presents information as factual, it lacks supporting evidence.  The claims about the consequences of missing numeric features for anomaly detection and financial recommendations should be treated with caution without further substantiation. 
+
+2025-08-24 01:03:53,208 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-24 01:03:53,239 [INFO] Running Memory Reflection Agent
+2025-08-24 01:03:54,161 [INFO] Reflection Completed - Lesson Logged
+2025-08-24 01:03:54,177 [INFO] Logging decision and lesson to memory
+2025-08-24 01:10:38,510 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 01:11:12,293 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 01:11:30,322 [INFO] Running Economic Indicator Agent
+2025-08-24 01:11:30,572 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-24 01:11:30,779 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-24 01:11:30,981 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-24 01:11:31,919 [INFO] Economic Summary Generated
+2025-08-24 01:11:31,921 [INFO] Running Market Analysis Agent
+2025-08-24 01:11:33,440 [INFO] Market Summary Generated
+2025-08-24 01:11:33,441 [INFO] Running Forecasting Agent
+2025-08-24 01:11:33,468 [INFO] ARIMA model invoked for assets: []
+2025-08-24 01:11:33,470 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-AAPL-2025-08-24_06-09-30.csv
+2025-08-24 01:11:33,472 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-GOOGL-2025-08-24_06-09-31.csv
+2025-08-24 01:11:33,473 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-24.csv
+2025-08-24 01:11:33,479 [INFO] Forecast summary saved to forecasts/forecast-2025-08-24_06-11-30.318376.csv
+2025-08-24 01:11:34,260 [INFO] Forecast Generated
+2025-08-24 01:11:34,260 [INFO] Logging decision and lesson to memory
+2025-08-24 01:11:34,288 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-24 01:11:34,290 [INFO] Running anomaly detection on transaction data
+2025-08-24 01:11:36,162 [INFO] Anomaly Report Generated
+2025-08-24 01:11:36,169 [INFO] Running Compliance Monitoring Agent
+2025-08-24 01:11:36,171 [INFO] Retrieving compliance rules for query: '## Financial Recommendations:
+
+**TSLA:**
+
+* **Direction & Strength:** Slightly decreasing (-0.43%) next week with weak downward movement.
+* **Recommendation:** Hold
+* **Justification:** The small dip and weak downward momentum suggest consolidation rather than a significant decline. 
+
+**AAPL:**
+
+* **Direction & Strength:** Neutral with a slight downward movement (-0.72%) expected, showing weak downward movement.
+* **Recommendation:** Review
+* **Justification:** Limited information and mixed forecasts warrant further analysis. More data is needed to make a confident decision.
+
+**NVDA:**
+
+* **Direction & Strength:** Slightly increasing (+0.12%) next week with moderate upward movement.
+* **Recommendation:** Limited Allocation 
+* **Justification:**  While showing positive movement, the critical "anomaly detection failure" raises serious concerns about data integrity. Limiting exposure until the issue is resolved is crucial. 
+
+
+
+**Important Note:** These recommendations are based on the provided data and should be considered alongside your own research, risk tolerance, and investment strategy.  The "anomaly detection failure" for NVDA is a significant risk factor that requires immediate attention. 
+'
+2025-08-24 01:11:36,174 [INFO] Searching similar embeddings
+2025-08-24 01:11:36,174 [INFO] Generating embeddings
+2025-08-24 01:11:36,365 [INFO] Retrieved chunk IDs: [3 5 1]
+2025-08-24 01:11:36,366 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-24 01:11:38,458 [INFO] Compliance Evaluation Completed
+2025-08-24 01:11:38,460 [INFO] Running Coordinator Agent
+2025-08-24 01:11:40,300 [INFO] Final Decision Synthesized
+2025-08-24 01:11:40,302 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-24 01:11:41,017 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 1,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+``` 
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * The text makes several factual claims:
+        * It states it can't provide a market analysis without price data and news headlines.
+        * It lists four specific actions it will take once provided with the data (identify trends, analyze sentiment, summarize developments, provide sentiment overview).
+        * It clarifies that it is an AI and cannot provide financial advice.
+        * It states its analysis is based on the provided data.
+
+* **Factual Grounding References (FGR): 1**
+    * The text references "data" as the basis for its analysis.
+
+* **Fictional Disclaimer Frequency (FDF): 0**
+    * There are no explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.0**
+    * The text is presented as factual and informative, lacking any markers that would suggest it is fictional. 
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-24 01:11:42,041 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  The text makes several claims presented as facts:
+        * "Slightly decreasing (-0.43%) next week"
+        * "Neutral with a slight downward movement (-0.72%) expected"
+        * "Slightly increasing (+0.12%) next week"
+        * "weak downward movement"
+        * "moderate upward movement"
+        * "anomaly detection failure" 
+* **Factual Grounding References (FGR): 0** 
+    * The text does not provide any references to sources or data to support these claims. 
+* **Fictional Disclaimer Frequency (FDF): 0**
+    * There are no explicit disclaimers stating the information is fictional.
+* **Explicit Contextualization Score (ECS): 0.1**
+    * While the "Important Note" at the end encourages readers to conduct their own research, the overall tone and presentation of the text strongly suggest it is offering factual financial advice. The ECS is slightly below 0.5 because of the note, but the primary framing remains factual. 
+
+
+
+**Hallucination and Misinformation Concerns:**
+
+The text exhibits several red flags:
+
+* **Lack of Sources:**  No data or sources are cited to support the predictions or the "anomaly detection failure" claim.
+* **Vague Language:** Terms like "weak downward movement" and "moderate upward movement" are subjective and lack precision.
+* **Potentially Harmful Advice:**  The "anomaly detection failure" claim, without context or evidence, could lead to uninformed investment decisions. 
+
+**Recommendation:**
+
+This text should be treated with extreme caution.  It is highly likely to contain hallucinations and misinformation. Readers should consult reputable financial sources and conduct thorough research before making any investment decisions based on this information. 
+
+2025-08-24 01:11:42,758 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 10,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.0 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD):** The text makes numerous claims presented as facts, such as "Anomaly detection algorithms rely on numerical data," "The most likely cause is a lack of relevant numerical data," and "Investing based on incomplete data increases the overall risk profile." 
+* **Factual Grounding References (FGR):**  There are no references to external sources or data to support these claims. 
+* **Fictional Disclaimer Frequency (FDF):** The text does not contain any disclaimers indicating it is fictional.
+* **Explicit Contextualization Score (ECS):** The text is presented in a factual and authoritative tone, making it appear as if it is based on real-world information and analysis. There is no indication that it is a fictional narrative. 
+
+
+**Important Note:** While the text presents information in a factual manner, the lack of grounding references raises concerns about its reliability.  It's crucial to verify claims made in such reports with trusted sources and data. 
+
+2025-08-24 01:11:42,760 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-24 01:11:42,761 [INFO] Running Memory Reflection Agent
+2025-08-24 01:11:43,577 [INFO] Reflection Completed - Lesson Logged
+2025-08-24 01:11:43,578 [INFO] Logging decision and lesson to memory
+2025-08-24 01:12:36,149 [INFO] Starting LangGraph Multi-Agent Financial System Test Run...
+2025-08-24 01:12:52,709 [INFO] Running Economic Indicator Agent
+2025-08-24 01:12:52,899 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-24 01:12:53,105 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-24 01:12:53,240 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-24 01:12:54,214 [INFO] Economic Summary Generated
+2025-08-24 01:12:54,216 [INFO] Running Market Analysis Agent
+2025-08-24 01:12:56,487 [INFO] Market Summary Generated
+2025-08-24 01:12:56,491 [INFO] Running Forecasting Agent
+2025-08-24 01:12:56,519 [INFO] ARIMA model invoked for assets: ['NVDA']
+2025-08-24 01:12:56,521 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-24_06-11-30.318376.csv
+2025-08-24 01:12:56,524 [INFO] Fetching price data for NVDA
+2025-08-24 01:12:56,924 [INFO] Asset CSV saved: forecasts/assets-NVDA-2025-08-24_06-12-56.csv
+2025-08-24 01:12:57,393 [INFO] Forecast summary saved to forecasts/forecast-2025-08-24_06-12-52.703518.csv
+2025-08-24 01:12:58,163 [INFO] Forecast Generated
+2025-08-24 01:12:58,164 [INFO] Logging decision and lesson to memory
+2025-08-24 01:12:58,195 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-24 01:12:58,197 [INFO] Running anomaly detection on transaction data
+2025-08-24 01:13:00,172 [INFO] Anomaly Report Generated
+2025-08-24 01:13:00,173 [INFO] Running Compliance Monitoring Agent
+2025-08-24 01:13:00,174 [INFO] Retrieving compliance rules for query: 'Here's a concise analysis based on the provided data:
+
+**1. Direction and Strength of Movement:**
+
+* **TSLA:** Slightly decreasing (-0.43%) next week with weak downward movement. Indicates consolidation.
+* **AAPL:** Neutral with a slight downward movement (-0.72%) expected, showing weak downward movement. Limited clear signal. 
+* **NVDA:** Slightly increasing (+0.12%) next week with moderate upward movement.
+
+**2. Recommendation:**
+
+* **TSLA:** Hold.  Weak downward momentum suggests consolidation, not a significant decline.
+* **AAPL:** Review. Limited information and mixed forecasts warrant further analysis.
+* **NVDA:** Limited Allocation. Positive movement is countered by the critical "anomaly detection failure" raising serious data integrity concerns.
+
+**3. Justification:**
+
+The primary driver for caution is the "anomaly detection failure" for NVDA. This indicates potential data inaccuracies that undermine the reliability of the bullish forecast.  
+
+While TSLA shows a slight dip, the weak downward movement suggests a consolidation phase rather than a strong sell signal. AAPL's neutral stance with slight downward movement requires more data for a confident decision. 
+
+
+**Important Note:**  The "anomaly detection failure" is a significant red flag.  Further investigation and confirmation of data integrity are essential before making any major decisions regarding NVDA. 
+'
+2025-08-24 01:13:00,176 [INFO] Searching similar embeddings
+2025-08-24 01:13:00,177 [INFO] Generating embeddings
+2025-08-24 01:13:00,321 [INFO] Retrieved chunk IDs: [3 1 4]
+2025-08-24 01:13:00,323 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-24 01:13:02,322 [INFO] Compliance Evaluation Completed
+2025-08-24 01:13:02,324 [INFO] Running Coordinator Agent
+2025-08-24 01:13:03,858 [INFO] Final Decision Synthesized
+2025-08-24 01:13:03,860 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-24 01:13:04,677 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 1,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    * Oppenheimer maintains an "Outperform" rating.
+    * Multiple analysts highlight NVDA as the leading AI play.
+    * Deutsche Bank reiterates a "Hold" rating with a $155 price target.
+    * News article raises concerns about NVDA's China market challenges.
+    *  The magnitude of the China market challenges is uncertain.
+    *  Positive analyst sentiment and industry trends suggest potential for NVDA growth.
+* **Factual Grounding References (FGR): 2**
+    * "citing accelerating hyperscaler capital expenditure"
+    * "News article raises concerns..."
+* **Fictional Disclaimer Frequency (FDF): 1**
+    * "Note: This analysis is based solely on the provided information and does not constitute financial advice." 
+* **Explicit Contextualization Score (ECS): 0.1** 
+    While there is a disclaimer, it doesn't explicitly frame the content as fictional. The text primarily presents information and opinions as factual, even if they are subject to interpretation or change. The ECS is low because the disclaimer focuses on the limitations of the analysis rather than its factual status. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-24 01:13:05,496 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  The text makes several claims presented as facts:
+        * TSLA decreasing by -0.43%
+        * AAPL decreasing by -0.72%
+        * NVDA increasing by +0.12%
+        * "anomaly detection failure" for NVDA
+        * Weak downward momentum for TSLA
+        * Limited information for AAPL
+* **Factual Grounding References (FGR): 2**
+    *  The text weakly grounds some claims:
+        * "based on the provided data"
+        * "data integrity concerns"
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * There are no explicit disclaimers stating the information is fictional.
+* **Explicit Contextualization Score (ECS): 0.1**
+    * While the text doesn't explicitly state it's fictional, the phrase "Important Note:  The 'anomaly detection failure' is a significant red flag" and the overall tone suggest a cautious interpretation of the data, implying potential for inaccuracies. This leans slightly towards a non-factual presentation. 
+
+
+
+**Overall:** The text presents information as factual but lacks strong grounding in verifiable evidence. The "anomaly detection failure" raises significant doubt about the reliability of the data, making the analysis potentially unreliable. 
+
+2025-08-24 01:13:06,521 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 5,
+  "fgr": 0,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 5** 
+    *  The text makes several claims presented as facts:
+        * "anomaly detection failure" for NVDA
+        * "Anomaly Report" states "No anomalies."
+        * Data entry errors, system glitches, and data source problems are presented as potential causes.
+        * The forecast is "highly suspect" if the data is flawed.
+        * Investing based on the forecast could lead to financial losses.
+
+* **Factual Grounding References (FGR): 0** 
+    * There are no references to specific sources, studies, or data points to support the claims.
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * The text does not contain any explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1** 
+    * While the text doesn't explicitly state it's fictional, the use of terms like "critical issue," "red flag," and "key risks" suggests a heightened sense of concern and potential danger. This framing, combined with the lack of factual grounding, pushes the ECS slightly towards a non-factual interpretation. 
+
+
+
+**Hallucination and Misinformation Potential:**
+
+The text exhibits a high potential for hallucination and misinformation due to:
+
+* **Lack of Evidence:** The claims are not supported by any cited evidence or sources.
+* **Unclear Origin:**  It's unclear where the information about "anomaly detection failure" and the "Anomaly Report" originates.
+* **Sensationalist Language:** The use of strong language like "critical issue," "red flag," and "financial loss" could be designed to evoke fear and alarm. 
+
+**Recommendation:**
+
+Treat this text with extreme caution.  Do not rely on it for making financial decisions.  Seek out information from reputable sources and cross-reference any claims made. 
+
+2025-08-24 01:13:06,523 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-24 01:13:06,524 [INFO] Running Memory Reflection Agent
+2025-08-24 01:13:07,135 [INFO] Reflection Completed - Lesson Logged
+2025-08-24 01:13:07,136 [INFO] Logging decision and lesson to memory
+2025-08-24 01:18:08,718 [INFO] Running Economic Indicator Agent
+2025-08-24 01:18:08,945 [INFO] Fetched economic indicator NY.GDP.MKTP.CD: {'indicator': 'NY.GDP.MKTP.CD', 'indicator_name': 'GDP (current US$)', 'country': 'United States', 'date': '2024', 'value': 29184890000000}
+2025-08-24 01:18:09,086 [INFO] Fetched economic indicator FP.CPI.TOTL.ZG: {'indicator': 'FP.CPI.TOTL.ZG', 'indicator_name': 'Inflation, consumer prices (annual %)', 'country': 'United States', 'date': '2024', 'value': 2.94952520485207}
+2025-08-24 01:18:09,211 [INFO] Fetched economic indicator SL.UEM.TOTL.ZS: {'indicator': 'SL.UEM.TOTL.ZS', 'indicator_name': 'Unemployment, total (% of total labor force) (modeled ILO estimate)', 'country': 'United States', 'date': '2024', 'value': 4.106}
+2025-08-24 01:18:10,149 [INFO] Economic Summary Generated
+2025-08-24 01:18:10,151 [INFO] Running Market Analysis Agent
+2025-08-24 01:18:12,900 [INFO] Market Summary Generated
+2025-08-24 01:18:12,902 [INFO] Running Forecasting Agent
+2025-08-24 01:18:12,932 [INFO] ARIMA model invoked for assets: ['TSLA', 'NVDA', 'AAPL']
+2025-08-24 01:18:12,933 [INFO] [SUCCESS] Deleted old forecast file: forecasts\assets-NVDA-2025-08-24_06-12-56.csv
+2025-08-24 01:18:12,935 [INFO] [SUCCESS] Deleted old forecast file: forecasts\forecast-2025-08-24_06-12-52.703518.csv
+2025-08-24 01:18:12,935 [INFO] Fetching price data for TSLA
+2025-08-24 01:18:13,129 [INFO] Asset CSV saved: forecasts/assets-TSLA-2025-08-24_06-18-13.csv
+2025-08-24 01:18:13,736 [INFO] Fetching price data for NVDA
+2025-08-24 01:18:13,981 [INFO] Asset CSV saved: forecasts/assets-NVDA-2025-08-24_06-18-13.csv
+2025-08-24 01:18:14,485 [INFO] Fetching price data for AAPL
+2025-08-24 01:18:14,717 [INFO] Asset CSV saved: forecasts/assets-AAPL-2025-08-24_06-18-14.csv
+2025-08-24 01:18:15,323 [INFO] Forecast summary saved to forecasts/forecast-2025-06-10.csv
+2025-08-24 01:18:15,969 [INFO] Forecast Generated
+2025-08-24 01:18:15,970 [INFO] Logging decision and lesson to memory
+2025-08-24 01:18:16,035 [INFO] Running Risk & Anomaly Detection Agent
+2025-08-24 01:18:16,050 [INFO] Running anomaly detection on transaction data
+2025-08-24 01:18:18,119 [INFO] Anomaly Report Generated
+2025-08-24 01:18:18,120 [INFO] Running Compliance Monitoring Agent
+2025-08-24 01:18:18,120 [INFO] Retrieving compliance rules for query: 'Here's a concise recommendation for investing in TSLA next week:
+
+**Recommendation:** Hold
+
+**Justification:**
+
+* **Direction & Strength:** TSLA is predicted to slightly decrease (-0.43%) next week with weak downward movement. This indicates consolidation rather than a significant decline.
+
+* **Data-Backed Reasoning:** The market summary highlights positive sentiment due to the recent Robotaxi demo, but the forecast shows a slight dip. This suggests the market may be digesting the news and finding equilibrium.  
+
+**Important Note:**  While holding is recommended, this is a short-term view. Further research and analysis beyond the provided data are crucial for making long-term investment decisions. 
+
+
+'
+2025-08-24 01:18:18,121 [INFO] Searching similar embeddings
+2025-08-24 01:18:18,122 [INFO] Generating embeddings
+2025-08-24 01:18:18,407 [INFO] Retrieved chunk IDs: [1 3 5]
+2025-08-24 01:18:18,412 [INFO] Successfully retrieved 3 compliance rule(s).
+2025-08-24 01:18:19,742 [INFO] Compliance Evaluation Completed
+2025-08-24 01:18:19,744 [INFO] Running Coordinator Agent
+2025-08-24 01:18:21,398 [INFO] Final Decision Synthesized
+2025-08-24 01:18:21,399 [INFO] Evaluating agent outputs for hallucinations...
+2025-08-24 01:18:22,217 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 1,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * "A recent demo of Tesla's Robotaxi impressed analysts"
+    * "This news suggests potential for future growth and market share expansion."
+    * "Positive analyst reception to the demo indicates strong potential for the Robotaxi service"
+    * "The provided information lacks financial data like stock performance, earnings reports, or industry comparisons"
+
+* **Factual Grounding References (FGR): 1**
+    * "A recent demo of Tesla's Robotaxi impressed analysts" - This implies a real event occurred.
+
+* **Fictional Disclaimer Frequency (FDF): 0**  There are no explicit disclaimers stating the information is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1** While the text states "Based on the limited information provided," it doesn't explicitly frame the analysis as fictional. However, the lack of concrete data and the phrase "potential for future growth" suggest a degree of speculation, hence the score of 0.1. 
+
+
+
+Let me know if you have any other text you'd like me to analyze!
+
+2025-08-24 01:18:22,932 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 4,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 4** 
+    * "TSLA is predicted to slightly decrease (-0.43%) next week"
+    * "This indicates consolidation rather than a significant decline."
+    * "The market summary highlights positive sentiment due to the recent Robotaxi demo"
+    * "This suggests the market may be digesting the news and finding equilibrium."
+
+* **Factual Grounding References (FGR): 2**
+    * "market summary"
+    * "forecast"
+
+* **Fictional Disclaimer Frequency (FDF): 0**  There are no explicit disclaimers stating the information is fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1** While the text doesn't explicitly state it's fictional, the phrase "short-term view" and the recommendation to conduct further research for long-term decisions suggest a degree of caution and acknowledgment that the provided information is not definitive. 
+
+
+
+**Important Note:**  The text presents predictions and interpretations of market sentiment, which are inherently subject to uncertainty and potential inaccuracies.  
+
+2025-08-24 01:18:23,959 [ERROR] Failed to parse JSON from model output: ```json
+{
+  "fcd": 6,
+  "fgr": 2,
+  "fdf": 0,
+  "ecs": 0.1 
+}
+```
+
+**Explanation:**
+
+* **Factual Claim Density (FCD): 6** 
+    *  The text makes several claims presented as facts:
+        * "The anomaly report highlights a potential issue with AAPL"
+        * "Volume and price this low are unusual for a major stock like AAPL."
+        * "A temporary technical issue with the data feed could be causing this anomaly."
+        * "The electric vehicle market is becoming increasingly competitive"
+        * "Government regulations regarding autonomous driving and electric vehicles could impact Tesla's operations and profitability."
+        * "Tesla has faced production delays and delivery issues in the past"
+
+* **Factual Grounding References (FGR): 2**
+    *  There are two references to potential sources of information:
+        * "The anomaly report"
+        * "data feed"
+
+* **Fictional Disclaimer Frequency (FDF): 0** 
+    * The text does not contain any explicit disclaimers framing the content as fictional.
+
+* **Explicit Contextualization Score (ECS): 0.1**
+    * While the text doesn't explicitly state it's fictional, the use of terms like "potential issue" and "might be concerning" suggests a degree of uncertainty and speculation. The focus on potential risks also leans towards a cautionary analysis rather than presenting definitive facts.  
+
+
+**Hallucination and Misinformation Potential:**
+
+The text presents information as factual without strong grounding in verifiable sources. The reliance on an unnamed "anomaly report" and the lack of specific data points raise concerns about the accuracy of the claims.  
+
+The discussion of risks for TSLA investment is more grounded, but it still relies on generalizations and potential future scenarios.  
+
+**Overall:** The text exhibits some hallmarks of potential misinformation due to its weak factual grounding and reliance on unspecified sources.  Further investigation and verification of the claims are necessary. 
+
+2025-08-24 01:18:23,960 [INFO] Evaluation results: {'market_summary': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'forecast': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}, 'risk_report': {'fcd': 1.0, 'fgr': 0.0, 'fdf': 0.0, 'ecs': 0.0}}
+2025-08-24 01:18:23,965 [INFO] Running Memory Reflection Agent
+2025-08-24 01:18:24,677 [INFO] Reflection Completed - Lesson Logged
+2025-08-24 01:18:24,679 [INFO] Logging decision and lesson to memory

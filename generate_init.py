@@ -6,6 +6,7 @@ project_root = os.path.abspath(".")
 # Directories where __init__.py should exist
 target_dirs = [
     "agents",
+    "tests",
     "tools",
     "memory",
     "graph",

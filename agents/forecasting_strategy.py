@@ -1,4 +1,10 @@
 # agents/forecasting_strategy.py
+import sys
+import os
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 from tools.quant_models import run_forecast_model
 from config.settings import load_config
@@ -7,24 +13,18 @@ from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from memory.memory_store import log_decision, retrieve_recent_memory
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
-logger = get_logger()
-
-
+# Initialize LLM once
 llm = ChatGroq(
     model="gemma2-9b-it",
     api_key=os.getenv("GROQ_API_KEY")
 )
 
-
-# Load prompt
+# Load forecast prompt
 with open("prompts/forecast.txt") as f:
     FORECAST_PROMPT = f.read()
 
@@ -32,7 +32,6 @@ with open("prompts/forecast.txt") as f:
 def forecasting_node(config):
     def run(state):
         logger.info("Running Forecasting Agent")
-
 
         market_summary = state.get("market_summary", "")
         assets = list(set(state["assets"]))
@@ -54,17 +53,18 @@ def forecasting_node(config):
             "user_question": state.get("user_query", "")
         }
 
+        # Format prompt
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)
-        llm_input = prompt.format(**context)
 
-        llm = ChatGroq(model="gemma2-9b-it")
-        parser = StrOutputParser()
-        output = parser.invoke(llm.invoke(llm_input))
+        # Run through pipeline
+        chain = prompt | llm | StrOutputParser()
+        output = chain.invoke(context)
 
         logger.info("Forecast Generated")
 
+        # Update state
         state["forecast"] = output
-        state["mape"] = mape  # Store MAPE in the state
+        state["mape"] = mape
         log_decision(state, output, config)
         return state
 

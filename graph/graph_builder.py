@@ -7,7 +7,13 @@ from IPython.display import display,Image
 import datetime
 from datetime import datetime, timezone # Add timezone here
 import os
+import sys
 from dotenv import load_dotenv
+
+# Set project root as the first entry in sys.path
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 load_dotenv()
 
@@ -30,75 +36,60 @@ class GraphState(TypedDict):
     evaluation_results: dict
 
 def build_graph(config):
-    """Build and return the compiled graph"""
+    """Build and return the compiled graph. Raises exceptions if anything fails."""
+    import traceback
+
+    logger.info("Starting graph construction...")
+
     try:
-        logger.info("Starting graph construction...")
-        
         # Create the StateGraph with our schema
         builder = StateGraph(GraphState)
         logger.info("StateGraph created successfully")
-        
-        # Import your agent nodes with error handling
-        try:
-            from agents.market_analysis import market_analysis_node
-            from agents.forecasting_strategy import forecasting_node
-            from agents.risk_anomaly import risk_node
-            from agents.economic_indicator import economic_indicator_node
-            from agents.compliance_monitor import compliance_node
-            from agents.coordinator import coordinator_node
-            from agents.memory_reflection import memory_reflection_node
-            from agents.evaluation import evaluation_node
-            logger.info("All agent modules imported successfully")
-        except ImportError as e:
-            logger.error(f"Failed to import agent modules: {e}")
-            raise
-        
-        # Add nodes to the graph
-        try:
-            builder.add_node("market_analysis", market_analysis_node(config))
-            builder.add_node("forecasting", forecasting_node(config))
-            builder.add_node("risk", risk_node(config))
-            builder.add_node("economic_data", economic_indicator_node())
-            builder.add_node("compliance", compliance_node(config))
-            builder.add_node("coordinator", coordinator_node(config))
-            builder.add_node("evaluation", evaluation_node(config))
-            builder.add_node("memory_reflection", memory_reflection_node(config))
-            logger.info("All nodes added successfully")
-        except Exception as e:
-            logger.error(f"Failed to add nodes: {e}")
-            raise
-        
-        # Set up the graph structure
-        try:
-            builder.set_entry_point("economic_data")
-            
-            # Use sequential execution to avoid parallel state updates
-            builder.add_edge("economic_data", "market_analysis")
-            builder.add_edge("market_analysis", "forecasting")
-            builder.add_edge("forecasting", "risk")
-            builder.add_edge("risk", "compliance")
-            builder.add_edge("compliance", "coordinator")
-            builder.add_edge("coordinator", "evaluation")
-            builder.add_edge("evaluation", "memory_reflection")
-            
-            builder.set_finish_point("memory_reflection")
-            logger.info("Graph structure defined successfully")
-        except Exception as e:
-            logger.error(f"Failed to set up graph structure: {e}")
-            raise
-        
-        # Compile the graph
-        try:
-            compiled_graph = builder.compile()
-            logger.info("Graph compiled successfully")
-            return compiled_graph
-        except Exception as e:
-            logger.error(f"Failed to compile graph: {e}")
-            raise
-            
+
+        # Import agent nodes
+        from agents.market_analysis import market_analysis_node
+        from agents.forecasting_strategy import forecasting_node
+        from agents.risk_anomaly import risk_node
+        from agents.economic_indicator import economic_indicator_node
+        from agents.compliance_monitor import compliance_node
+        from agents.coordinator import coordinator_node
+        from agents.memory_reflection import memory_reflection_node
+        from agents.evaluation import evaluation_node
+        logger.info("All agent modules imported successfully")
+
+        # Add nodes
+        builder.add_node("market_analysis", market_analysis_node(config))
+        builder.add_node("forecasting", forecasting_node(config))
+        builder.add_node("risk", risk_node(config))
+        builder.add_node("economic_data", economic_indicator_node())
+        builder.add_node("compliance", compliance_node(config))
+        builder.add_node("coordinator", coordinator_node(config))
+        builder.add_node("evaluation", evaluation_node(config))
+        builder.add_node("memory_reflection", memory_reflection_node(config))
+        logger.info("All nodes added successfully")
+
+        # Set up graph structure
+        builder.set_entry_point("economic_data")
+        builder.add_edge("economic_data", "market_analysis")
+        builder.add_edge("market_analysis", "forecasting")
+        builder.add_edge("forecasting", "risk")
+        builder.add_edge("risk", "compliance")
+        builder.add_edge("compliance", "coordinator")
+        builder.add_edge("coordinator", "evaluation")
+        builder.add_edge("evaluation", "memory_reflection")
+        builder.set_finish_point("memory_reflection")
+        logger.info("Graph structure defined successfully")
+
+        # Compile graph
+        compiled_graph = builder.compile()
+        logger.info("Graph compiled successfully")
+        return compiled_graph
+
     except Exception as e:
-        logger.error(f"Graph construction failed: {e}")
-        return None
+        logger.error("Graph construction failed:\n%s", traceback.format_exc())
+        # Fail fast
+        raise RuntimeError("Graph construction failed. Check logs for details.") from e
+
 
 def run():
     """Main execution function"""
