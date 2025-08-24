@@ -35,6 +35,8 @@ def load_index():
     if os.path.exists(VECTOR_DB_PATH):
         return faiss.read_index(VECTOR_DB_PATH)
     else:
-        return faiss.IndexFlatL2(model.get_sentence_embedding_dimension())
-    
+        # Create a new index that supports ID mapping
+        embedding_dim = model.get_sentence_embedding_dimension()
+        index_flat = faiss.IndexFlatL2(embedding_dim)
+        return faiss.IndexIDMap(index_flat)
 

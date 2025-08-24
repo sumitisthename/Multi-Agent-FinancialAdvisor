@@ -37,7 +37,11 @@ def compliance_node(config):
             risk_alerts = state.get("risk_report", "")
             date = state["timestamp"]
 
-            rules = extract_compliance_rules(config)
+            # Use the RAG pipeline to get relevant rules
+            if not proposed_action:
+                rules = "No action proposed. No rules to check."
+            else:
+                rules = extract_compliance_rules(proposed_action)
 
             context = {
                 "date": date,

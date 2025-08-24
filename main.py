@@ -3,17 +3,8 @@
 from graph.graph_builder import build_graph
 from config.settings import load_config
 from utils.logger import setup_logger
-from dotenv import load_dotenv
 from datetime import datetime
 import os
-
-
-from dotenv import load_dotenv
-load_dotenv()
-
-import os
-print("[DEBUG] Using GROQ Key:", os.getenv("GROQ_API_KEY"))
-
 
 
 def run():
