@@ -12,6 +12,8 @@ from codecarbon import EmissionsTracker
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import graph
 from graph.graph_builder import build_graph
+from graph.generate_graph import generate_forecast_graph
+import pandas as pd
 from config.settings import load_config
 from utils.logger import setup_logger
 
@@ -114,6 +116,22 @@ def run_graph_with_streaming(initial_state):
         with st.expander(f"📌 {title}"):
             st.markdown(f"```\n{content}\n```")
     st.markdown("---")
+
+    # Display Model Evaluation
+    st.subheader("🤖 Model Selection")
+    if "forecast_records" in result:
+        for record in result["forecast_records"]:
+            st.write(f"### Evaluation for {record['Asset']}")
+            eval_df = pd.DataFrame(record['model_evaluations'])
+            st.dataframe(eval_df)
+
+    # Generate and Display Graphs
+    st.subheader("📊 Forecast Graphs")
+    generate_forecast_graph(timestamp)
+    for asset in assets_list:
+        graph_file = f"forecast_{asset}_{timestamp}.png"
+        if os.path.exists(graph_file):
+            st.image(graph_file)
 
     # Emissions
     st.markdown("---")

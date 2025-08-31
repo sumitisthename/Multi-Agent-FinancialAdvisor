@@ -1,6 +1,6 @@
 # agents/forecasting_strategy.py
 
-from tools.quant_models import run_forecast_model
+from tools.quant_models import run_forecast_model, format_forecast_table
 from config.settings import load_config
 from utils.logger import get_logger
 from langchain_groq import ChatGroq
@@ -40,15 +40,17 @@ def forecasting_node(config):
 
         logger.info("ARIMA model invoked for assets: %s", assets)
 
-        forecast_data = run_forecast_model(assets, date, config)
+        forecast_records = run_forecast_model(assets, date, config)
+        forecast_table = format_forecast_table(forecast_records)
 
         context = {
             "date": date,
             "assets": ", ".join(assets),
             "market_summary": market_summary,
-            "forecast_table": forecast_data,
+            "forecast_table": forecast_table,
             "user_question": state.get("user_query", "")
         }
+        state["forecast_records"] = forecast_records
 
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)
         llm_input = prompt.format(**context)
