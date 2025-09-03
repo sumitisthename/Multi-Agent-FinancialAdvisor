@@ -37,16 +37,16 @@ def generate_forecast_graph(date):
         last_date = historical_df['Date'].iloc[-1]
         forecast_date = last_date + timedelta(days=1)
 
-        if row['ARIMA_Forecast'] != 'N/A' and pd.notna(row['ARIMA_Forecast']):
+        if 'ARIMA_Forecast' in row and row['ARIMA_Forecast'] != 'N/A' and pd.notna(row['ARIMA_Forecast']):
             forecast_price = float(row['ARIMA_Forecast'])
             plt.plot(forecast_date, forecast_price, 'ro', label='ARIMA Forecast')
-        if row['SARIMA_Forecast'] != 'N/A' and pd.notna(row['SARIMA_Forecast']):
+        if 'SARIMA_Forecast' in row and row['SARIMA_Forecast'] != 'N/A' and pd.notna(row['SARIMA_Forecast']):
             forecast_price = float(row['SARIMA_Forecast'])
             plt.plot(forecast_date, forecast_price, 'go', label='SARIMA Forecast')
-        if row['Prophet_Forecast'] != 'N/A' and pd.notna(row['Prophet_Forecast']):
+        if 'Prophet_Forecast' in row and row['Prophet_Forecast'] != 'N/A' and pd.notna(row['Prophet_Forecast']):
             forecast_price = float(row['Prophet_Forecast'])
             plt.plot(forecast_date, forecast_price, 'bo', label='Prophet Forecast')
-        if row['LSTM_Forecast'] != 'N/A' and pd.notna(row['LSTM_Forecast']):
+        if 'LSTM_Forecast' in row and row['LSTM_Forecast'] != 'N/A' and pd.notna(row['LSTM_Forecast']):
             forecast_price = float(row['LSTM_Forecast'])
             plt.plot(forecast_date, forecast_price, 'yo', label='LSTM Forecast')
 
