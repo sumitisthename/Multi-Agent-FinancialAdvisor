@@ -13,17 +13,6 @@ from dotenv import load_dotenv
 load_dotenv()
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
-logger = get_logger()
-
-
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY")
-)
-
-
 # Load prompt
 with open("prompts/forecast.txt") as f:
     FORECAST_PROMPT = f.read()
@@ -33,6 +22,11 @@ def forecasting_node(config):
     def run(state):
         logger.info("Running Forecasting Agent")
 
+        # Initialize LLM within the node
+        llm = ChatGroq(
+            model="gemma2-9b-it",
+            api_key=os.getenv("GROQ_API_KEY")
+        )
 
         market_summary = state.get("market_summary", "")
         assets = list(set(state["assets"]))
@@ -55,7 +49,6 @@ def forecasting_node(config):
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)
         llm_input = prompt.format(**context)
 
-        llm = ChatGroq(model="gemma2-9b-it")
         parser = StrOutputParser()
         output = parser.invoke(llm.invoke(llm_input))
 

@@ -52,7 +52,7 @@ def format_forecast_table(forecast_records):
             ema30 = record.get("EMA_30", "-")
 
             # Simple status based on the first forecast model (ARIMA)
-            if arima_forecast > latest:
+            if isinstance(arima_forecast, float) and isinstance(latest, float) and arima_forecast > latest:
                 status = "📈 Bullish"
             else:
                 status = "📉 Bearish"
@@ -76,8 +76,12 @@ def evaluate_and_select_model(price_series):
 
         forecast = None
 
-        train_series = price_series[:-1]
-        test_value = price_series[-1]
+        if isinstance(price_series, pd.DataFrame) and 'Close' in price_series.columns:
+            train_series = price_series['Close'][:-1]
+            test_value = price_series['Close'].iloc[-1]
+        else:
+            train_series = price_series[:-1]
+            test_value = price_series.iloc[-1]
 
         try:
             if model_name == "ARIMA":

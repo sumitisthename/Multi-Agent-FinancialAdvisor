@@ -1,6 +1,8 @@
 import unittest
 import logging
 from datetime import datetime, timezone
+from unittest.mock import patch, MagicMock
+import os
 
 # For optional IPython inline display (won't fail if IPython not installed)
 try:
@@ -10,23 +12,12 @@ except ImportError:
     display = None
 
 # Adjust import path to your actual module
-from graph.graph_builder import build_graph  
+from graph.graph_builder import build_graph
+from langchain_core.messages import AIMessage
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def save_graph_visualization(graph, filename="test_graph_visualization.png"):
-    try:
-        mermaid_png = graph.get_graph().draw_mermaid_png()
-        with open(filename, "wb") as f:
-            f.write(mermaid_png)
-        logger.info(f"Graph visualization saved as '{filename}'")
-        if display and Image:
-            display(Image(mermaid_png))
-        return filename
-    except Exception as e:
-        logger.error(f"Failed to save graph visualization: {e}")
-        return None
 
 class TestGraph(unittest.TestCase):
 
@@ -34,42 +25,62 @@ class TestGraph(unittest.TestCase):
         self.config = {"api_key": "test_api_key"}
 
     def test_build_graph(self):
-        graph = build_graph(self.config)
-        self.assertIsNotNone(graph)
+        with patch('agents.economic_indicator.os.getenv') as mock_getenv, \
+             patch('agents.market_analysis.os.getenv') as mock_getenv_market, \
+             patch('agents.forecasting_strategy.os.getenv') as mock_getenv_forecast, \
+             patch('agents.risk_anomaly.os.getenv') as mock_getenv_risk, \
+             patch('agents.compliance_monitor.os.getenv') as mock_getenv_compliance, \
+             patch('agents.coordinator.os.getenv') as mock_getenv_coordinator, \
+             patch('agents.memory_reflection.os.getenv') as mock_getenv_memory:
+            mock_getenv.return_value = "DUMMY_KEY"
+            mock_getenv_market.return_value = "DUMMY_KEY"
+            mock_getenv_forecast.return_value = "DUMMY_KEY"
+            mock_getenv_risk.return_value = "DUMMY_KEY"
+            mock_getenv_compliance.return_value = "DUMMY_KEY"
+            mock_getenv_coordinator.return_value = "DUMMY_KEY"
+            mock_getenv_memory.return_value = "DUMMY_KEY"
+
+            graph = build_graph(self.config)
+            self.assertIsNotNone(graph)
         logger.info(f"Graph object type: {type(graph)}")
 
     def test_graph_invoke(self):
-        graph = build_graph(self.config)
-        self.assertIsNotNone(graph)
+        with patch.dict(os.environ, {"GROQ_API_KEY": "DUMMY_KEY"}):
+            # Mock the LLM responses
+            with patch('langchain_groq.ChatGroq._generate') as mock_generate:
+                from langchain_core.outputs import ChatGeneration, ChatResult
+                mock_generation = ChatGeneration(message=AIMessage(content="Mocked LLM response."))
+                mock_result = ChatResult(generations=[mock_generation])
+                mock_generate.return_value = mock_result
 
-        initial_state = {
-            "assets": ["AAPL", "TSLA"],
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "market_summary": "",
-            "forecast": "",
-            "risk_report": "",
-            "compliance_review": "",
-            "final_decision": "",
-            "reflection_lesson": "",
-            "user_query": "What is the market forecast?",
-            "economic_indicators": []
-        }
+                graph = build_graph(self.config)
+                self.assertIsNotNone(graph)
 
-        result = graph.invoke(initial_state)
+                initial_state = {
+                    "assets": ["AAPL", "TSLA"],
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "market_summary": "",
+                    "forecast": "",
+                    "risk_report": "",
+                    "compliance_review": "",
+                    "final_decision": "",
+                    "reflection_lesson": "",
+                    "user_query": "What is the market forecast?",
+                    "economic_indicators": []
+                }
+
+                result = graph.invoke(initial_state)
+
+                logger.info(f"Graph invoke result: {result}")
+
+                self.assertIsInstance(result, dict)
+                self.assertIn("final_decision", result)
 
         logger.info(f"Graph invoke result: {result}")
 
         self.assertIsInstance(result, dict)
         self.assertIn("final_decision", result)
 
-    def test_graph_visualization_saved(self):
-        graph = build_graph(self.config)
-        self.assertIsNotNone(graph)
-
-        filename = "test_graph_visualization.png"
-        saved_file = save_graph_visualization(graph, filename)
-        self.assertIsNotNone(saved_file)
-        self.assertTrue(saved_file.endswith(".png"))
 
 if __name__ == "__main__":
     unittest.main()

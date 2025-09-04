@@ -12,16 +12,6 @@ from dotenv import load_dotenv
 load_dotenv()
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-logger = get_logger()
-
-
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY")
-)
-
-
 # Load reflection prompt
 with open("prompts/coordinator.txt") as f:
     REFLECTION_PROMPT = f.read().replace("Decision", "Reflection")  # reuse structure
@@ -31,6 +21,11 @@ def memory_reflection_node(config):
     def run(state):
         logger.info("Running Memory Reflection Agent")
         try:
+            # Initialize LLM within the node
+            llm = ChatGroq(
+                model="gemma2-9b-it",
+                api_key=os.getenv("GROQ_API_KEY")
+            )
             date = state["timestamp"]
             decision = state.get("final_decision", "")
             economic_indicators = state.get("economic_indicators", [])

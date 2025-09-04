@@ -14,8 +14,6 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
 
 
 

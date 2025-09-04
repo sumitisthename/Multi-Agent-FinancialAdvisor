@@ -11,11 +11,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
-logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
-logger = get_logger()
 
 # Load prompt
 with open("prompts/compliance.txt") as f:
@@ -31,6 +27,7 @@ def compliance_node(config):
         Executes the compliance monitoring agent.
         """
         from langchain_groq import ChatGroq
+        logger = get_logger()
         logger.info("Running Compliance Monitoring Agent")
         try:
             proposed_action = state.get("forecast", "")

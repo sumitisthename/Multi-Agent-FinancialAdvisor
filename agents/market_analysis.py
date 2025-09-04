@@ -20,16 +20,8 @@ config = load_config()
 
 # Validate API key
 api_key = os.getenv("GROQ_API_KEY")
-print("[DEBUG] Using GROQ Key:", api_key)
 if not api_key:
-    raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
-
-# Initialize LLM globally with API key
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY"),
-    temperature=0.2
-)
+    logger.warning("GROQ_API_KEY environment variable is not set.")
 
 # Load prompt template from file
 with open("prompts/market.txt") as f:
@@ -38,6 +30,13 @@ with open("prompts/market.txt") as f:
 def market_analysis_node(config):
     def run(state):
         logger.info("Running Market Analysis Agent")
+
+        # Initialize LLM within the node
+        llm = ChatGroq(
+            model="gemma2-9b-it",
+            api_key=os.getenv("GROQ_API_KEY"),
+            temperature=0.2
+        )
 
         # ✅ FIXED: Fetch data with correct arguments
         prices = fetch_market_data(state["assets"], state["timestamp"])

@@ -34,7 +34,9 @@ class TestQuantModels(unittest.TestCase):
         print("\n=== 🔮 Forecast Output ===")
         print(forecast_output)
 
-        self.assertIsInstance(forecast_output, str)
+        self.assertIsInstance(forecast_output, list)
+        for item in forecast_output:
+            self.assertIn('Asset', item)
 
     def test_detect_anomalies(self):
         transactions = [

@@ -1,0 +1,15 @@
+pytest
+python-dotenv
+yfinance
+langchain
+langgraph
+streamlit
+pandas
+plotly
+scikit-learn
+thefuzz
+codecarbon
+langchain-groq
+statsmodels
+ipython
+prophet
