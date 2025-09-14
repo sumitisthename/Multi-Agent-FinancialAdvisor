@@ -1,6 +1,6 @@
 # agents/economic_indicator_agent.py
 
-from tools.economic_data_tool import fetch_economic_indicator
+from tools.economic_data_tool import fetch_gdp_data, fetch_pce_data, fetch_employment_data
 from config.settings import load_config
 from utils.logger import get_logger
 from langchain_core.output_parsers import StrOutputParser
@@ -39,26 +39,33 @@ def economic_indicator_node():
     def run(state):
         logger.info("Running Economic Indicator Agent")
 
-        # Define indicators to fetch
-        indicators = [
-            "NY.GDP.MKTP.CD",       # GDP (current US$)
-            "FP.CPI.TOTL.ZG",       # Inflation, consumer prices (annual %)
-            "SL.UEM.TOTL.ZS"        # Unemployment rate (% of labor force)
-        ]
+        # Fetch economic data
+        try:
+            gdp_data = fetch_gdp_data()
+            logger.info(f"Fetched GDP data: {gdp_data}")
+        except Exception as e:
+            logger.error(f"Error fetching GDP data: {e}")
+            gdp_data = {"error": str(e)}
 
-        results = []
-        for ind in indicators:
-            try:
-                result = fetch_economic_indicator(ind, country_code="US")
-                logger.info(f"Fetched economic indicator {ind}: {result}")
-                results.append(result)
-            except Exception as e:
-                logger.error(f"Error fetching {ind}: {e}")
-                results.append({"indicator": ind, "error": str(e)})
+        try:
+            pce_data = fetch_pce_data()
+            logger.info(f"Fetched PCE data: {pce_data}")
+        except Exception as e:
+            logger.error(f"Error fetching PCE data: {e}")
+            pce_data = {"error": str(e)}
+
+        try:
+            employment_data = fetch_employment_data()
+            logger.info(f"Fetched employment data: {employment_data}")
+        except Exception as e:
+            logger.error(f"Error fetching employment data: {e}")
+            employment_data = {"error": str(e)}
 
         # Prepare context for LLM
         context = {
-            "indicators": results,
+            "gdp_data": gdp_data,
+            "pce_data": pce_data,
+            "employment_data": employment_data,
             "user_question": state.get("user_query", "")
         }
 

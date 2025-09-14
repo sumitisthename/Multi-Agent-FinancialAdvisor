@@ -1,38 +1,78 @@
-import requests
+import beaapi
 import logging
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-def fetch_economic_indicator(indicator_id="NY.GDP.MKTP.CD", country_code="US"):
+def get_bea_api_key():
     """
-    Fetches the most recent value of a given economic indicator from the World Bank API.
-    - Default indicator: GDP (current US$)
-    - Default country: United States (US)
-
-    World Bank Indicator Examples:
-    - NY.GDP.MKTP.CD → GDP (current US$)
-    - FP.CPI.TOTL.ZG → Inflation, consumer prices (annual %)
-    - SL.UEM.TOTL.ZS → Unemployment (% of total labor force)
+    Get the BEA API key from the environment variables.
     """
-    url = f"http://api.worldbank.org/v2/country/{country_code}/indicator/{indicator_id}?format=json&per_page=1"
+    bea_api_key = os.getenv("BEA_API_KEY")
+    if not bea_api_key:
+        raise ValueError("BEA_API_KEY environment variable not set.")
+    return bea_api_key
 
+def fetch_gdp_data():
+    """
+    Fetches the latest GDP data from the BEA API.
+    Note: The table and parameters are currently hardcoded. This could be improved in the future
+    to allow for more flexibility.
+    """
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        data = response.json()
-
-        if len(data) < 2 or not data[1]:
-            logger.warning(f"No data found for indicator {indicator_id}")
-            return {"error": "No data available."}
-
-        record = data[1][0]
-        return {
-            "indicator": record.get("indicator", {}).get("id"),
-            "indicator_name": record.get("indicator", {}).get("value"),
-            "country": record.get("country", {}).get("value"),
-            "date": record.get("date"),
-            "value": record.get("value")
-        }
+        bea_api_key = get_bea_api_key()
+        gdp_data = beaapi.get_data(
+            bea_api_key,
+            'NIPA',
+            TableName='T10105',
+            Frequency='Q',
+            Year='X'
+        )
+        return gdp_data
     except Exception as e:
-        logger.error(f"Failed to fetch indicator {indicator_id} from World Bank: {e}")
+        logger.error(f"Failed to fetch GDP data from BEA: {e}")
+        return {"error": str(e)}
+
+def fetch_pce_data():
+    """
+    Fetches the latest PCE price index data from the BEA API.
+    Note: The table and parameters are currently hardcoded. This could be improved in the future
+    to allow for more flexibility.
+    """
+    try:
+        bea_api_key = get_bea_api_key()
+        pce_data = beaapi.get_data(
+            bea_api_key,
+            'NIPA',
+            TableName='T20304',
+            Frequency='Q',
+            Year='X'
+        )
+        return pce_data
+    except Exception as e:
+        logger.error(f"Failed to fetch PCE data from BEA: {e}")
+        return {"error": str(e)}
+
+def fetch_employment_data():
+    """
+    Fetches the latest employment data from the BEA API.
+    Note: The table and parameters are currently hardcoded. This could be improved in the future
+    to allow for more flexibility.
+    """
+    try:
+        bea_api_key = get_bea_api_key()
+        employment_data = beaapi.get_data(
+            bea_api_key,
+            'Regional',
+            TableName='SAINC4',
+            GeoFips='STATE',
+            LineCode='3' # Full-time and part-time employment
+        )
+        return employment_data
+    except Exception as e:
+        logger.error(f"Failed to fetch employment data from BEA: {e}")
         return {"error": str(e)}

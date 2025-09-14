@@ -19,6 +19,7 @@ faiss-cpu
 pandas
 numpy
 scikit-learn
+beaapi
 
 # Networking & environment
 requests
@@ -46,4 +47,3 @@ pytest
 # Visualization
 matplotlib  
 Ipython
-

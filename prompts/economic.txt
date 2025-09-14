@@ -1,11 +1,17 @@
 You are an expert economic analyst. Summarize the key economic indicators for the United States.
 
-Indicators:
-{indicators}
+GDP Data:
+{gdp_data}
+
+PCE Price Index Data:
+{pce_data}
+
+Employment Data:
+{employment_data}
 
 Based on the data above, provide an analytical summary addressing the following:
 1. What do these indicators suggest about the current state of the U.S. economy?
-2. Are there any notable trends or warnings in GDP, inflation, or unemployment?
+2. Are there any notable trends or warnings in GDP, inflation (as measured by PCE), or employment?
 3. {user_question}
 
 Your summary should be clear, informative, and suitable for a general audience with a basic understanding of economics.
