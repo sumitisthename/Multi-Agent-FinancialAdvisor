@@ -13,10 +13,6 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
-logger = get_logger()
-
 # Load prompt
 with open("prompts/compliance.txt") as f:
     COMPLIANCE_PROMPT = f.read()
@@ -33,6 +29,10 @@ def compliance_node(config):
         from langchain_groq import ChatGroq
         logger.info("Running Compliance Monitoring Agent")
         try:
+            api_key = os.getenv("GROQ_API_KEY")
+            if not api_key:
+                raise ValueError("GROQ_API_KEY environment variable is not set.")
+
             proposed_action = state.get("forecast", "")
             risk_alerts = state.get("risk_report", "")
             date = state["timestamp"]
@@ -53,7 +53,7 @@ def compliance_node(config):
             # Initialize LLM
             llm = ChatGroq(
                 model="gemma2-9b-it",
-                api_key=os.getenv("GROQ_API_KEY"),
+                api_key=api_key,
                 temperature=0.2
             )
 

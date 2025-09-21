@@ -13,15 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
 logger = get_logger()
-
-
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY")
-)
 
 
 # Load prompt
@@ -53,7 +45,14 @@ def forecasting_node(config):
         prompt = PromptTemplate.from_template(FORECAST_PROMPT)
         llm_input = prompt.format(**context)
 
-        llm = ChatGroq(model="gemma2-9b-it")
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            raise ValueError("GROQ_API_KEY environment variable is not set.")
+
+        llm = ChatGroq(
+            model="gemma2-9b-it",
+            api_key=api_key
+        )
         parser = StrOutputParser()
         output = parser.invoke(llm.invoke(llm_input))
 

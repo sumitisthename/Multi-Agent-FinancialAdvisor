@@ -14,11 +14,6 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
-
-
-
 # Load prompt
 with open("prompts/risk.txt") as f:
     RISK_PROMPT = f.read()
@@ -35,6 +30,10 @@ def risk_node(config):
         from langchain_groq import ChatGroq
         logger.info("Running Risk & Anomaly Detection Agent")
         try:
+            api_key = os.getenv("GROQ_API_KEY")
+            if not api_key:
+                raise ValueError("GROQ_API_KEY environment variable is not set.")
+
             assets = state["assets"]
             date = state["timestamp"]
             market_summary = state.get("market_summary", "")
@@ -60,7 +59,7 @@ def risk_node(config):
             # Initialize LLM
             llm = ChatGroq(
                 model="gemma2-9b-it",
-                api_key=os.getenv("GROQ_API_KEY"),
+                api_key=api_key,
                 temperature=0
             )
 

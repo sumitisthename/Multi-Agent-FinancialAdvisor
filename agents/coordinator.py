@@ -11,17 +11,6 @@ from dotenv import load_dotenv
 load_dotenv()
 logger = get_logger()
 
-print(os.getenv("GROQ_API_KEY"))
-
-logger = get_logger()
-
-
-llm = ChatGroq(
-    model="gemma2-9b-it",
-    api_key=os.getenv("GROQ_API_KEY")
-)
-
-
 # Load prompt
 with open("prompts/coordinator.txt") as f:
     COORDINATOR_PROMPT = f.read()
@@ -31,6 +20,10 @@ def coordinator_node(config):
     def run(state):
         logger.info("Running Coordinator Agent")
         try:
+            api_key = os.getenv("GROQ_API_KEY")
+            if not api_key:
+                raise ValueError("GROQ_API_KEY environment variable is not set.")
+
             economic_indicators = state.get("economic_indicators", [])
             if not economic_indicators:
                 raise ValueError("No economic indicators found in state.")
@@ -61,7 +54,7 @@ def coordinator_node(config):
             prompt = PromptTemplate.from_template(COORDINATOR_PROMPT)
             llm_input = prompt.format(**context)
 
-            llm = ChatGroq(model="gemma2-9b-it")
+            llm = ChatGroq(model="gemma2-9b-it", api_key=api_key)
             parser = StrOutputParser()
             print("\n=== Coordinator Prompt Input ===\n", llm_input, "\n============================\n")
             final_decision = parser.invoke(llm.invoke(llm_input))
